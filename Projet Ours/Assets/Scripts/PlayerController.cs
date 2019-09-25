@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
     private Rigidbody2D player;
+    public GameObject crossHair;
 
     public float moveSpeed;
     public float rollTime;
@@ -34,10 +35,12 @@ public class PlayerController : MonoBehaviour
             transform.position = transform.position + movement * Time.deltaTime * moveSpeed;
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetButton("Fire"))
         {
             StartCoroutine(Roll());
         }
+
+        MoveCrossHair();
     }
 
     IEnumerator Roll()   //C'est le code de la Roulade.
@@ -73,5 +76,21 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(rollTime);
         player.velocity = Vector2.zero;
         canMove = true;*/
+    }
+    private void MoveCrossHair()
+    {
+        Vector3 aim = new Vector3(Input.GetAxis("AimHorizontal"), Input.GetAxis("AimVertical"), 0.0f);
+
+        if (aim.magnitude > 0.0f)
+        {
+            aim.Normalize();
+            aim *= 0.4f;
+            crossHair.transform.localPosition = aim;
+            crossHair.SetActive(true);
+        }
+        else
+        {
+            crossHair.SetActive(false);
+        }
     }
 }
