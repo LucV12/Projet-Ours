@@ -14,6 +14,15 @@ public class PlayerController : MonoBehaviour
     public float rollSpeed;
     bool canMove;
 
+    private float timeBtwAttack;
+    public float startTimeBtwAttack;
+
+    public Transform attackPos;
+    public LayerMask whatIsEnemies;
+    public float attackRange;
+    public int damage;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,30 +62,15 @@ public class PlayerController : MonoBehaviour
         player.velocity = Vector2.zero;
         canMove = true;
 
-        /*if (Input.GetKey(KeyCode.LeftArrow))
+       /* if(timeBtwAttack <= 0)
         {
-            player.velocity = Vector2.left * rollSpeed;
-            canMove = false;               //Si on laisse la possibilité de se déplacer pendant le dash, le déplacement va annuler cette dernière.
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            player.velocity = Vector2.right * rollSpeed;
-            canMove = false;
-        }
-        else if (Input.GetKey(KeyCode.UpArrow))
-        {
-            player.velocity = Vector2.up * rollSpeed;
-            canMove = false;
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            player.velocity = Vector2.down * rollSpeed;
-            canMove = false;
-        }
-        yield return new WaitForSeconds(rollTime);
-        player.velocity = Vector2.zero;
-        canMove = true;*/
+            if (Input.GetButtonDown("Attack"))
+            {
+
+            }
+        }*/
     }
+
     private void MoveCrossHair()
     {
         Vector3 aim = new Vector3(Input.GetAxis("AimHorizontal"), Input.GetAxis("AimVertical"), 0.0f);
@@ -84,7 +78,7 @@ public class PlayerController : MonoBehaviour
         if (aim.magnitude > 0.0f)
         {
             aim.Normalize();
-            aim *= 0.4f;
+            aim *= 15f;
             crossHair.transform.localPosition = aim;
             crossHair.SetActive(true);
         }
@@ -93,4 +87,10 @@ public class PlayerController : MonoBehaviour
             crossHair.SetActive(false);
         }
     }
+
+    private void Attack()
+    {
+
+    }
+
 }
