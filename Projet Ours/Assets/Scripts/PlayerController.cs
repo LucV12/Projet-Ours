@@ -44,12 +44,29 @@ public class PlayerController : MonoBehaviour
             transform.position = transform.position + movement * Time.deltaTime * moveSpeed;
         }
 
-        if (Input.GetButton("Fire"))
+        if (Input.GetButton("Dash"))
         {
             StartCoroutine(Roll());
         }
 
         MoveCrossHair();
+
+        if (timeBtwAttack <= 0)
+        {
+            if (Input.GetButtonDown("Attack"))
+            {
+                timeBtwAttack = startTimeBtwAttack;
+                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+                    for (int i = 0; i < enemiesToDamage.Length; i++)
+                    {
+                    enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
+                    }
+            }
+            else
+            {
+                timeBtwAttack -= Time.deltaTime; 
+            }
+        }
     }
 
     IEnumerator Roll()   //C'est le code de la Roulade.
@@ -62,13 +79,12 @@ public class PlayerController : MonoBehaviour
         player.velocity = Vector2.zero;
         canMove = true;
 
-       /* if(timeBtwAttack <= 0)
-        {
-            if (Input.GetButtonDown("Attack"))
-            {
+    }
 
-            }
-        }*/
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
 
     private void MoveCrossHair()
@@ -86,11 +102,6 @@ public class PlayerController : MonoBehaviour
         {
             crossHair.SetActive(false);
         }
-    }
-
-    private void Attack()
-    {
-
     }
 
 }
