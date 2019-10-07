@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -23,17 +22,15 @@ public class PlayerController : MonoBehaviour
     public int damage;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
         canMove = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (canMove == true)
+        if (canMove == true) //Mouvement de base
         {
             Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
 
@@ -49,23 +46,28 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Roll());
         }
 
-        MoveCrossHair();
+        MoveCrossHair(); // Fontion pour viser
 
-        if (timeBtwAttack <= 0)
+        if (timeBtwAttack <= 0) //Attaque suivant le temps entre les attaques
         {
             if (Input.GetButtonDown("Attack"))
             {
                 timeBtwAttack = startTimeBtwAttack;
-                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
-                    for (int i = 0; i < enemiesToDamage.Length; i++)
-                    {
-                    enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
-                    }
+                Collider2D [] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+                 if (enemiesToDamage[0].gameObject.tag == "Enemy")
+                 {
+
+                     enemiesToDamage[0].GetComponent<Enemy>().TakeDamage(damage); 
+                  }
+
+                Debug.Log(enemiesToDamage.Length);
+                Debug.Log("AtK");
             }
-            else
-            {
-                timeBtwAttack -= Time.deltaTime; 
-            }
+            
+        }
+        else
+        {
+            timeBtwAttack -= Time.deltaTime; 
         }
     }
 
@@ -81,13 +83,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected() //Visualisation de l'atk range
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
 
-    private void MoveCrossHair()
+    private void MoveCrossHair() //Fonction de visée
     {
         Vector3 aim = new Vector3(Input.GetAxis("AimHorizontal"), Input.GetAxis("AimVertical"), 0.0f);
 
