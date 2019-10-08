@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask whatIsEnemies;
     public float attackRange;
     public int damage;
+    private bool isAxisInUse = false;
 
 
     void Start()
@@ -50,20 +51,30 @@ public class PlayerController : MonoBehaviour
 
         if (timeBtwAttack <= 0) //Attaque suivant le temps entre les attaques
         {
-            if (Input.GetButtonDown("Attack"))
+            if (Input.GetAxisRaw("Attack") != 0)
             {
-                timeBtwAttack = startTimeBtwAttack;
-                Collider2D [] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
-                 if (enemiesToDamage[0].gameObject.tag == "Enemy")
-                 {
+                if (isAxisInUse == false)
+                {
 
-                     enemiesToDamage[0].GetComponent<Enemy>().TakeDamage(damage); 
-                  }
 
-                Debug.Log(enemiesToDamage.Length);
-                Debug.Log("AtK");
+                    timeBtwAttack = startTimeBtwAttack;
+                    Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+                    if (enemiesToDamage[0].gameObject.tag == "Enemy")
+                    {
+
+                        enemiesToDamage[0].GetComponent<Enemy>().TakeDamage(damage);
+                    }
+
+                    Debug.Log(enemiesToDamage.Length);
+                    Debug.Log("AtK");
+                    isAxisInUse = true;
+                }
             }
-            
+            if (Input.GetAxisRaw("Attack") == 0)
+            {
+                isAxisInUse = false;
+            }
+
         }
         else
         {
@@ -96,7 +107,7 @@ public class PlayerController : MonoBehaviour
         if (aim.magnitude > 0.0f)
         {
             aim.Normalize();
-            aim *= 0.5f;
+            aim *= 0.25f;
             crossHair.transform.localPosition = aim;
             crossHair.SetActive(true);
         }
