@@ -55,26 +55,32 @@ public class PlayerController : MonoBehaviour
             {
                 if (isAxisInUse == false)
                 {
-
-
                     timeBtwAttack = startTimeBtwAttack;
                     Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+
                     if (enemiesToDamage[0].gameObject.tag == "Enemy")
                     {
-
-                        enemiesToDamage[0].GetComponent<Enemy>().TakeDamage(damage);
+                       enemiesToDamage[0].GetComponent<Enemy>().TakeDamage(damage);
                     }
 
                     Debug.Log(enemiesToDamage.Length);
                     Debug.Log("AtK");
-                    isAxisInUse = true;
+                    isAxisInUse = true;  
+
+                    Vector3 aim = new Vector3(Input.GetAxis("AimHorizontal"), Input.GetAxis("AimVertical"), 0.0f);
+                    animator.SetFloat("AimHorizontal", aim.x);
+                    animator.SetFloat("AimVertical", aim.y);
+                    animator.SetBool("isAttacking", true);
+
                 }
             }
+
             if (Input.GetAxisRaw("Attack") == 0)
             {
                 isAxisInUse = false;
+                animator.SetBool("isAttacking", false);  
             }
-
+                    
         }
         else
         {
