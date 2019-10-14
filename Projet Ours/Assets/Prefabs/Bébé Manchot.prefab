@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 8209273059801167077}
   - component: {fileID: 8209273059801167078}
   - component: {fileID: 8209273059801167081}
+  - component: {fileID: 6420206862203764898}
   m_Layer: 8
   m_Name: "B\xE9b\xE9 Manchot"
   m_TagString: Untagged
@@ -183,3 +184,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6420206862203764898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209273059801167074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d9bd6b0f601cb4fb3635bd734cea5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
