@@ -20,11 +20,11 @@ public class Enemy : MonoBehaviour
     {
         if(health <= 0)
         {
-            if (executed == false)
+            if (executed == false && nounours.GetComponent<PlayerController>().rageActivated == false)
             {
                 nounours.GetComponent<PlayerController>().rage += 0.1f;
             }
-            else if (executed == true)
+            else if (executed == true && nounours.GetComponent<PlayerController>().rageActivated == false)
             {
                 nounours.GetComponent<PlayerController>().rage += 0.5f;
             }
