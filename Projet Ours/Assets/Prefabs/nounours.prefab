@@ -175,6 +175,12 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  rage: 0
+  rageActivated: 0
+  startRageTime: 0
+  rageDecrease: 0
+  rageDamageBoost: 0
+  rageSpeedBoost: 0
 --- !u!95 &154733573039282559
 Animator:
   serializedVersion: 3

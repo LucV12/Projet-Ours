@@ -25,11 +25,24 @@ public class PlayerController : MonoBehaviour
 
     public AnimationCurve curve;
 
+    public float rage;
+    private bool rageAvaible;
+    public bool rageActivated;
+    public float startRageTime;
+    private float rageTime;
+    public float rageDecrease;
+    public int rageDamageBoost;
+    public int rageSpeedBoost;
+
+
 
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
         canMove = true;
+
+        rageActivated = false;
+        rageAvaible = false;
     }
 
     void Update()
@@ -71,6 +84,38 @@ public class PlayerController : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+        }
+
+        if (rage < 1 && rage > 0)
+        {
+            rage -= rageDecrease;
+        }
+        else if (rage >= 1)
+        {
+            rageAvaible = true;
+        }
+
+        if (rageAvaible == true && Input.GetKeyDown(KeyCode.A))
+        {
+            rage = 0;
+            rageAvaible = false;
+            rageActivated = true;
+            Debug.Log("Rage Activée !!!");
+            rageTime = startRageTime;
+            damage = damage * rageDamageBoost;
+            moveSpeed = moveSpeed * rageSpeedBoost;
+        }
+
+        if (rageActivated == true)
+        {
+            rageTime -= Time.deltaTime;
+        }
+
+        if (rageTime <= 0 && rageActivated == true)
+        {
+            rageActivated = false;
+            damage = damage / rageDamageBoost;
+            moveSpeed = moveSpeed / rageSpeedBoost;
         }
     }
 
