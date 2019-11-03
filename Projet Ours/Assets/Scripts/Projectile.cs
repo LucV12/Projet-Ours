@@ -13,7 +13,6 @@ public class Projectile : MonoBehaviour{
 
     void Start()
     {
-        //player = GameObject.FindGameObjectWithTag("Player").transform;
         nounours = GameObject.FindGameObjectWithTag("Player");
         player = nounours.transform;
         target = new Vector2(player.position.x, player.position.y);
@@ -32,16 +31,15 @@ public class Projectile : MonoBehaviour{
     {
         if (other.CompareTag("Player"))
         {
-            //PlayerController pc = nounours.GetComponent<PlayerController>();
-            //pc.health -= damage;
             nounours.GetComponent<PlayerController>().health -= damage;
-            DestroyProjectile();
             Debug.Log("HIT !");
+            nounours.GetComponent<PlayerController>().HitByEnemy();
+            DestroyProjectile();
         }
     }
 
     void DestroyProjectile()
     {
         Destroy(gameObject);
-    }
+    }    
 }

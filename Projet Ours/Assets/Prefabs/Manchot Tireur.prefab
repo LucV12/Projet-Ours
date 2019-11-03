@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 4134490385012589303}
   - component: {fileID: 4134490385012589302}
   - component: {fileID: 4134490385012589296}
-  - component: {fileID: 2515328202650214047}
+  - component: {fileID: 6401269338028449623}
   - component: {fileID: 4134490385012589297}
+  - component: {fileID: 8422844166085033624}
+  - component: {fileID: -6763159975260491472}
   m_Layer: 8
   m_Name: Manchot Tireur
   m_TagString: Enemy
@@ -102,7 +104,7 @@ MonoBehaviour:
   projectile: {fileID: 2537351313363181223, guid: c1c67a9672393c245985567f22d4841b,
     type: 3}
   player: {fileID: 154733573039282556, guid: 07e7eca8ab1ed7a4092e7839d8dced36, type: 3}
---- !u!114 &2515328202650214047
+--- !u!114 &6401269338028449623
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,7 +118,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   executed: 0
-  nounours: {fileID: 154733573039282554, guid: 07e7eca8ab1ed7a4092e7839d8dced36, type: 3}
+  blood: {fileID: 3122966314988428144, guid: a95d2d2c5c5cd2c4db66c47a4f769cf6, type: 3}
+  camera: {fileID: 0}
+  Flak2Sang: {fileID: 4096593589477641891, guid: 2c771aa9456d82f41a5cee23256bbc54,
+    type: 3}
 --- !u!61 &4134490385012589297
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,3 +148,50 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
+--- !u!61 &8422844166085033624
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4134490385012589299}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4}
+  m_EdgeRadius: 0
+--- !u!50 &-6763159975260491472
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4134490385012589299}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 20
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4

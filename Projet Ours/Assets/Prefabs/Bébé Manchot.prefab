@@ -41,12 +41,13 @@ GameObject:
   - component: {fileID: 8209273059801167079}
   - component: {fileID: 8209273059801167076}
   - component: {fileID: 8209273059801167077}
+  - component: {fileID: 425892514055961628}
   - component: {fileID: 8209273059801167078}
+  - component: {fileID: 3436852220299974995}
   - component: {fileID: 8209273059801167081}
-  - component: {fileID: 6420206862203764898}
   m_Layer: 8
   m_Name: "B\xE9b\xE9 Manchot"
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,13 +131,31 @@ MonoBehaviour:
   moveSpeed: 0.75
   aggroPosition: 3
   attackPosition: {fileID: 8209273059416316699}
-  attackRange: 0.17
+  attackRange: 0.18
   attackDuration: 0.5
   attackDelay: 0.5
   whatIsEnnemies:
     serializedVersion: 2
     m_Bits: 1024
-  damage: 2
+  damage: 1
+--- !u!114 &425892514055961628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209273059801167074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d9bd6b0f601cb4fb3635bd734cea5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  executed: 0
+  blood: {fileID: 3122966314988428144, guid: a95d2d2c5c5cd2c4db66c47a4f769cf6, type: 3}
+  camera: {fileID: 0}
+  Flak2Sang: {fileID: 4096593589477641891, guid: 2c771aa9456d82f41a5cee23256bbc54,
+    type: 3}
 --- !u!61 &8209273059801167078
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -150,7 +169,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.03}
+  m_Offset: {x: 0, y: -0.02}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -162,6 +181,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.26, y: 0.22}
+  m_EdgeRadius: 0
+--- !u!61 &3436852220299974995
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209273059801167074}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
 --- !u!50 &8209273059801167081
 Rigidbody2D:
@@ -182,18 +227,5 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &6420206862203764898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8209273059801167074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68d9bd6b0f601cb4fb3635bd734cea5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1

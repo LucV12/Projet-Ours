@@ -8,20 +8,26 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D player;
     public GameObject crossHair;
     public float health;
+    private TrailRenderer trail;
 
     public float moveSpeed;
     public float rollTime;
     public float rollSpeed;
+    public float rollDelay;
     bool canMove;
+    bool trailActive = false;
+    bool canRoll = true;
 
     private float timeBtwAttack;
     public float startTimeBtwAttack;
 
     public Transform attackPos;
     public LayerMask whatIsEnemies;
+    public LayerMask whatIsGrabbable;
     public float attackRange;
     public int damage;
     private bool isAxisInUse = false;
+    private bool isAxisInUseLeft = false;
 
     public AnimationCurve curve;
 
@@ -34,12 +40,15 @@ public class PlayerController : MonoBehaviour
     public int rageDamageBoost;
     public int rageSpeedBoost;
 
+    GameObject grabbableObject;
+
 
 
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
         canMove = true;
+        trail = GetComponent<TrailRenderer>();
 
         rageActivated = false;
         rageAvaible = false;
@@ -52,14 +61,14 @@ public class PlayerController : MonoBehaviour
             MovePlayer();
         }
 
-        if (Input.GetButton("Dash"))
+        if (Input.GetButton("Dash") && trailActive == false && canRoll == true)
         {
             StartCoroutine(Roll());
         }
 
         MoveCrossHair(); // Fontion pour viser
 
-        if (timeBtwAttack <= 0) //Attaque suivant le temps entre les attaques
+        if (timeBtwAttack <= 0) //Attaque
         {
             if (Input.GetAxisRaw("Attack") != 0)
             {
@@ -72,19 +81,20 @@ public class PlayerController : MonoBehaviour
             if (Input.GetAxisRaw("Attack") == 0)
             {
                 isAxisInUse = false;
-                animator.SetBool("isAttacking", false);  
-            }           
+                animator.SetBool("isAttacking", false);
+            }
         }
-
         else
         {
-            timeBtwAttack -= Time.deltaTime; 
+            timeBtwAttack -= Time.deltaTime;
+            animator.SetBool("isAttacking", false);
         }
 
         if (health <= 0)
         {
             Destroy(gameObject);
         }
+
 
         if (rage < 1 && rage > 0)
         {
@@ -95,15 +105,9 @@ public class PlayerController : MonoBehaviour
             rageAvaible = true;
         }
 
-        if (rageAvaible == true && Input.GetKeyDown(KeyCode.A))
+        if (rageAvaible == true && Input.GetButtonDown("Jump"))
         {
-            rage = 0;
-            rageAvaible = false;
-            rageActivated = true;
-            Debug.Log("Rage Activée !!!");
-            rageTime = startRageTime;
-            damage = damage * rageDamageBoost;
-            moveSpeed = moveSpeed * rageSpeedBoost;
+            RageActive();
         }
 
         if (rageActivated == true)
@@ -117,6 +121,27 @@ public class PlayerController : MonoBehaviour
             damage = damage / rageDamageBoost;
             moveSpeed = moveSpeed / rageSpeedBoost;
         }
+
+        
+
+    }
+
+    private void OnTriggerStay2D (Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Grabbable"))
+        {
+            if (Input.GetAxisRaw("Grab") != 0)
+            {
+                if (isAxisInUseLeft == false)
+                {
+                  Grab();
+                }
+            }
+            if (Input.GetAxisRaw("Grab") == 0)
+            {
+              isAxisInUseLeft = false;
+            }
+        }
     }
 
     #region dash routines
@@ -125,11 +150,17 @@ public class PlayerController : MonoBehaviour
 
         Vector3 rollMovement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
         canMove = false;
+        canRoll = false;
+        trailActive = true;
         player.velocity = rollMovement * rollSpeed;
+        trail.enabled = !trail.enabled;
         yield return new WaitForSeconds(rollTime);
         player.velocity = Vector2.zero;
         canMove = true;
-
+        trailActive = false;
+        trail.enabled = !trail.enabled;
+        yield return new WaitForSeconds(rollDelay);
+        canRoll = true;
     }
 
     private IEnumerator RollWithCurve()
@@ -175,7 +206,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void MovePlayer () //Fonction de déplacement
+    private void MovePlayer() //Fonction de déplacement
     {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
 
@@ -183,7 +214,9 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Magnitude", movement.magnitude);
 
-        transform.position = transform.position + movement * Time.deltaTime * moveSpeed;
+        //transform.position = transform.position + movement * Time.deltaTime * moveSpeed;
+
+        player.MovePosition(transform.position + movement.normalized * moveSpeed);
     }
 
     private void Attack() //Fonction de l'attaque
@@ -205,4 +238,34 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("AimVertical", aim.y);
         animator.SetBool("isAttacking", true);
     }
+
+    private void RageActive() //Fonction d'activable de l'effet de rage
+    {
+        rage = 0;
+        rageAvaible = false;
+        rageActivated = true;
+        Debug.Log("Rage Activée !!!");
+        rageTime = startRageTime;
+        damage = damage * rageDamageBoost;
+        moveSpeed = moveSpeed * rageSpeedBoost;
+    }
+
+    private void Grab()
+    {
+        grabbableObject = GameObject.FindGameObjectWithTag("Grabbable");
+        grabbableObject.GetComponent<Grabbable>().isGrabbed = true;
+    }
+
+    IEnumerator ColorChange()
+    {
+        gameObject.GetComponent<Renderer>().material.color = Color.magenta;
+        yield return new WaitForSeconds(0.2f);
+        gameObject.GetComponent<Renderer>().material.color = Color.white;
+    }
+
+    public void HitByEnemy()
+    {
+        StartCoroutine(ColorChange());
+    }
+
 }

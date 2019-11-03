@@ -67,6 +67,7 @@ public class Baby : MonoBehaviour
         {
             playerToDamage[i].GetComponent<PlayerController>().health -= damage;
             Debug.Log("Player damaged !");
+            nounours.GetComponent<PlayerController>().HitByEnemy();
         }
 
         yield return new WaitForSeconds(attackDelay);

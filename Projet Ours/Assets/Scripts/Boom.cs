@@ -5,7 +5,9 @@ using UnityEngine;
 public class Boom : MonoBehaviour
 {
     private Rigidbody2D kamikaze;
-    public Transform player;
+    Transform player;
+
+    GameObject nounours;
 
     public float normalSpeed;
     public float chargeSpeed;
@@ -26,12 +28,14 @@ public class Boom : MonoBehaviour
         isDoingCharge = false;
         canMove = true;
         kamikaze = GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        nounours = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
+        player = nounours.transform;
+
         if (Vector2.Distance(transform.position, player.position) > chargePosition && isDoingCharge == false && canMove == true)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, normalSpeed * Time.deltaTime);
@@ -64,8 +68,7 @@ public class Boom : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-        {
-            kamikaze.position = Vector2.zero;
+        {           
             canMove = false;
             StartCoroutine(Explosion());
         }

@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
 
     public float health;
     public bool executed;
+    public GameObject blood;
+    public GameObject camera;
+    public GameObject Flak2Sang;
 
     GameObject nounours;
 
@@ -15,21 +18,30 @@ public class Enemy : MonoBehaviour
     {
         executed = false;
         nounours = GameObject.FindGameObjectWithTag("Player");
+        camera = GameObject.Find("Main Camera");
     }
 
     void Update()
     {
+        if (executed == true)
+        {
+            gameObject.GetComponent<Renderer>().material.color = Color.blue;
+        }
+
         if (health <= 0)
         {
             if (executed == false && nounours.GetComponent<PlayerController>().rageActivated == false)
             {
-                nounours.GetComponent<PlayerController>().rage += 1f;
+                nounours.GetComponent<PlayerController>().rage += 0.2f;
             }
             else if (executed == true && nounours.GetComponent<PlayerController>().rageActivated == false)
             {
                 nounours.GetComponent<PlayerController>().rage += 0.5f;
             }
 
+            Instantiate(blood, transform.position, Quaternion.identity);
+            camera.GetComponent<CameraShaker>().Shake();
+            Instantiate(Flak2Sang, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
@@ -37,5 +49,21 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
         Debug.Log("damage TAKEN !");
+        StartCoroutine(colorChange());       
+    }
+
+    private void OnCollisionEnter2D(Collider other)
+    {
+        if (other.CompareTag("Grabbable"))
+        {
+            executed = true;
+        }
+    }
+
+    IEnumerator colorChange()
+    {
+        gameObject.GetComponent<Renderer>().material.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+        gameObject.GetComponent<Renderer>().material.color = Color.white;
     }
 }
