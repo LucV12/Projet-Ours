@@ -134,10 +134,10 @@ MonoBehaviour:
   animator: {fileID: 154733573039282559}
   crossHair: {fileID: 154733572088424146}
   health: 10
-  moveSpeed: 1
-  rollTime: 0.2
-  rollSpeed: 2.5
-  rollDelay: 0
+  moveSpeed: 0.05
+  rollTime: 0.15
+  rollSpeed: 10
+  rollDelay: 1
   startTimeBtwAttack: 0.3
   attackPos: {fileID: 154733572088424149}
   whatIsEnemies:
@@ -148,45 +148,12 @@ MonoBehaviour:
     m_Bits: 0
   attackRange: 0.14
   damage: 1
-  curve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2.0812383
-      outSlope: 2.0812383
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.4804832
-      value: 1
-      inSlope: 0.07818639
-      outSlope: 0.07818639
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: -1.9248655
-      outSlope: -1.9248655
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   rage: 0
   rageActivated: 0
-  startRageTime: 0
-  rageDecrease: 0
-  rageDamageBoost: 0
-  rageSpeedBoost: 0
+  startRageTime: 5
+  rageDecrease: 0.0005
+  rageDamageBoost: 2
+  rageSpeedBoost: 2
 --- !u!95 &154733573039282559
 Animator:
   serializedVersion: 3
@@ -309,7 +276,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154733573039282554}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -336,7 +303,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154733573039282554}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -346,7 +313,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -367,10 +334,10 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 0.25
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.15068193
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -427,7 +394,7 @@ TrailRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 2
+    textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
   m_MinVertexDistance: 0.1

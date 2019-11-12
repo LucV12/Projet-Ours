@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     private bool isAxisInUse = false;
     private bool isAxisInUseLeft = false;
 
-    public AnimationCurve curve;
+    //public AnimationCurve curve;
 
     public float rage;
     private bool rageAvaible;
@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator Roll()   //C'est le code de la Roulade.
     {
 
-        Vector3 rollMovement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
+        Vector3 rollMovement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 2f);
         canMove = false;
         canRoll = false;
         trailActive = true;
@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
         canRoll = true;
     }
 
-    private IEnumerator RollWithCurve()
+    /*private IEnumerator RollWithCurve()
     {
         float timer = 0.0f;
 
@@ -180,7 +180,7 @@ public class PlayerController : MonoBehaviour
 
         player.velocity = Vector2.zero;
         canMove = true;
-    }
+    }*/
     #endregion
 
     private void OnDrawGizmosSelected() //Visualisation de l'atk range

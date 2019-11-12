@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-       // Instantiate<GameObject>(player);      
+        // Instantiate<GameObject>(player); 
+        player = GameObject.Find("nounours");
     }
 
     

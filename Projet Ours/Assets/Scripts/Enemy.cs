@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
     {
         if (executed == true)
         {
-            gameObject.GetComponent<Renderer>().material.color = Color.blue;
+            StartCoroutine(executionReady());
         }
 
         if (health <= 0)
@@ -47,14 +47,20 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+        if (executed = true)
+        {
+            health -= damage * 5;
+            Debug.Log("EXECUTED !");
+        }
+
         health -= damage;
         Debug.Log("damage TAKEN !");
         StartCoroutine(colorChange());       
     }
 
-    private void OnCollisionEnter2D(Collider other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("Grabbable"))
+        if (other.collider.CompareTag("Grabbable"))
         {
             executed = true;
         }
@@ -65,5 +71,13 @@ public class Enemy : MonoBehaviour
         gameObject.GetComponent<Renderer>().material.color = Color.red;
         yield return new WaitForSeconds(0.2f);
         gameObject.GetComponent<Renderer>().material.color = Color.white;
+    }
+
+    IEnumerator executionReady()
+    {
+        gameObject.GetComponent<Renderer>().material.color = Color.blue;
+        yield return new WaitForSeconds(2.5f);
+        gameObject.GetComponent<Renderer>().material.color = Color.white;
+        executed = false;
     }
 }

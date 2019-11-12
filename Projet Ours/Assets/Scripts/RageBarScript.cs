@@ -12,6 +12,7 @@ public class RageBarScript : MonoBehaviour
     void Start()
     {
         rageBar = GetComponent<Image>();
+        nounours = GameObject.Find("nounours");
     }
 
     // Update is called once per frame
