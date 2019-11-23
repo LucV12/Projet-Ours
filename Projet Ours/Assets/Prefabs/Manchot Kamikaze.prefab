@@ -130,6 +130,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   executed: 0
+  blood: {fileID: 3122966314988428144, guid: a95d2d2c5c5cd2c4db66c47a4f769cf6, type: 3}
+  camera: {fileID: 0}
+  Flak2Sang: {fileID: 4096593589477641891, guid: 2c771aa9456d82f41a5cee23256bbc54,
+    type: 3}
 --- !u!114 &2706278802277070977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,16 +215,16 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2706278802277070989}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 40
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4

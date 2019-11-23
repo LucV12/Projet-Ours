@@ -150,12 +150,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68d9bd6b0f601cb4fb3635bd734cea5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
   health: 1
   executed: 0
+  repulsed: 0
   blood: {fileID: 3122966314988428144, guid: a95d2d2c5c5cd2c4db66c47a4f769cf6, type: 3}
   camera: {fileID: 0}
   Flak2Sang: {fileID: 4096593589477641891, guid: 2c771aa9456d82f41a5cee23256bbc54,
     type: 3}
+  isKicked: 0
 --- !u!61 &8209273059801167078
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -216,16 +219,16 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8209273059801167074}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4

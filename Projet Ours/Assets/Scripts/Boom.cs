@@ -15,6 +15,7 @@ public class Boom : MonoBehaviour
 
     bool isDoingCharge;
     bool canMove;
+    bool executed;
 
     public Transform explosionPos;
     public float explosionRange;
@@ -35,27 +36,30 @@ public class Boom : MonoBehaviour
     void Update()
     {
         player = nounours.transform;
+        executed = GetComponent<Enemy>().executed;
 
-        if (Vector2.Distance(transform.position, player.position) > chargePosition && isDoingCharge == false && canMove == true)
+        if (executed == false)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, normalSpeed * Time.deltaTime);
-        }
-        else if (Vector2.Distance(transform.position, player.position) <= chargePosition)
-        {
-            if (isDoingCharge == false)
+            if (Vector2.Distance(transform.position, player.position) > chargePosition && isDoingCharge == false && canMove == true)
             {
-                isDoingCharge = true;
-                targetChargePos = player.position;
+                transform.position = Vector2.MoveTowards(transform.position, player.position, normalSpeed * Time.deltaTime);
             }
-            else if (isDoingCharge == true && canMove == true)
+            else if (Vector2.Distance(transform.position, player.position) <= chargePosition)
             {
-                transform.position = Vector2.MoveTowards(transform.position, targetChargePos, chargeSpeed * Time.deltaTime);
-                if (transform.position == targetChargePos)
+                if (isDoingCharge == false)
                 {
-                    StartCoroutine(Explosion());
+                    isDoingCharge = true;
+                    targetChargePos = player.position;
+                }
+                else if (isDoingCharge == true && canMove == true)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, targetChargePos, chargeSpeed * Time.deltaTime);
+                    if (transform.position == targetChargePos)
+                    {
+                        StartCoroutine(Explosion());
+                    }
                 }
             }
-
         }
     }
 

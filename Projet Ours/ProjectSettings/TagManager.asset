@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Grabbable
+  - Enviro
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - Player
   - Grabbable
   - Background
-  - 
-  - 
+  - Enviro
+  - Projectile
   - 
   - 
   - 

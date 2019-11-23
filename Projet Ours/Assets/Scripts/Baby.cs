@@ -17,6 +17,8 @@ public class Baby : MonoBehaviour
     public LayerMask whatIsEnnemies;
     public float damage;
 
+    bool executed;
+
     GameObject nounours;
 
     // Start is called before the first frame update
@@ -26,19 +28,21 @@ public class Baby : MonoBehaviour
         canMove = true;
         baby = GetComponent<Rigidbody2D>();
         nounours = GameObject.FindGameObjectWithTag("Player");
-        player = nounours.transform;
-        
-
+        player = nounours.transform; 
     }
 
     // Update is called once per frame
     void Update()
     {
+        executed = GetComponent<Enemy>().executed;
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        if (Vector2.Distance(transform.position, player.position) < aggroPosition && isAttacking == false && canMove == true)
+        if (executed == false)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, player.position) < aggroPosition && isAttacking == false && canMove == true)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            }
         }
     }
 
@@ -65,9 +69,12 @@ public class Baby : MonoBehaviour
         Collider2D[] playerToDamage = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, whatIsEnnemies);
         for (int i = 0; i < playerToDamage.Length; i++)
         {
-            playerToDamage[i].GetComponent<PlayerController>().health -= damage;
-            Debug.Log("Player damaged !");
-            nounours.GetComponent<PlayerController>().HitByEnemy();
+            if (nounours.GetComponent<PlayerController>().canLooseLife == true)
+            {
+                playerToDamage[i].GetComponent<PlayerController>().health -= damage;
+                Debug.Log("Player damaged !");
+                nounours.GetComponent<PlayerController>().HitByEnemy();
+            }
         }
 
         yield return new WaitForSeconds(attackDelay);

@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     bool canMove;
     bool trailActive = false;
     bool canRoll = true;
+    public bool canLooseLife = true;
 
     private float timeBtwAttack;
     public float startTimeBtwAttack;
@@ -40,8 +41,16 @@ public class PlayerController : MonoBehaviour
     public int rageDamageBoost;
     public int rageSpeedBoost;
 
-    GameObject grabbableObject;
+    public float roarPushTime = 2f;
+    public float roarPushSpeed = 2f;
 
+    public float enemyCheckDistance = 2f;
+
+    GameObject grabbableObject;
+    public Collider2D CollStop;
+
+    public LayerMask enemyLayer;
+    public LayerMask EnviroLayer;
 
 
     void Start()
@@ -64,6 +73,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Dash") && trailActive == false && canRoll == true)
         {
             StartCoroutine(Roll());
+        }
+
+        if (Input.GetButton("CapacityButton"))
+        {
+            //StartCoroutine(GetComponent<Kick>().KickActivable());
+            //GetComponentInChildren<Roar>().RoarActivable();
         }
 
         MoveCrossHair(); // Fontion pour viser
@@ -105,9 +120,9 @@ public class PlayerController : MonoBehaviour
             rageAvaible = true;
         }
 
-        if (rageAvaible == true && Input.GetButtonDown("Jump"))
+        if (rageAvaible == true && Input.GetButtonDown("Rage"))
         {
-            RageActive();
+            RageActive1();
         }
 
         if (rageActivated == true)
@@ -122,7 +137,12 @@ public class PlayerController : MonoBehaviour
             moveSpeed = moveSpeed / rageSpeedBoost;
         }
 
-        
+        Vector3 rollMovement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        RaycastHit2D EnviroHit = Physics2D.Raycast(transform.position, rollMovement, enemyCheckDistance, EnviroLayer);
+        if (EnviroHit && EnviroHit.collider.gameObject.tag == "Enviro")
+        {
+            CollStop.enabled = true;
+        }
 
     }
 
@@ -145,22 +165,29 @@ public class PlayerController : MonoBehaviour
     }
 
     #region dash routines
-    private IEnumerator Roll()   //C'est le code de la Roulade.
+    private IEnumerator Roll()   //Coroutine de la Roulade.
     {
-
         Vector3 rollMovement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 2f);
         canMove = false;
         canRoll = false;
         trailActive = true;
+
+        RaycastHit2D enemyHit = Physics2D.Raycast(transform.position, rollMovement, enemyCheckDistance, enemyLayer);
+        if (enemyHit && enemyHit.collider.gameObject.tag == "Enemy")
+        {
+            CollStop.enabled = false;
+        }  
+            
         player.velocity = rollMovement * rollSpeed;
         trail.enabled = !trail.enabled;
         yield return new WaitForSeconds(rollTime);
         player.velocity = Vector2.zero;
-        canMove = true;
+        canMove = true;        
         trailActive = false;
         trail.enabled = !trail.enabled;
+        CollStop.enabled = true;
         yield return new WaitForSeconds(rollDelay);
-        canRoll = true;
+        canRoll = true;            
     }
 
     /*private IEnumerator RollWithCurve()
@@ -181,13 +208,19 @@ public class PlayerController : MonoBehaviour
         player.velocity = Vector2.zero;
         canMove = true;
     }*/
+
+
     #endregion
 
     private void OnDrawGizmosSelected() //Visualisation de l'atk range
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
+        Vector3 rollMovement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 2f);
+        Gizmos.DrawRay(transform.position, rollMovement);
     }
+
+    
 
     private void MoveCrossHair() //Fonction de visée
     {
@@ -239,13 +272,15 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isAttacking", true);
     }
 
-    private void RageActive() //Fonction d'activable de l'effet de rage
+    private void RageActive1() //Fonction d'activable de l'effet de rage
     {
         rage = 0;
         rageAvaible = false;
         rageActivated = true;
+        StartCoroutine(ColorChangeRage());
         Debug.Log("Rage Activée !!!");
         rageTime = startRageTime;
+        
         damage = damage * rageDamageBoost;
         moveSpeed = moveSpeed * rageSpeedBoost;
     }
@@ -260,6 +295,13 @@ public class PlayerController : MonoBehaviour
     {
         gameObject.GetComponent<Renderer>().material.color = Color.magenta;
         yield return new WaitForSeconds(0.2f);
+        gameObject.GetComponent<Renderer>().material.color = Color.white;
+    }
+
+    IEnumerator ColorChangeRage()
+    {
+        gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+        yield return new WaitForSeconds(5f);
         gameObject.GetComponent<Renderer>().material.color = Color.white;
     }
 

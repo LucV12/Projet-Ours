@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
+    public Rigidbody2D enemy;
     public float health;
     public bool executed;
+    [HideInInspector] public bool repulsed;
     public GameObject blood;
     public GameObject camera;
     public GameObject Flak2Sang;
+    public bool isKicked;
 
     GameObject nounours;
 
     // Start is called before the first frame update
     void Start()
     {
+        repulsed = false;
         executed = false;
+        isKicked = false;
         nounours = GameObject.FindGameObjectWithTag("Player");
         camera = GameObject.Find("Main Camera");
+        enemy = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -47,7 +52,7 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        if (executed = true)
+        if (executed == true)
         {
             health -= damage * 5;
             Debug.Log("EXECUTED !");
@@ -61,6 +66,11 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.collider.CompareTag("Grabbable"))
+        {
+            executed = true;
+        }
+
+        if (other.collider.CompareTag("Enviro") && isKicked == true)
         {
             executed = true;
         }
@@ -79,5 +89,15 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         gameObject.GetComponent<Renderer>().material.color = Color.white;
         executed = false;
+    }
+
+    public IEnumerator Repulsed()
+    {
+        enemy.velocity = (transform.position - nounours.transform.position).normalized * nounours.GetComponent<PlayerController>().roarPushSpeed;
+        repulsed = true;
+        yield return new WaitForSeconds(nounours.GetComponent<PlayerController>().roarPushTime);
+        repulsed = false;
+        enemy.velocity = Vector2.zero;
+        Debug.Log("Roarred !!!");
     }
 }

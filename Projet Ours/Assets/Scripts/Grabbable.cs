@@ -50,4 +50,13 @@ public class Grabbable : MonoBehaviour
         grabbableObject.velocity = Vector3.zero;
         colliderHit.enabled = false;
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.CompareTag("Enemy"))
+        {
+            grabbableObject.velocity = grabbableObject.velocity * 0f;
+            colliderHit.enabled = false;
+        }
+    }
 }

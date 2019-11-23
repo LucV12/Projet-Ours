@@ -9,10 +9,10 @@ public class GameManager : MonoBehaviour
     public Camera topView;
 
     
-    void Start()
+    void Awake()
     {
-        // Instantiate<GameObject>(player); 
-        player = GameObject.Find("nounours");
+        Instantiate<GameObject>(player);
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     
