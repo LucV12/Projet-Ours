@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
 
     public float roarPushTime = 2f;
     public float roarPushSpeed = 2f;
+    public float tourbiRange = 2f;
 
     public float enemyCheckDistance = 2f;
 
@@ -79,6 +80,7 @@ public class PlayerController : MonoBehaviour
         {
             //StartCoroutine(GetComponent<Kick>().KickActivable());
             //GetComponentInChildren<Roar>().RoarActivable();
+            StartCoroutine(GetComponent<Tourbilol>().TourbilolActivable());
         }
 
         MoveCrossHair(); // Fontion pour viser
