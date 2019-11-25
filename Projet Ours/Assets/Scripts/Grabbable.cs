@@ -44,11 +44,13 @@ public class Grabbable : MonoBehaviour
     private IEnumerator ThrowThings(Vector3 moveGrab)
     {        
         isGrabbed = false;
+        isAxisInUseLeft = true;
         grabbableObject.velocity = moveGrab.normalized * pouissance2FEU;
         colliderHit.enabled = true;
         yield return new WaitForSeconds(throwTime);
         grabbableObject.velocity = Vector3.zero;
         colliderHit.enabled = false;
+        isAxisInUseLeft = false;
     }
 
     private void OnCollisionEnter2D(Collision2D other)

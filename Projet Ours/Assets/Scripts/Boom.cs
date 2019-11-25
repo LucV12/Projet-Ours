@@ -8,10 +8,15 @@ public class Boom : MonoBehaviour
     Transform player;
 
     GameObject nounours;
+    public Animator animator;
 
     public float normalSpeed;
     public float chargeSpeed;
     public float chargePosition;
+
+    public GameObject blood;
+    GameObject camera;
+    public GameObject Flak2Sang;
 
     bool isDoingCharge;
     bool canMove;
@@ -23,6 +28,7 @@ public class Boom : MonoBehaviour
     public LayerMask whatIsEnnemies;
     Vector3 targetChargePos;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +36,7 @@ public class Boom : MonoBehaviour
         canMove = true;
         kamikaze = GetComponent<Rigidbody2D>();
         nounours = GameObject.FindGameObjectWithTag("Player");
+        camera = GameObject.Find("Main Camera");
     }
 
     // Update is called once per frame
@@ -43,19 +50,21 @@ public class Boom : MonoBehaviour
             if (Vector2.Distance(transform.position, player.position) > chargePosition && isDoingCharge == false && canMove == true)
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.position, normalSpeed * Time.deltaTime);
+                animator.SetBool("isMoving", true);
             }
             else if (Vector2.Distance(transform.position, player.position) <= chargePosition)
             {
                 if (isDoingCharge == false)
-                {
+                {                    
                     isDoingCharge = true;
                     targetChargePos = player.position;
                 }
                 else if (isDoingCharge == true && canMove == true)
                 {
                     transform.position = Vector2.MoveTowards(transform.position, targetChargePos, chargeSpeed * Time.deltaTime);
+                    animator.SetBool("isGlissing", true);
                     if (transform.position == targetChargePos)
-                    {
+                    {                        
                         StartCoroutine(Explosion());
                     }
                 }
@@ -80,12 +89,19 @@ public class Boom : MonoBehaviour
 
     IEnumerator Explosion()
     {
+        animator.SetBool("isBooming", true);
+        animator.SetBool("isGlissing", false);
+        canMove = false;
         yield return new WaitForSeconds(explosionDelay);
         Collider2D[] playerToDamage = Physics2D.OverlapCircleAll(explosionPos.position, explosionRange, whatIsEnnemies);
-        for (int i = 0; i < playerToDamage.Length; i++)
+        for (int i = 0; i < playerToDamage.Length; i++)          
+            
         {
             playerToDamage[i].GetComponent<PlayerController>().health = 0;
         }
+
+        Instantiate(blood, transform.position, Quaternion.identity);
+        Instantiate(Flak2Sang, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

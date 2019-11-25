@@ -7,16 +7,17 @@ public class Roar : MonoBehaviour
 
     float roarRange = 1f;
     float roarDelay = 2f;
-    public LayerMask whatIsEnemies;
-    float attackRange = 0.5f;
+    LayerMask whatIsEnemies;
     Transform roarPos;
     GameObject nounours;
-    public LayerMask whatIsBullets;
+    LayerMask whatIsBullets;
 
     private void Start()
     {
         nounours = GameObject.FindGameObjectWithTag("Player");
         roarPos = nounours.transform;
+        whatIsEnemies = LayerMask.GetMask("Enemy");
+        whatIsBullets = LayerMask.GetMask("Projectile");
     }
 
     public void RoarActivable()  //Fonction du Rugissement
@@ -37,6 +38,6 @@ public class Roar : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
-        //Gizmos.DrawWireSphere(GetComponent<PlayerController>().transform.position, roarRange);
+        Gizmos.DrawWireSphere(roarPos.position, roarRange);
     }
 }

@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     {
         Instantiate<GameObject>(player);
         player = GameObject.FindGameObjectWithTag("Player");
+        //player.AddComponent<Roar>();
     }
 
     

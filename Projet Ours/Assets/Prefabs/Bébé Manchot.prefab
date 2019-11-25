@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 8209273059801167078}
   - component: {fileID: 3436852220299974995}
   - component: {fileID: 8209273059801167081}
+  - component: {fileID: 8473494469510716435}
   m_Layer: 8
   m_Name: "B\xE9b\xE9 Manchot"
   m_TagString: Enemy
@@ -129,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.75
-  aggroPosition: 3
+  aggroPosition: 1.7
   attackPosition: {fileID: 8209273059416316699}
   attackRange: 0.18
   attackDuration: 0.5
@@ -232,3 +233,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &8473494469510716435
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209273059801167074}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2943fdb6606b48647823c23e3cbe519a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

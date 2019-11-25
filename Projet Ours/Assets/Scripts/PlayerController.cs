@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,7 +10,9 @@ public class PlayerController : MonoBehaviour
     public GameObject crossHair;
     public float health;
     private TrailRenderer trail;
+    GameObject nounours;
 
+    [Header("Movement")]
     public float moveSpeed;
     public float rollTime;
     public float rollSpeed;
@@ -17,11 +20,12 @@ public class PlayerController : MonoBehaviour
     bool canMove;
     bool trailActive = false;
     bool canRoll = true;
-    public bool canLooseLife = true;
 
+    [HideInInspector] public bool canLooseLife = true;
+
+    [Header("Attack")]
     private float timeBtwAttack;
     public float startTimeBtwAttack;
-
     public Transform attackPos;
     public LayerMask whatIsEnemies;
     public LayerMask whatIsGrabbable;
@@ -32,6 +36,7 @@ public class PlayerController : MonoBehaviour
 
     //public AnimationCurve curve;
 
+    [Header("Rage")]
     public float rage;
     private bool rageAvaible;
     public bool rageActivated;
@@ -41,15 +46,14 @@ public class PlayerController : MonoBehaviour
     public int rageDamageBoost;
     public int rageSpeedBoost;
 
+    [Header("Capacities")]
     public float roarPushTime = 2f;
     public float roarPushSpeed = 2f;
-    public float tourbiRange = 2f;
 
-    public float enemyCheckDistance = 2f;
-
+    [Header("Collision and layers")]
     GameObject grabbableObject;
+    public float enemyCheckDistance = 2f;
     public Collider2D CollStop;
-
     public LayerMask enemyLayer;
     public LayerMask EnviroLayer;
 
@@ -59,7 +63,7 @@ public class PlayerController : MonoBehaviour
         player = GetComponent<Rigidbody2D>();
         canMove = true;
         trail = GetComponent<TrailRenderer>();
-
+        nounours = GameObject.FindGameObjectWithTag("Player");
         rageActivated = false;
         rageAvaible = false;
     }
@@ -79,8 +83,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("CapacityButton"))
         {
             //StartCoroutine(GetComponent<Kick>().KickActivable());
-            //GetComponentInChildren<Roar>().RoarActivable();
-            StartCoroutine(GetComponent<Tourbilol>().TourbilolActivable());
+            GetComponent<Roar>().RoarActivable();
+            //StartCoroutine(GetComponent<Tourbilol>().TourbilolActivable());
         }
 
         MoveCrossHair(); // Fontion pour viser
@@ -164,6 +168,60 @@ public class PlayerController : MonoBehaviour
               isAxisInUseLeft = false;
             }
         }
+
+        if (collision.gameObject.CompareTag("RoarItem"))
+        {
+            Debug.Log("COLLISION RoarITEM");
+
+            if (Input.GetButtonDown("Y"))
+
+            {
+                Roar instance = GetComponent<Roar>();
+                if (instance == null)
+                {
+                    nounours.AddComponent<Roar>();
+                    Destroy(nounours.GetComponent<Kick>());
+                    Destroy(nounours.GetComponent<Tourbilol>());
+                }
+                //Destroy(collision.gameObject);
+            }                        
+        }
+
+        if (collision.gameObject.CompareTag("KickItem"))
+        {
+                Debug.Log("COLLISION KickITEM");
+
+                if (Input.GetButtonDown("Y"))
+
+                {
+                    Kick instance = GetComponent<Kick>();
+                    if (instance == null)
+                    {
+                        nounours.AddComponent<Kick>();
+                        Destroy(nounours.GetComponent<Tourbilol>());
+                        Destroy(nounours.GetComponent<Roar>());
+                    }
+                    //Destroy(collision.gameObject);
+                }
+        }
+
+        if (collision.gameObject.CompareTag("TourbilolItem"))
+        {
+                    Debug.Log("COLLISION TourbilolITEM");
+
+                    if (Input.GetButtonDown("Y"))
+                    {
+                        Tourbilol instance = GetComponent<Tourbilol>();
+                        if (instance == null)
+                        {
+                            nounours.AddComponent<Tourbilol>();
+                            Destroy(nounours.GetComponent<Kick>());
+                            Destroy(nounours.GetComponent<Roar>());
+                        }
+                        //Destroy(collision.gameObject);
+                    }
+        }  
+        
     }
 
     #region dash routines

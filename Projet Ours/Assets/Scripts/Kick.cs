@@ -6,7 +6,7 @@ public class Kick : MonoBehaviour
 {
     float kickPower = 2f;
     float kickPushTime = 2f;
-    public LayerMask whatIsEnemies;
+    LayerMask whatIsEnemies;
     float attackRange = 0.5f;
     Transform attackPos;
     GameObject nounours;
@@ -17,6 +17,7 @@ public class Kick : MonoBehaviour
     {
         nounours = GameObject.FindGameObjectWithTag("Player");
         attackPos = nounours.transform;
+        whatIsEnemies = LayerMask.GetMask("Enemy");
     }
 
     private void Update()

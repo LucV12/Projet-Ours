@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: -5401496338181498901}
   - component: {fileID: 6211288722685270558}
   - component: {fileID: 8101697273912765370}
+  - component: {fileID: -8269505720105042720}
   m_Layer: 8
   m_Name: Manchot Kamikaze
   m_TagString: Enemy
@@ -128,12 +129,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68d9bd6b0f601cb4fb3635bd734cea5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
   health: 3
   executed: 0
+  repulsed: 0
   blood: {fileID: 3122966314988428144, guid: a95d2d2c5c5cd2c4db66c47a4f769cf6, type: 3}
   camera: {fileID: 0}
   Flak2Sang: {fileID: 4096593589477641891, guid: 2c771aa9456d82f41a5cee23256bbc54,
     type: 3}
+  isKicked: 0
 --- !u!114 &2706278802277070977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,9 +150,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e137ca8dc6eec9742865b641c1410e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: -8269505720105042720}
   normalSpeed: 0.4
-  chargeSpeed: 1.5
-  chargePosition: 1
+  chargeSpeed: 2
+  chargePosition: 1.5
+  blood: {fileID: 3122966314988428144, guid: a95d2d2c5c5cd2c4db66c47a4f769cf6, type: 3}
+  Flak2Sang: {fileID: 4096593589477641891, guid: 2c771aa9456d82f41a5cee23256bbc54,
+    type: 3}
   explosionPos: {fileID: 2706278801320752631}
   explosionRange: 0.47
   explosionDelay: 0.5
@@ -228,3 +236,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &-8269505720105042720
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706278802277070989}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a0057f3c3323eba42b9f40f0f447feb5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
