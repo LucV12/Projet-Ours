@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     private bool isAxisInUse = false;
     private bool isAxisInUseLeft = false;
 
-    //public AnimationCurve curve;
+    public AnimationCurve curve;
 
     [Header("Rage")]
     public float rage;
@@ -250,16 +250,16 @@ public class PlayerController : MonoBehaviour
         canRoll = true;            
     }
 
-    /*private IEnumerator RollWithCurve()
+    private IEnumerator RollWithCurve()
     {
         float timer = 0.0f;
 
-        Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
+        Vector3 aim = new Vector3(Input.GetAxis("AimHorizontal"), Input.GetAxis("AimVertical"), 0.0f);
         canMove = false;
 
         while (timer < rollTime)
         {
-            player.velocity = direction.normalized * (rollSpeed * curve.Evaluate(timer / rollTime));
+            player.velocity = aim.normalized * (rollSpeed * curve.Evaluate(timer / rollTime));
 
             timer += Time.deltaTime;
             yield return null;
@@ -267,7 +267,7 @@ public class PlayerController : MonoBehaviour
 
         player.velocity = Vector2.zero;
         canMove = true;
-    }*/
+    }
 
 
     #endregion
@@ -314,6 +314,8 @@ public class PlayerController : MonoBehaviour
 
     private void Attack() //Fonction de l'attaque
     {
+        Vector3 aim = new Vector3(Input.GetAxis("AimHorizontal"), Input.GetAxis("AimVertical"), 0.0f);
+
         timeBtwAttack = startTimeBtwAttack;
         Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
 
@@ -324,9 +326,10 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log(enemiesToDamage.Length);
         Debug.Log("AtK");
+        StartCoroutine(RollWithCurve());
         isAxisInUse = true;
 
-        Vector3 aim = new Vector3(Input.GetAxis("AimHorizontal"), Input.GetAxis("AimVertical"), 0.0f);
+        
         animator.SetFloat("AimHorizontal", aim.x);
         animator.SetFloat("AimVertical", aim.y);
         animator.SetBool("isAttacking", true);
@@ -334,15 +337,17 @@ public class PlayerController : MonoBehaviour
 
     private void RageActive1() //Fonction d'activable de l'effet de rage
     {
+        animator.SetBool("IsRageActivated", true);
         rage = 0;
         rageAvaible = false;
         rageActivated = true;
-        StartCoroutine(ColorChangeRage());
+       StartCoroutine(ColorChangeRage());
         Debug.Log("Rage Activée !!!");
         rageTime = startRageTime;
         
         damage = damage * rageDamageBoost;
         moveSpeed = moveSpeed * rageSpeedBoost;
+        
     }
 
     private void Grab()
@@ -356,13 +361,15 @@ public class PlayerController : MonoBehaviour
         gameObject.GetComponent<Renderer>().material.color = Color.magenta;
         yield return new WaitForSeconds(0.2f);
         gameObject.GetComponent<Renderer>().material.color = Color.white;
+
     }
 
     IEnumerator ColorChangeRage()
     {
-        gameObject.GetComponent<Renderer>().material.color = Color.yellow;
-        yield return new WaitForSeconds(5f);
-        gameObject.GetComponent<Renderer>().material.color = Color.white;
+        //gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+        yield return new WaitForSeconds(1.5f);
+        //gameObject.GetComponent<Renderer>().material.color = Color.white;
+        animator.SetBool("IsRageActivated", false);
     }
 
     public void HitByEnemy()

@@ -151,7 +151,40 @@ MonoBehaviour:
     m_Bits: 2048
   attackRange: 0.14
   damage: 1
-  rage: 0
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.42931813
+      value: 0.653427
+      inSlope: 4.677958
+      outSlope: 4.677958
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13797927
+      outWeight: 0.07650573
+    - serializedVersion: 3
+      time: 0.9963379
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rage: 1
   rageActivated: 0
   startRageTime: 5
   rageDecrease: 0.0005
