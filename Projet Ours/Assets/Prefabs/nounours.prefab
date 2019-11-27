@@ -159,6 +159,7 @@ MonoBehaviour:
   rageSpeedBoost: 2
   roarPushTime: 2
   roarPushSpeed: 2
+  tourbiRange: 2
   enemyCheckDistance: 1
   CollStop: {fileID: 6850098507008566403}
   enemyLayer:
@@ -244,7 +245,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
