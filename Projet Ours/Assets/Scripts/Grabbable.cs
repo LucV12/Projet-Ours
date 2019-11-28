@@ -13,6 +13,9 @@ public class Grabbable : MonoBehaviour
     public float pouissance2FEU;
     public float throwTime;
     public BoxCollider2D colliderHit;
+    public bool isExplosive;
+    public LayerMask whatIsEnemies;
+    public float explosionRange;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +60,15 @@ public class Grabbable : MonoBehaviour
     {
         if (other.collider.CompareTag("Enemy"))
         {
+            if (isExplosive == true)
+            {
+                Collider2D[] enemiesToBlow = Physics2D.OverlapCircleAll(transform.position, explosionRange, whatIsEnemies);
+                for (int i = 0; i < enemiesToBlow.Length; i++)
+                {
+                    enemiesToBlow[i].GetComponent<Enemy>().TakeDamage(1);
+                }
+                Destroy(gameObject);
+            }
             grabbableObject.velocity = grabbableObject.velocity * 0f;
             colliderHit.enabled = false;
         }
