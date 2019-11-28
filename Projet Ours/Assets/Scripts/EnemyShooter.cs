@@ -7,6 +7,8 @@ public class EnemyShooter : MonoBehaviour
     public float speed;
     public float stoppingDistance;
     public float retreatDistance;
+    public float aggroRange;
+    public float seeDistance;
 
     private float timeBtwShots;
     public float startTimeBtwshots;
@@ -30,7 +32,7 @@ public class EnemyShooter : MonoBehaviour
         if (executed == false)
         {
 
-            if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
+            if (Vector2.Distance(transform.position, player.position) > stoppingDistance  && Vector2.Distance(transform.position, player.position) < seeDistance)
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
             }
@@ -45,7 +47,7 @@ public class EnemyShooter : MonoBehaviour
                 transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
             }
 
-            if (timeBtwShots <= 0)
+            if (timeBtwShots <= 0 && (Vector2.Distance(transform.position, player.position) < aggroRange))
             {
                 Instantiate(projectile, transform.position, Quaternion.identity);
                 timeBtwShots = startTimeBtwshots;

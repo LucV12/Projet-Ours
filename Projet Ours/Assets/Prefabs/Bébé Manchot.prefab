@@ -139,6 +139,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   damage: 1
+  animator: {fileID: 8473494469510716435}
 --- !u!114 &425892514055961628
 MonoBehaviour:
   m_ObjectHideFlags: 0

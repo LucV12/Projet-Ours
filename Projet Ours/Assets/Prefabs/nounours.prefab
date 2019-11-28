@@ -69,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 83a46da8d216cd9409e2968d5175e248, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -136,6 +136,8 @@ MonoBehaviour:
   animator: {fileID: 154733573039282559}
   crossHair: {fileID: 154733572088424146}
   health: 10
+  slashParticle: {fileID: 3664818284620356623, guid: 7a0ba75e78909a7458cda3be69332656,
+    type: 3}
   moveSpeed: 0.05
   rollTime: 0.15
   rollSpeed: 10
@@ -192,7 +194,6 @@ MonoBehaviour:
   rageSpeedBoost: 2
   roarPushTime: 2
   roarPushSpeed: 2
-  tourbiRange: 2
   enemyCheckDistance: 1
   CollStop: {fileID: 6850098507008566403}
   enemyLayer:

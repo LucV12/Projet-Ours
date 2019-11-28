@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float health;
     private TrailRenderer trail;
     GameObject nounours;
+    public GameObject slashParticle;
 
     [Header("Movement")]
     public float moveSpeed;
@@ -322,6 +323,7 @@ public class PlayerController : MonoBehaviour
         if (enemiesToDamage.Length > 0 && enemiesToDamage[0].gameObject.tag == "Enemy")
         {
             enemiesToDamage[0].GetComponent<Enemy>().TakeDamage(damage);
+            Instantiate(slashParticle, crossHair.transform.position, Quaternion.identity);
         }
 
         Debug.Log(enemiesToDamage.Length);
@@ -338,6 +340,7 @@ public class PlayerController : MonoBehaviour
     private void RageActive1() //Fonction d'activable de l'effet de rage
     {
         animator.SetBool("IsRageActivated", true);
+        canMove = false;
         rage = 0;
         rageAvaible = false;
         rageActivated = true;
@@ -367,9 +370,10 @@ public class PlayerController : MonoBehaviour
     IEnumerator ColorChangeRage()
     {
         //gameObject.GetComponent<Renderer>().material.color = Color.yellow;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.2f);
         //gameObject.GetComponent<Renderer>().material.color = Color.white;
         animator.SetBool("IsRageActivated", false);
+        canMove = true;
     }
 
     public void HitByEnemy()

@@ -26,6 +26,8 @@ public class CameraShaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        initialCameraPosition = transform.localPosition;
+
         if (remainingShakeTime <= 0)
         {
             transform.localPosition = initialCameraPosition;

@@ -16,6 +16,7 @@ public class Baby : MonoBehaviour
     public float attackDelay;
     public LayerMask whatIsEnnemies;
     public float damage;
+    public Animator animator;
 
     bool executed;
 
@@ -34,6 +35,7 @@ public class Baby : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("IsMoving", false);
         executed = GetComponent<Enemy>().executed;
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -42,6 +44,7 @@ public class Baby : MonoBehaviour
             if (Vector2.Distance(transform.position, player.position) < aggroPosition && isAttacking == false && canMove == true)
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+                animator.SetBool("IsMoving", true);
             }
         }
     }
