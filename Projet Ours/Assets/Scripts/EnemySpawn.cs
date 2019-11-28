@@ -15,7 +15,7 @@ public class EnemySpawn : MonoBehaviour
         Invoke("spawn", spawnTime);
     }
 
-    void spawn()
+    void Spawn()
     { 
         for (int i = 0; i < enemyCount; i ++)
         {
