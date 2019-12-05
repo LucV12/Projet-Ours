@@ -21,6 +21,7 @@ public class Boom : MonoBehaviour
     bool isDoingCharge;
     bool canMove;
     bool executed;
+    bool isRepusled;
 
     public Transform explosionPos;
     public float explosionRange;
@@ -37,6 +38,7 @@ public class Boom : MonoBehaviour
         kamikaze = GetComponent<Rigidbody2D>();
         nounours = GameObject.FindGameObjectWithTag("Player");
         camera = GameObject.Find("Main Camera");
+        isRepusled = GetComponent<Enemy>().repulsed;
     }
 
     // Update is called once per frame
@@ -45,7 +47,7 @@ public class Boom : MonoBehaviour
         player = nounours.transform;
         executed = GetComponent<Enemy>().executed;
 
-        if (executed == false)
+        if (executed == false && isRepusled == false)
         {
             if (Vector2.Distance(transform.position, player.position) > chargePosition && isDoingCharge == false && canMove == true)
             {

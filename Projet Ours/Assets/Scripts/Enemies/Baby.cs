@@ -17,6 +17,7 @@ public class Baby : MonoBehaviour
     public LayerMask whatIsEnnemies;
     public float damage;
     public Animator animator;
+    bool isRepusled;
 
     bool executed;
 
@@ -29,17 +30,18 @@ public class Baby : MonoBehaviour
         canMove = true;
         baby = GetComponent<Rigidbody2D>();
         nounours = GameObject.FindGameObjectWithTag("Player");
-        player = nounours.transform; 
+        player = nounours.transform;
+        isRepusled = GetComponent<Enemy>().repulsed;
+        executed = GetComponent<Enemy>().executed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        animator.SetBool("IsMoving", false);
-        executed = GetComponent<Enemy>().executed;
+        animator.SetBool("IsMoving", false);        
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        if (executed == false)
+        if (executed == false && isRepusled == false)
         {
             if (Vector2.Distance(transform.position, player.position) < aggroPosition && isAttacking == false && canMove == true)
             {

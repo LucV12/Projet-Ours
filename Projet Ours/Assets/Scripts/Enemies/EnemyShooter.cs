@@ -16,12 +16,14 @@ public class EnemyShooter : MonoBehaviour
     public GameObject projectile;
     public Transform player;
     bool executed;
+    bool isRepusled;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;        
         timeBtwShots = startTimeBtwshots;
+        isRepusled = GetComponent<Enemy>().repulsed;
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class EnemyShooter : MonoBehaviour
     {
         executed = GetComponent<Enemy>().executed;
 
-        if (executed == false)
+        if (executed == false && isRepusled == false)
         {
 
             if (Vector2.Distance(transform.position, player.position) > stoppingDistance  && Vector2.Distance(transform.position, player.position) < seeDistance)

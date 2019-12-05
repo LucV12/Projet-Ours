@@ -10,12 +10,14 @@ public class Projectile : MonoBehaviour{
 
     Transform player;
     Vector2 target;
+    bool canLooseLife;
 
     void Start()
     {
         nounours = GameObject.FindGameObjectWithTag("Player");
         player = nounours.transform;
         target = new Vector2(player.position.x, player.position.y);
+        canLooseLife = GetComponent<PlayerController>().canLooseLife;
     }
     void Update()
     {
@@ -31,11 +33,16 @@ public class Projectile : MonoBehaviour{
     {
         if (other.CompareTag("Player"))
         {
-            nounours.GetComponent<PlayerController>().health -= damage;
-            Debug.Log("HIT !");
-            nounours.GetComponent<PlayerController>().HitByEnemy();
+            if (canLooseLife == true)
+            {
+                nounours.GetComponent<PlayerController>().health -= damage;
+                Debug.Log("HIT !");
+                nounours.GetComponent<PlayerController>().HitByEnemy();
+            }
+
             DestroyProjectile();
         }
+
         else if (other.CompareTag("Enviro"))
         {
             DestroyProjectile();

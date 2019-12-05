@@ -19,23 +19,22 @@ public class PlayerController : MonoBehaviour
     public float rollSpeed;
     public float rollDelay;
     bool canMove;
-    bool trailActive = false;
-    bool canRoll = true;
+    public bool trailActive = false;
+    public bool canRoll = true;
+    public AnimationCurve curve;
 
     [HideInInspector] public bool canLooseLife = true;
 
-    [Header("Attack")]
-    private float timeBtwAttack;
+    [Header("Attack")]   
     public float startTimeBtwAttack;
+    private float timeBtwAttack;
     public Transform attackPos;
     public LayerMask whatIsEnemies;
     public LayerMask whatIsGrabbable;
     public float attackRange;
     public int damage;
     private bool isAxisInUse = false;
-    private bool isAxisInUseLeft = false;
-
-    public AnimationCurve curve;
+    private bool isAxisInUseLeft = false;    
 
     [Header("Rage")]
     public float rage;
@@ -52,8 +51,8 @@ public class PlayerController : MonoBehaviour
     public float roarPushSpeed = 2f;
 
     [Header("Collision and layers")]
-    GameObject grabbableObject;
     public float enemyCheckDistance = 2f;
+    GameObject grabbableObject;    
     public Collider2D CollStop;
     public LayerMask enemyLayer;
     public LayerMask EnviroLayer;
@@ -129,7 +128,7 @@ public class PlayerController : MonoBehaviour
 
         if (rageAvaible == true && Input.GetButtonDown("Rage"))
         {
-            RageActive1();
+            //RageActive1();
         }
 
         if (rageActivated == true)
@@ -337,7 +336,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isAttacking", true);
     }
 
-    private void RageActive1() //Fonction d'activable de l'effet de rage
+    /*private void RageActive1() //Fonction d'activable de l'effet de rage
     {
         animator.SetBool("IsRageActivated", true);
         canMove = false;
@@ -351,7 +350,7 @@ public class PlayerController : MonoBehaviour
         damage = damage * rageDamageBoost;
         moveSpeed = moveSpeed * rageSpeedBoost;
         
-    }
+    }*/
 
     private void Grab()
     {
@@ -367,10 +366,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    IEnumerator ColorChangeRage()
+    public IEnumerator ColorChangeRage()
     {
         //gameObject.GetComponent<Renderer>().material.color = Color.yellow;
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1.1f);
         //gameObject.GetComponent<Renderer>().material.color = Color.white;
         animator.SetBool("IsRageActivated", false);
         canMove = true;
