@@ -254,7 +254,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 346.1, y: -243.73}
+  m_AnchoredPosition: {x: 346.1, y: -243.7}
   m_SizeDelta: {x: 57.15, y: 72.59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &799657335651457955
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 1089551456615764256}
   m_Layer: 5
   m_Name: RageUI
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -525,6 +525,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b42bc0cc934b7547b200b3a83e2006c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rollCooldown: {fileID: 0}
+  activeCooldown: {fileID: 0}
+  nounours: {fileID: 0}
 --- !u!1 &1499323310711018197
 GameObject:
   m_ObjectHideFlags: 0

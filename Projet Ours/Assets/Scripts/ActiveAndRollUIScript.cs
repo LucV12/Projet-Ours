@@ -56,6 +56,7 @@ public class ActiveAndRollUIScript : MonoBehaviour
 
     public IEnumerator rollUICooldown()
     {
+        Debug.Log("Roll Cooldown");
         rollCooldownActivated = true;
         rollFill = nounours.GetComponent<PlayerController>().rollDelay;
         startRollFill = rollFill;
@@ -65,6 +66,7 @@ public class ActiveAndRollUIScript : MonoBehaviour
 
     public IEnumerator activeUICooldown()
     {
+        Debug.Log("Active Cooldown");
         activeCooldownActivated = true;
         activeFill = nounours.GetComponent<PlayerController>().startActiveDelay;
         startActiveFill = activeFill;
