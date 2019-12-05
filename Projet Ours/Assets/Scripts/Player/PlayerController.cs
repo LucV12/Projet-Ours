@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
     [Header("Capacities")]
     public float roarPushTime = 2f;
     public float roarPushSpeed = 2f;
+    public float startActiveDelay = 2f;
 
     [Header("Collision and layers")]
     public float enemyCheckDistance = 2f;
