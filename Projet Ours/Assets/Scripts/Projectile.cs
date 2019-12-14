@@ -36,6 +36,11 @@ public class Projectile : MonoBehaviour{
             nounours.GetComponent<PlayerController>().HitByEnemy();
             DestroyProjectile();
         }
+
+        if (other.CompareTag("Enviro"))
+        {
+            DestroyProjectile();
+        }
     }
 
     public void DestroyProjectile()

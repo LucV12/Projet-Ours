@@ -12,7 +12,7 @@ public class EnemySpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("spawn", spawnTime);
+        Invoke("Spawn", spawnTime);
     }
 
     void Spawn()
