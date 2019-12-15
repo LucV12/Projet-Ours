@@ -6,15 +6,23 @@ public class RageBasique : MonoBehaviour
 {
     public float rageTime;
     public int rageDamageBoost;
+    GameObject nounours;
+    PlayerController pc;
+
+    private void Start()
+    {
+        nounours = GameObject.FindGameObjectWithTag("Player");
+        pc = nounours.GetComponent<PlayerController>();
+    }
 
     public IEnumerator RageActive1()
     {
-        StartCoroutine(GetComponent<PlayerController>().ColorChangeRage());
-        GetComponent<PlayerController>().damage = GetComponent<PlayerController>().damage * rageDamageBoost;
-        GetComponent<PlayerController>().canLooseLife = false;
+        StartCoroutine(pc.ColorChangeRage());
+        pc.damage = pc.damage * rageDamageBoost;
+        pc.canLooseLife = false;
         Debug.Log("Rage Activée !!!");
         yield return new WaitForSeconds(rageTime);
-        GetComponent<PlayerController>().damage = GetComponent<PlayerController>().damage / rageDamageBoost;
-        GetComponent<PlayerController>().canLooseLife = true;
+        pc.damage = pc.damage / rageDamageBoost;
+        pc.canLooseLife = true;
     }
 }

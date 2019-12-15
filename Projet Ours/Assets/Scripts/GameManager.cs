@@ -6,20 +6,24 @@ public class GameManager : MonoBehaviour
 {
 
     public GameObject player;
-    public Camera topView;
+    public GameObject playerInit;
+    Camera cameraInit;
 
     
     void Awake()
     {
         Instantiate<GameObject>(player);
-        player = GameObject.FindGameObjectWithTag("Player");
-        //player.AddComponent<Roar>();
+        playerInit = GameObject.FindGameObjectWithTag("Player");
+        cameraInit = Camera.main;
+        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(playerInit);
+        DontDestroyOnLoad(cameraInit);
     }
 
     
     void Update()
     {
-        topView.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10f);
+        cameraInit.transform.position = new Vector3(playerInit.transform.position.x, playerInit.transform.position.y, -10f);
     }
 
     void OnGUI()

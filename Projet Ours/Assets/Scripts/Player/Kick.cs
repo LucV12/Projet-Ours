@@ -10,6 +10,7 @@ public class Kick : MonoBehaviour
     float attackRange = 0.5f;
     Transform attackPos;
     GameObject nounours;
+    Animator animator;
 
 
 
@@ -18,19 +19,19 @@ public class Kick : MonoBehaviour
         nounours = GameObject.FindGameObjectWithTag("Player");
         attackPos = nounours.transform;
         whatIsEnemies = LayerMask.GetMask("Enemy");
+        animator = nounours.GetComponent<PlayerController>().animator;
     }
 
-    private void Update()
-    {
-        if (Input.GetButton("CapacityButton"))
-        {
-            StartCoroutine(KickActivable());
-        }
-    }
 
     public IEnumerator KickActivable()  //Fonction du coup de pied
     {
         Vector3 aim = new Vector3(Input.GetAxis("AimHorizontal"), Input.GetAxis("AimVertical"), 0.0f);
+
+        animator.SetFloat("Horizontal", aim.x);
+        animator.SetFloat("Vertical", aim.y);
+        animator.SetBool("IsKicking", true);
+        yield return new WaitForSeconds(0.2f);
+        animator.SetBool("IsKicking", false);
 
         Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
 
@@ -40,10 +41,14 @@ public class Kick : MonoBehaviour
             enemiesToDamage[0].GetComponent<Enemy>().TakeDamage(1);
             enemiesToDamage[0].GetComponent<Enemy>().enemy.velocity = aim * kickPower;
             enemiesToDamage[0].GetComponent<Enemy>().isKicked = true;
-            yield return new WaitForSeconds(kickPushTime);
+            yield return new WaitForSeconds(kickPushTime);            
             enemiesToDamage[0].GetComponent<Enemy>().enemy.velocity = Vector2.zero;
             enemiesToDamage[0].GetComponent<Enemy>().isKicked = false;
+            animator.SetBool("IsKicking", false);
         }
+
+        
+
     }
 }
 

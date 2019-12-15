@@ -5,13 +5,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    [SerializeField] private Animator animator;
+    public Animator animator;
     private Rigidbody2D player;
     public GameObject crossHair;
     public float health;
     private TrailRenderer trail;
     GameObject nounours;
     public GameObject slashParticle;
+    private GameObject UI;
 
     [Header("Movement")]
     public float moveSpeed;
@@ -38,18 +39,20 @@ public class PlayerController : MonoBehaviour
 
     [Header("Rage")]
     public float rage;
-    private bool rageAvaible;
+    public bool rageAvaible;
     public bool rageActivated;
     public float startRageTime;
     private float rageTime;
     public float rageDecrease;
     public int rageDamageBoost;
     public int rageSpeedBoost;
+    public GameObject[] rages;
 
     [Header("Capacities")]
     public float roarPushTime = 2f;
     public float roarPushSpeed = 2f;
     public float startActiveDelay = 2f;
+    public GameObject[] capacities;
 
     [Header("Collision and layers")]
     public float enemyCheckDistance = 2f;
@@ -67,10 +70,14 @@ public class PlayerController : MonoBehaviour
         nounours = GameObject.FindGameObjectWithTag("Player");
         rageActivated = false;
         rageAvaible = false;
+        UI = GameObject.FindGameObjectWithTag("UI");
     }
 
     void Update()
     {
+
+        MoveCrossHair();
+
         if (canMove == true) //Mouvement de base
         {
             MovePlayer();
@@ -79,16 +86,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Dash") && trailActive == false && canRoll == true)
         {
             StartCoroutine(Roll());
+            StartCoroutine(UI.GetComponent<ActiveAndRollUIScript>().rollUICooldown());
         }
-
-        if (Input.GetButton("CapacityButton"))
-        {
-            //StartCoroutine(GetComponent<Kick>().KickActivable());
-            GetComponent<Roar>().RoarActivable();
-            //StartCoroutine(GetComponent<Tourbilol>().TourbilolActivable());
-        }
-
-        MoveCrossHair(); // Fontion pour viser
 
         if (timeBtwAttack <= 0) //Attaque
         {
@@ -127,11 +126,6 @@ public class PlayerController : MonoBehaviour
             rageAvaible = true;
         }
 
-        if (rageAvaible == true && Input.GetButtonDown("Rage"))
-        {
-            //RageActive1();
-        }
-
         if (rageActivated == true)
         {
             rageTime -= Time.deltaTime;
@@ -140,8 +134,6 @@ public class PlayerController : MonoBehaviour
         if (rageTime <= 0 && rageActivated == true)
         {
             rageActivated = false;
-            damage = damage / rageDamageBoost;
-            moveSpeed = moveSpeed / rageSpeedBoost;
         }
 
         Vector3 rollMovement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
@@ -177,14 +169,9 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonDown("Y"))
 
             {
-                Roar instance = GetComponent<Roar>();
-                if (instance == null)
-                {
-                    nounours.AddComponent<Roar>();
-                    Destroy(nounours.GetComponent<Kick>());
-                    Destroy(nounours.GetComponent<Tourbilol>());
-                }
-                //Destroy(collision.gameObject);
+                capacities[0].SetActive(false);
+                capacities[1].SetActive(true);
+                capacities[2].SetActive(false);
             }                        
         }
 
@@ -195,14 +182,9 @@ public class PlayerController : MonoBehaviour
                 if (Input.GetButtonDown("Y"))
 
                 {
-                    Kick instance = GetComponent<Kick>();
-                    if (instance == null)
-                    {
-                        nounours.AddComponent<Kick>();
-                        Destroy(nounours.GetComponent<Tourbilol>());
-                        Destroy(nounours.GetComponent<Roar>());
-                    }
-                    //Destroy(collision.gameObject);
+                    capacities[0].SetActive(true);
+                    capacities[1].SetActive(false);
+                    capacities[2].SetActive(false);
                 }
         }
 
@@ -212,17 +194,51 @@ public class PlayerController : MonoBehaviour
 
                     if (Input.GetButtonDown("Y"))
                     {
-                        Tourbilol instance = GetComponent<Tourbilol>();
-                        if (instance == null)
-                        {
-                            nounours.AddComponent<Tourbilol>();
-                            Destroy(nounours.GetComponent<Kick>());
-                            Destroy(nounours.GetComponent<Roar>());
-                        }
-                        //Destroy(collision.gameObject);
+                        capacities[0].SetActive(false);
+                        capacities[1].SetActive(false);
+                        capacities[2].SetActive(true);
                     }
-        }  
-        
+        }
+
+        if (collision.gameObject.CompareTag("BearserkItem"))
+        {
+            Debug.Log("COLLISION BearserkITEM");
+
+            if (Input.GetButtonDown("Y"))
+
+            {
+                rages[0].SetActive(true);
+                rages[1].SetActive(false);
+                rages[2].SetActive(false);
+            }
+        }
+
+        if (collision.gameObject.CompareTag("RueeItem"))
+        {
+            Debug.Log("COLLISION RueeITEM");
+
+            if (Input.GetButtonDown("Y"))
+
+            {
+                rages[0].SetActive(false);
+                rages[1].SetActive(true);
+                rages[2].SetActive(false);
+            }
+        }
+
+        if (collision.gameObject.CompareTag("TerriItem"))
+        {
+            Debug.Log("COLLISION TerriITEM");
+
+            if (Input.GetButtonDown("Y"))
+            {
+                rages[0].SetActive(false);
+                rages[1].SetActive(false);
+                rages[2].SetActive(true);
+            }
+        }
+
+
     }
 
     #region dash routines
@@ -237,11 +253,14 @@ public class PlayerController : MonoBehaviour
         if (enemyHit && enemyHit.collider.gameObject.tag == "Enemy")
         {
             CollStop.enabled = false;
-        }  
-            
+        }
+
+        animator.SetBool("IsRolling", true);
+        yield return new WaitForSeconds(0.05f);
         player.velocity = rollMovement * rollSpeed;
         trail.enabled = !trail.enabled;
         yield return new WaitForSeconds(rollTime);
+        animator.SetBool("IsRolling", false);
         player.velocity = Vector2.zero;
         canMove = true;        
         trailActive = false;
@@ -308,8 +327,6 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Magnitude", movement.magnitude);
 
-        //transform.position = transform.position + movement * Time.deltaTime * moveSpeed;
-
         player.MovePosition(transform.position + movement.normalized * moveSpeed);
     }
 
@@ -369,6 +386,8 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator ColorChangeRage()
     {
+        animator.SetBool("IsRageActivated", true);
+        canMove = false;
         //gameObject.GetComponent<Renderer>().material.color = Color.yellow;
         yield return new WaitForSeconds(1.1f);
         //gameObject.GetComponent<Renderer>().material.color = Color.white;

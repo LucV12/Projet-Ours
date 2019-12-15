@@ -139,20 +139,11 @@ MonoBehaviour:
   slashParticle: {fileID: 3664818284620356623, guid: 7a0ba75e78909a7458cda3be69332656,
     type: 3}
   moveSpeed: 0.05
-  rollTime: 0.15
-  rollSpeed: 10
+  rollTime: 0.3
+  rollSpeed: 5
   rollDelay: 1
-  canLooseLife: 1
-  startTimeBtwAttack: 0.3
-  attackPos: {fileID: 154733572088424149}
-  whatIsEnemies:
-    serializedVersion: 2
-    m_Bits: 256
-  whatIsGrabbable:
-    serializedVersion: 2
-    m_Bits: 2048
-  attackRange: 0.14
-  damage: 1
+  trailActive: 0
+  canRoll: 1
   curve:
     serializedVersion: 2
     m_Curve:
@@ -186,14 +177,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  canLooseLife: 1
+  startTimeBtwAttack: 0.3
+  attackPos: {fileID: 154733572088424149}
+  whatIsEnemies:
+    serializedVersion: 2
+    m_Bits: 256
+  whatIsGrabbable:
+    serializedVersion: 2
+    m_Bits: 2048
+  attackRange: 0.14
+  damage: 1
   rage: 1
+  rageAvaible: 0
   rageActivated: 0
   startRageTime: 5
   rageDecrease: 0.0005
   rageDamageBoost: 2
   rageSpeedBoost: 2
+  rages:
+  - {fileID: 8633961608463623494}
+  - {fileID: 4024841027913089822}
+  - {fileID: 5311625029325688542}
   roarPushTime: 2
   roarPushSpeed: 2
+  startActiveDelay: 2
+  capacities:
+  - {fileID: 874989164457243714}
+  - {fileID: 8994258469503293728}
+  - {fileID: 4144785096370613728}
   enemyCheckDistance: 1
   CollStop: {fileID: 6850098507008566403}
   enemyLayer:
@@ -494,7 +506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7333002811788523561
 Transform:
   m_ObjectHideFlags: 0
@@ -530,13 +542,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6778395673494880111}
+  - component: {fileID: 3548184333967528567}
   m_Layer: 0
   m_Name: Capacity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6778395673494880111
 Transform:
   m_ObjectHideFlags: 0
@@ -554,6 +567,20 @@ Transform:
   m_Father: {fileID: 154733573039282556}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3548184333967528567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2882566641673497427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e18323d12585764ba448927d3ac7341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayCapa: 0
+  canCapa: 0
 --- !u!1 &4024841027913089822
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,13 +590,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6071972504457838093}
+  - component: {fileID: 3487656338252612303}
   m_Layer: 0
-  m_Name: Activable 2
+  m_Name: "Ru\xE9e"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6071972504457838093
 Transform:
   m_ObjectHideFlags: 0
@@ -584,6 +612,21 @@ Transform:
   m_Father: {fileID: 200041502004266499}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3487656338252612303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4024841027913089822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ead092de61cb6438ce56f7c5f60b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rageTime: 7
+  dashRageSpeedBoost: 3.5
+  rageDamageBoost: 3
 --- !u!1 &4144785096370613728
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,13 +679,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7891896278727237448}
+  - component: {fileID: 3308983803115768411}
   m_Layer: 0
-  m_Name: Activable 3
+  m_Name: Terrifiante
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7891896278727237448
 Transform:
   m_ObjectHideFlags: 0
@@ -657,6 +701,24 @@ Transform:
   m_Father: {fileID: 200041502004266499}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3308983803115768411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5311625029325688542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4524d36432c09594bb888d4cd95c9da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrorRange: 1.8
+  whatIsEnemies:
+    serializedVersion: 2
+    m_Bits: 256
+  terrorSpeed: 2
+  terrorTime: 5
 --- !u!1 &8633961608463623494
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6725564851206028784}
+  - component: {fileID: 8930345844299820934}
   m_Layer: 0
   m_Name: Bearseark
   m_TagString: Untagged
@@ -687,6 +750,20 @@ Transform:
   m_Father: {fileID: 200041502004266499}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8930345844299820934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8633961608463623494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e004a404ebbaa24297d3b2bb7122617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rageTime: 7
+  rageDamageBoost: 3
 --- !u!1 &8981514416325340609
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,13 +773,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 200041502004266499}
+  - component: {fileID: 6380333302679354080}
   m_Layer: 0
   m_Name: Rage Activables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &200041502004266499
 Transform:
   m_ObjectHideFlags: 0
@@ -720,6 +798,22 @@ Transform:
   m_Father: {fileID: 154733573039282556}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6380333302679354080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8981514416325340609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c1e857a7ae8bab4daa564ebada63ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rages:
+  - {fileID: 8633961608463623494}
+  - {fileID: 4024841027913089822}
+  - {fileID: 5311625029325688542}
 --- !u!1 &8994258469503293728
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,7 +830,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1411817156785031743
 Transform:
   m_ObjectHideFlags: 0

@@ -85,9 +85,9 @@ public class Enemy : MonoBehaviour
 
     IEnumerator executionReady()
     {
-        gameObject.GetComponent<Renderer>().material.color = Color.blue;
+        //gameObject.GetComponent<Renderer>().material.color = Color.blue;
         yield return new WaitForSeconds(2.5f);
-        gameObject.GetComponent<Renderer>().material.color = Color.white;
+        //gameObject.GetComponent<Renderer>().material.color = Color.white;
         executed = false;
     }
 

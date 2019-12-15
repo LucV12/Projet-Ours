@@ -17,7 +17,7 @@ public class Projectile : MonoBehaviour{
         nounours = GameObject.FindGameObjectWithTag("Player");
         player = nounours.transform;
         target = new Vector2(player.position.x, player.position.y);
-        canLooseLife = GetComponent<PlayerController>().canLooseLife;
+        canLooseLife = nounours.GetComponent<PlayerController>().canLooseLife;
     }
     void Update()
     {

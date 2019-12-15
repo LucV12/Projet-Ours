@@ -10,6 +10,20 @@ TagManager:
   - RoarItem
   - KickItem
   - TourbilolItem
+  - UI
+  - Heart2
+  - Heart3
+  - ActiveUI
+  - Heart1
+  - RollUI
+  - Heart5
+  - Heart4
+  - Environment
+  - GameManager
+  - ScenesManager
+  - BearserkItem
+  - RueeItem
+  - TerriItem
   layers:
   - Default
   - TransparentFX
