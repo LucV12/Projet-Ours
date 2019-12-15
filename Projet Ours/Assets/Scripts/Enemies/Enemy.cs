@@ -12,8 +12,14 @@ public class Enemy : MonoBehaviour
     public GameObject camera;
     public GameObject Flak2Sang;
     public bool isKicked;
+    private ArenaSpawn arenaSpawn;
 
     GameObject nounours;
+
+    public void init(ArenaSpawn _arenaSpawn)
+    {
+        arenaSpawn = _arenaSpawn;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +53,7 @@ public class Enemy : MonoBehaviour
             Instantiate(blood, transform.position, Quaternion.identity);
             camera.GetComponent<CameraShaker>().Shake();
             Instantiate(Flak2Sang, transform.position, Quaternion.identity);
+            arenaSpawn.onEnemyDeath();
             Destroy(gameObject);
         }
     }
