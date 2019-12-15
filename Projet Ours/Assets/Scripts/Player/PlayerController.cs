@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public bool trailActive = false;
     public bool canRoll = true;
     public AnimationCurve curve;
+    private GameObject UI;
 
     [HideInInspector] public bool canLooseLife = true;
 
@@ -65,6 +66,7 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         trail = GetComponent<TrailRenderer>();
         nounours = GameObject.FindGameObjectWithTag("Player");
+        UI = GameObject.FindGameObjectWithTag("UI");
         rageActivated = false;
         rageAvaible = false;
     }
@@ -79,6 +81,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Dash") && trailActive == false && canRoll == true)
         {
             StartCoroutine(Roll());
+            StartCoroutine(UI.GetComponent<ActiveAndRollUIScript>().rollUICooldown());
         }
 
         if (Input.GetButton("CapacityButton"))
@@ -86,6 +89,7 @@ public class PlayerController : MonoBehaviour
             //StartCoroutine(GetComponent<Kick>().KickActivable());
             GetComponent<Roar>().RoarActivable();
             //StartCoroutine(GetComponent<Tourbilol>().TourbilolActivable());
+            StartCoroutine(UI.GetComponent<ActiveAndRollUIScript>().activeUICooldown());
         }
 
         MoveCrossHair(); // Fontion pour viser

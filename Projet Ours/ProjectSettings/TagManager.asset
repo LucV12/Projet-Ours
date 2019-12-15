@@ -10,6 +10,15 @@ TagManager:
   - RoarItem
   - KickItem
   - TourbilolItem
+  - UI
+  - Heart2
+  - Heart3
+  - ActiveUI
+  - Heart1
+  - RollUI
+  - Heart5
+  - Heart4
+  - DialogManager
   layers:
   - Default
   - TransparentFX

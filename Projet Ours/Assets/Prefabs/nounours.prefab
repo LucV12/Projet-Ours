@@ -142,17 +142,8 @@ MonoBehaviour:
   rollTime: 0.15
   rollSpeed: 10
   rollDelay: 1
-  canLooseLife: 1
-  startTimeBtwAttack: 0.3
-  attackPos: {fileID: 154733572088424149}
-  whatIsEnemies:
-    serializedVersion: 2
-    m_Bits: 256
-  whatIsGrabbable:
-    serializedVersion: 2
-    m_Bits: 2048
-  attackRange: 0.14
-  damage: 1
+  trailActive: 0
+  canRoll: 1
   curve:
     serializedVersion: 2
     m_Curve:
@@ -186,6 +177,17 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  canLooseLife: 1
+  startTimeBtwAttack: 0.3
+  attackPos: {fileID: 154733572088424149}
+  whatIsEnemies:
+    serializedVersion: 2
+    m_Bits: 256
+  whatIsGrabbable:
+    serializedVersion: 2
+    m_Bits: 2048
+  attackRange: 0.14
+  damage: 1
   rage: 1
   rageActivated: 0
   startRageTime: 5
@@ -194,6 +196,7 @@ MonoBehaviour:
   rageSpeedBoost: 2
   roarPushTime: 2
   roarPushSpeed: 2
+  startActiveDelay: 2
   enemyCheckDistance: 1
   CollStop: {fileID: 6850098507008566403}
   enemyLayer:
