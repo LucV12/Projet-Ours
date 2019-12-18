@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1463309786839292895}
   - component: {fileID: 1463309786839292894}
+  - component: {fileID: 489275551691033967}
   m_Layer: 13
   m_Name: Abattoir 3
   m_TagString: Environment
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463309786839292893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.910593, y: 11.7519655, z: 0}
+  m_LocalPosition: {x: 3.410593, y: 9.2519655, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1463309787258744704}
@@ -48,6 +49,22 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &489275551691033967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463309786839292893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de1c8fab0a89f284585dddb4058dac77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connecteurs:
+  - {fileID: 8990747070846575655}
+  - {fileID: 5240665928870627680}
+  gameObjectCollider: {fileID: 1463309787198751004}
 --- !u!1 &1463309787002874523
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,6 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1463309787123490144}
   - component: {fileID: 1463309787123490145}
+  - component: {fileID: 8990747070846575655}
   m_Layer: 13
   m_Name: Porte bas
   m_TagString: Untagged
@@ -322,7 +340,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463309787123490143}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.002605, y: -12.985365, z: 0}
+  m_LocalPosition: {x: 0.0026049614, y: -7.985365, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1463309787002874524}
@@ -341,6 +359,19 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &8990747070846575655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463309787123490143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dec29da59ce668409525e78d3ad9899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orientationConnecteur: 1
 --- !u!1 &1463309787198751000
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +401,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463309787198751000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1463309786839292895}
@@ -1289,7 +1320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463309787244408723}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.621031, y: -4.9221005, z: -309.28125}
+  m_LocalPosition: {x: -18.62103, y: 0.07789993, z: -309.28125}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1463309787364712894}
@@ -1353,7 +1384,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463309787258743935}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1463309786839292895}
@@ -2476,6 +2507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1463309787383830432}
   - component: {fileID: 1463309787383830433}
+  - component: {fileID: 5240665928870627680}
   m_Layer: 13
   m_Name: Porte gauche
   m_TagString: Untagged
@@ -2491,7 +2523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463309787383830431}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.9881163, y: -8.00086, z: 0}
+  m_LocalPosition: {x: -5.9881163, y: -3.0008602, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1463309787664347893}
@@ -2510,6 +2542,19 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &5240665928870627680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463309787383830431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dec29da59ce668409525e78d3ad9899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orientationConnecteur: 2
 --- !u!1 &1463309787515635471
 GameObject:
   m_ObjectHideFlags: 0

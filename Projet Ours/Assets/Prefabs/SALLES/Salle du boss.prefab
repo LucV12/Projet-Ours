@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3699592172369425156}
   m_Layer: 13
   m_Name: Salle du boss
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1121,7 +1121,7 @@ GameObject:
   - component: {fileID: 8849023395481871462}
   m_Layer: 10
   m_Name: FAUTEUILBOSS
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1134,7 +1134,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2993584792810290763}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.15, y: 4.117, z: 1522.6417}
+  m_LocalPosition: {x: 1.15, y: 4.117, z: 0.642}
   m_LocalScale: {x: 2.7009358, y: 2.7009358, z: 2.7009358}
   m_Children: []
   m_Father: {fileID: 1843588142155817237}
@@ -1186,7 +1186,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &8849023395481871462
@@ -3944,7 +3944,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ed3ebdcf39ce36d41bc6ef69e176f8de, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5981,11 +5981,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4360380318135743332}
     m_Modifications:
-    - target: {fileID: 2744728466933507350, guid: b7821dbcc97430f4b8a530d1defbbe13,
-        type: 3}
-      propertyPath: m_Name
-      value: Porte droite
-      objectReference: {fileID: 0}
     - target: {fileID: 2166917637031584100, guid: b7821dbcc97430f4b8a530d1defbbe13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6040,6 +6035,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744728466933507350, guid: b7821dbcc97430f4b8a530d1defbbe13,
+        type: 3}
+      propertyPath: m_Name
+      value: Porte droite
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7821dbcc97430f4b8a530d1defbbe13, type: 3}

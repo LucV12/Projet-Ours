@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9003246925003886520}
   - component: {fileID: 9003246925003886521}
+  - component: {fileID: 1544383591596970881}
   m_Layer: 13
   m_Name: Porte haut
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9003246925003886523}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.9887733, y: -9.992269, z: 0}
+  m_LocalPosition: {x: 2.9887733, y: -1.9922676, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9003246926865292334}
@@ -44,6 +45,19 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &1544383591596970881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9003246925003886523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dec29da59ce668409525e78d3ad9899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orientationConnecteur: 0
 --- !u!1 &9003246925072117211
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,7 +83,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9003246925072117211}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.998211, y: -8.096134, z: -309.28125}
+  m_LocalPosition: {x: 2.998211, y: -0.096134186, z: -309.28125}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 9003246927021129462}
@@ -162,7 +176,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9003246925786544698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9003246926847426071}
@@ -1664,6 +1678,7 @@ GameObject:
   - component: {fileID: 9003246926298529859}
   - component: {fileID: 9003246926298529857}
   - component: {fileID: 9003246926298529856}
+  - component: {fileID: 1253248198739025725}
   m_Layer: 13
   m_Name: Porte droite
   m_TagString: Untagged
@@ -1679,7 +1694,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9003246926298529858}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.0083504, y: -8.998088, z: 0}
+  m_LocalPosition: {x: 5.0083504, y: -0.9980869, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9003246925870354246}
@@ -1735,6 +1750,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1253248198739025725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9003246926298529858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dec29da59ce668409525e78d3ad9899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orientationConnecteur: 3
 --- !u!1 &9003246926836225756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,7 +1792,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9003246926836225756}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9003246926847426071}
@@ -2578,6 +2606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9003246926847426071}
   - component: {fileID: 9003246926847426070}
+  - component: {fileID: 1425237976141537510}
   m_Layer: 13
   m_Name: Gym
   m_TagString: Environment
@@ -2593,7 +2622,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9003246926847426073}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2434187, y: -1.1296384, z: 0}
+  m_LocalPosition: {x: 1.2434187, y: -5.1296387, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 9003246925786544699}
@@ -2617,6 +2646,23 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &1425237976141537510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9003246926847426073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de1c8fab0a89f284585dddb4058dac77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connecteurs:
+  - {fileID: 1253248198739025725}
+  - {fileID: 7835667475752230511}
+  - {fileID: 1544383591596970881}
+  gameObjectCollider: {fileID: 9003246926836225752}
 --- !u!1 &9003246926864324809
 GameObject:
   m_ObjectHideFlags: 0
@@ -2906,6 +2952,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9003246926994697891}
   - component: {fileID: 9003246926994697888}
+  - component: {fileID: 7835667475752230511}
   m_Layer: 13
   m_Name: Porte bas
   m_TagString: Untagged
@@ -2921,7 +2968,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9003246926994697890}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0017204285, y: -13.02259, z: 0}
+  m_LocalPosition: {x: -0.0017204285, y: -5.0225887, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9003246925811256737}
@@ -2940,6 +2987,19 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &7835667475752230511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9003246926994697890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dec29da59ce668409525e78d3ad9899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orientationConnecteur: 1
 --- !u!1 &9003246927021129465
 GameObject:
   m_ObjectHideFlags: 0
