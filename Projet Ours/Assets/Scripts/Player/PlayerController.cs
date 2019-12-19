@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Dash") && trailActive == false && canRoll == true)
         {
             StartCoroutine(Roll());
+            FindObjectOfType<AudioManager>().Play("Roulade");
             StartCoroutine(UI.GetComponent<ActiveAndRollUIScript>().rollUICooldown());
         }
 
@@ -172,6 +173,10 @@ public class PlayerController : MonoBehaviour
                 capacities[0].SetActive(false);
                 capacities[1].SetActive(true);
                 capacities[2].SetActive(false);
+
+                UI.GetComponent<ActiveAndRollUIScript>().activeSprites[0].SetActive(false);
+                UI.GetComponent<ActiveAndRollUIScript>().activeSprites[1].SetActive(true);
+                UI.GetComponent<ActiveAndRollUIScript>().activeSprites[2].SetActive(false);
             }                        
         }
 
@@ -185,6 +190,10 @@ public class PlayerController : MonoBehaviour
                     capacities[0].SetActive(true);
                     capacities[1].SetActive(false);
                     capacities[2].SetActive(false);
+
+                    UI.GetComponent<ActiveAndRollUIScript>().activeSprites[0].SetActive(true);
+                    UI.GetComponent<ActiveAndRollUIScript>().activeSprites[1].SetActive(false);
+                    UI.GetComponent<ActiveAndRollUIScript>().activeSprites[2].SetActive(false);
                 }
         }
 
@@ -197,6 +206,10 @@ public class PlayerController : MonoBehaviour
                         capacities[0].SetActive(false);
                         capacities[1].SetActive(false);
                         capacities[2].SetActive(true);
+
+                        UI.GetComponent<ActiveAndRollUIScript>().activeSprites[0].SetActive(false);
+                        UI.GetComponent<ActiveAndRollUIScript>().activeSprites[1].SetActive(false);
+                        UI.GetComponent<ActiveAndRollUIScript>().activeSprites[2].SetActive(true);
                     }
         }
 
@@ -210,6 +223,10 @@ public class PlayerController : MonoBehaviour
                 rages[0].SetActive(true);
                 rages[1].SetActive(false);
                 rages[2].SetActive(false);
+
+                UI.GetComponent<ActiveAndRollUIScript>().rageSprites[0].SetActive(true);
+                UI.GetComponent<ActiveAndRollUIScript>().rageSprites[1].SetActive(false);
+                UI.GetComponent<ActiveAndRollUIScript>().rageSprites[2].SetActive(false);
             }
         }
 
@@ -223,6 +240,10 @@ public class PlayerController : MonoBehaviour
                 rages[0].SetActive(false);
                 rages[1].SetActive(true);
                 rages[2].SetActive(false);
+
+                UI.GetComponent<ActiveAndRollUIScript>().rageSprites[0].SetActive(false);
+                UI.GetComponent<ActiveAndRollUIScript>().rageSprites[1].SetActive(true);
+                UI.GetComponent<ActiveAndRollUIScript>().rageSprites[2].SetActive(false);
             }
         }
 
@@ -235,6 +256,10 @@ public class PlayerController : MonoBehaviour
                 rages[0].SetActive(false);
                 rages[1].SetActive(false);
                 rages[2].SetActive(true);
+
+                UI.GetComponent<ActiveAndRollUIScript>().rageSprites[0].SetActive(false);
+                UI.GetComponent<ActiveAndRollUIScript>().rageSprites[1].SetActive(false);
+                UI.GetComponent<ActiveAndRollUIScript>().rageSprites[2].SetActive(true);
             }
         }
 
@@ -388,8 +413,10 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetBool("IsRageActivated", true);
         canMove = false;
+        FindObjectOfType<AudioManager>().Play("EnclenchementRage");
         //gameObject.GetComponent<Renderer>().material.color = Color.yellow;
         yield return new WaitForSeconds(1.1f);
+        FindObjectOfType<AudioManager>().Play("RageBoom");
         //gameObject.GetComponent<Renderer>().material.color = Color.white;
         animator.SetBool("IsRageActivated", false);
         canMove = true;
@@ -398,6 +425,7 @@ public class PlayerController : MonoBehaviour
     public void HitByEnemy()
     {
         StartCoroutine(ColorChange());
+        FindObjectOfType<AudioManager>().Play("HitByEnemy");
     }
 
 }

@@ -93,6 +93,7 @@ public class Boom : MonoBehaviour
     {
         animator.SetBool("isBooming", true);
         animator.SetBool("isGlissing", false);
+        FindObjectOfType<AudioManager>().Play("Explosion");
         canMove = false;
         yield return new WaitForSeconds(explosionDelay);
         Collider2D[] playerToDamage = Physics2D.OverlapCircleAll(explosionPos.position, explosionRange, whatIsEnnemies);

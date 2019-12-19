@@ -67,7 +67,12 @@ public class Grabbable : MonoBehaviour
                 {
                     enemiesToBlow[i].GetComponent<Enemy>().TakeDamage(1);
                 }
+                FindObjectOfType<AudioManager>().Play("Explosion");
                 Destroy(gameObject);
+            }
+            else if (isExplosive == false)
+            {
+                FindObjectOfType<AudioManager>().Play("StunLancer");
             }
             grabbableObject.velocity = grabbableObject.velocity * 0f;
             colliderHit.enabled = false;

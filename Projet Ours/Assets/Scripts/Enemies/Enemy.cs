@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour
             if (executed == false && nounours.GetComponent<PlayerController>().rageActivated == false)
             {
                 nounours.GetComponent<PlayerController>().rage += 0.2f;
+                FindObjectOfType<AudioManager>().Play("MortManchot");
             }
             else if (executed == true && nounours.GetComponent<PlayerController>().rageActivated == false)
             {
@@ -62,10 +63,12 @@ public class Enemy : MonoBehaviour
         if (executed == true)
         {
             health -= damage * 5;
+            FindObjectOfType<AudioManager>().Play("Execution");
             Debug.Log("EXECUTED !");
         }
 
         health -= damage;
+        FindObjectOfType<AudioManager>().Play("Frappe");
         Debug.Log("damage TAKEN !");
         StartCoroutine(colorChange());       
     }
@@ -80,6 +83,7 @@ public class Enemy : MonoBehaviour
         if (other.collider.CompareTag("Enviro") && isKicked == true)
         {
             executed = true;
+            FindObjectOfType<AudioManager>().Play("StunContreMur");
         }
     }
 
@@ -106,5 +110,10 @@ public class Enemy : MonoBehaviour
         repulsed = false;
         enemy.velocity = Vector2.zero;
         Debug.Log("Roarred !!!");
+    }
+
+    private void DeathScream()
+    {
+        FindObjectOfType<AudioManager>().Play("MortManchot");
     }
 }
