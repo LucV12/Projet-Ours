@@ -25,6 +25,10 @@ public class RageTerrifiante : MonoBehaviour
 
         StartCoroutine(pc.ColorChangeRage());
 
+        yield return new WaitForSeconds(1.1f);
+
+        FindObjectOfType<AudioManager>().Play("TerrorRage");
+
         Collider2D[] enemyToTerrify = Physics2D.OverlapCircleAll(terrorPos.position, terrorRange, whatIsEnemies);
         for (int i = 0; i < enemyToTerrify.Length; i++)
         {

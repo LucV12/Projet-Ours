@@ -20,6 +20,8 @@ public class RageRuee : MonoBehaviour
     public IEnumerator RageActive2 ()
     {
         StartCoroutine(pc.ColorChangeRage());
+        yield return new WaitForSeconds(1);
+        FindObjectOfType<AudioManager>().Play("DashRage");
         dashRageActivated = true;
         pc.rollSpeed = pc.rollSpeed * dashRageSpeedBoost;
         pc.canRoll = false;

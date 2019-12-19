@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2789620988800853005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2789620988800853007}
+  - component: {fileID: 2789620988800853004}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2789620988800853007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789620988800853005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 554.14264, y: 385.31754, z: -2570.1555}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2789620988800853004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789620988800853005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb3c0f000a647548b5f7274f4b86ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Frappe
+    clip: {fileID: 8300000, guid: dd9a896aad5867241b5935024218f489, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Execution
+    clip: {fileID: 8300000, guid: 7574a080e8fbf864e87fa949c2d53610, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Explosion
+    clip: {fileID: 8300000, guid: 23eb90eacc13353438815c8dd3807c61, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: GrabObjet
+    clip: {fileID: 8300000, guid: 979fbd35965dcb243b3542cb41e10d15, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Kick
+    clip: {fileID: 8300000, guid: 8545a040e32028041923ceba96fa8929, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: TerrorRage
+    clip: {fileID: 8300000, guid: dcf116c394a9f514e994521ecff75c61, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StunContreMur
+    clip: {fileID: 8300000, guid: 491d9c035e310634097261c2688722e5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StunLancer
+    clip: {fileID: 8300000, guid: 679dc5cafdd84a34ebb4df991ea8fce7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Roar
+    clip: {fileID: 8300000, guid: b4554900047a1ad4fba812f8a7fe8234, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: TirManchot
+    clip: {fileID: 8300000, guid: b40fda708a655cb42b2cdca7ba3481a1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Tourbilol
+    clip: {fileID: 8300000, guid: 7736a8d18021e4249adff32386cba6cb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Roulade
+    clip: {fileID: 8300000, guid: 01b1e16074732c34d911b6c896058e3d, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MortManchot
+    clip: {fileID: 8300000, guid: edf310a77af432f43a275a6a93ab0b18, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnclenchementRage
+    clip: {fileID: 8300000, guid: 494afb2f5056edf4db8fcf49d1f01152, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: RageBoom
+    clip: {fileID: 8300000, guid: 86a11439c68c6034fb6734e1327fa2d8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: HitByEnemy
+    clip: {fileID: 8300000, guid: f1ac2977702016c4883e4d11721688b4, type: 3}
+    volume: 0.9
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DashRage
+    clip: {fileID: 8300000, guid: 43f35e5f0193b7b4896e6d8a5078d596, type: 3}
+    volume: 0.9
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  pas: []
+  music: []
