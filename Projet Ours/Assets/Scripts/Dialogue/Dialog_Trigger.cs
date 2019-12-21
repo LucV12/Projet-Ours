@@ -37,14 +37,14 @@ public class Dialog_Trigger : MonoBehaviour
                 toucheA.SetActive(false);
             }
 
-            if (playerToTalk.Length > 0 && Input.GetKeyDown(KeyCode.P))
+            if (playerToTalk.Length > 0 && Input.GetButtonDown("Interract"))
             {
                 TriggerDialogue();
                 isTalking = true;
                 toucheA.SetActive(false);
             }
         }
-        else if (isTalking == true && Input.GetKeyDown(KeyCode.P))
+        else if (isTalking == true && Input.GetButtonDown("Interract"))
         {
             ContinueDialogue();
         }

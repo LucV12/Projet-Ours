@@ -41,7 +41,7 @@ public class Tourbilol : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(tourbiPos.position, tourbiRange);
+        /*Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(tourbiPos.position, tourbiRange);*/
     }
 }

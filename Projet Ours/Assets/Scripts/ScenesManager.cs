@@ -14,7 +14,11 @@ public class ScenesManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+       if (Input.GetButtonDown("Start"))
+        {
+            SceneManager.LoadSceneAsync("Menu", LoadSceneMode.Additive);
+            Time.timeScale = 0f;
+        }
     }
 
     public void RunScene()

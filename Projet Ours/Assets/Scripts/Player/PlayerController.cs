@@ -354,22 +354,6 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isAttacking", true);
     }
 
-    /*private void RageActive1() //Fonction d'activable de l'effet de rage
-    {
-        animator.SetBool("IsRageActivated", true);
-        canMove = false;
-        rage = 0;
-        rageAvaible = false;
-        rageActivated = true;
-       StartCoroutine(ColorChangeRage());
-        Debug.Log("Rage Activée !!!");
-        rageTime = startRageTime;
-        
-        damage = damage * rageDamageBoost;
-        moveSpeed = moveSpeed * rageSpeedBoost;
-        
-    }*/
-
     private void Grab()
     {
         grabbableObject = GameObject.FindGameObjectWithTag("Grabbable");
