@@ -5,10 +5,14 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-    public Text nameText;
-    public Text dialogueText;
+    Text nameText;
+    Text dialogueText;
 
-    public Animator animator;
+    GameObject NTO;
+    GameObject DTO;
+    GameObject textBox;
+
+    Animator animator;
 
     private Queue<string> sentences;
 
@@ -16,6 +20,12 @@ public class DialogManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
+        NTO = GameObject.FindGameObjectWithTag("NameText");
+        nameText = NTO.GetComponent<Text>();
+        DTO = GameObject.FindGameObjectWithTag("DialogueText");
+        dialogueText = DTO.GetComponent<Text>();
+        textBox = GameObject.FindGameObjectWithTag("TextBox");
+        animator = textBox.GetComponent<Animator>();
     }
 
     public void StartDialogue (Dialog dialogue)

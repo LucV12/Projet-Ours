@@ -138,10 +138,12 @@ MonoBehaviour:
   health: 10
   slashParticle: {fileID: 3664818284620356623, guid: 7a0ba75e78909a7458cda3be69332656,
     type: 3}
+  InitPosition: {x: 0, y: 0, z: 0}
   moveSpeed: 0.05
   rollTime: 0.3
   rollSpeed: 5
   rollDelay: 1
+  canMove: 0
   trailActive: 0
   canRoll: 1
   curve:

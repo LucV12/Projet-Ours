@@ -13,13 +13,20 @@ public class PlayerController : MonoBehaviour
     GameObject nounours;
     public GameObject slashParticle;
     private GameObject UI;
+    ScenesManager SM;
+    public Vector3 InitPosition;
+    PauseMenu PM;
+    GameObject gameOver;
+    GameOverScript GOS;
+    GameObject gameManager;
+    GameManager GM;
 
     [Header("Movement")]
     public float moveSpeed;
     public float rollTime;
     public float rollSpeed;
     public float rollDelay;
-    bool canMove;
+    public bool canMove;
     public bool trailActive = false;
     public bool canRoll = true;
     public AnimationCurve curve;
@@ -71,14 +78,24 @@ public class PlayerController : MonoBehaviour
         rageActivated = false;
         rageAvaible = false;
         UI = GameObject.FindGameObjectWithTag("UI");
+        SM = GameObject.FindGameObjectWithTag("ScenesManager").GetComponent<ScenesManager>();
+        InitPosition = Vector3.zero;
+        PM = GameObject.FindGameObjectWithTag("PauseMenu").GetComponent<PauseMenu>();
+        gameOver = GameObject.FindGameObjectWithTag("GameOver");
+        GOS = gameOver.GetComponent<GameOverScript>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        GM = gameManager.GetComponent<GameManager>();
     }
 
     void Update()
     {
 
-        MoveCrossHair();
+        if(PM.GameIsPaused == false)
+        {
+            MoveCrossHair();
+        }
 
-        if (canMove == true) //Mouvement de base
+        if (canMove == true && PM.GameIsPaused == false) //Mouvement de base
         {
             MovePlayer();
         }
@@ -113,7 +130,7 @@ public class PlayerController : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            GOS.GameOver();              
         }
 
 
@@ -166,6 +183,11 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("COLLISION RoarITEM");
 
+            if (GM.capaAvaible.Contains("Roar") == false)
+            {
+                GM.capaAvaible.Add("Roar");
+            }
+            
             if (Input.GetButtonDown("Y"))
 
             {
@@ -179,20 +201,30 @@ public class PlayerController : MonoBehaviour
         {
                 Debug.Log("COLLISION KickITEM");
 
-                if (Input.GetButtonDown("Y"))
-
+                if (GM.capaAvaible.Contains("Kick") == false)
                 {
-                    capacities[0].SetActive(true);
-                    capacities[1].SetActive(false);
-                    capacities[2].SetActive(false);
+                    GM.capaAvaible.Add("Kick");
                 }
+
+            if (Input.GetButtonDown("Y"))
+
+            {
+                 capacities[0].SetActive(true);
+                 capacities[1].SetActive(false);
+                 capacities[2].SetActive(false);
+            }
         }
 
         if (collision.gameObject.CompareTag("TourbilolItem"))
         {
                     Debug.Log("COLLISION TourbilolITEM");
 
-                    if (Input.GetButtonDown("Y"))
+            if (GM.capaAvaible.Contains("Tourbi") == false)
+            {
+                GM.capaAvaible.Add("Tourbi");
+            }
+
+            if (Input.GetButtonDown("Y"))
                     {
                         capacities[0].SetActive(false);
                         capacities[1].SetActive(false);
@@ -203,6 +235,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("BearserkItem"))
         {
             Debug.Log("COLLISION BearserkITEM");
+
+            if (GM.rageAvaible.Contains("Bearserk") == false)
+            {
+                GM.rageAvaible.Add("Bearserk");
+            }
 
             if (Input.GetButtonDown("Y"))
 
@@ -217,6 +254,11 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("COLLISION RueeITEM");
 
+            if (GM.rageAvaible.Contains("Ruee") == false)
+            {
+                GM.rageAvaible.Add("Ruee");
+            }
+
             if (Input.GetButtonDown("Y"))
 
             {
@@ -229,6 +271,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("TerriItem"))
         {
             Debug.Log("COLLISION TerriITEM");
+
+            if (GM.rageAvaible.Contains("Terri") == false)
+            {
+                GM.rageAvaible.Add("Terri");
+            }
 
             if (Input.GetButtonDown("Y"))
             {

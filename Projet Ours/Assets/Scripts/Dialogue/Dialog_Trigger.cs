@@ -12,7 +12,7 @@ public class Dialog_Trigger : MonoBehaviour
 
     private bool isTalking;
 
-    public Animator textBox;
+    Animator textBox;
 
     public GameObject toucheA;
 
@@ -20,6 +20,7 @@ public class Dialog_Trigger : MonoBehaviour
     {
         isTalking = false;
         toucheA.SetActive(false);
+        textBox = GameObject.FindGameObjectWithTag("TextBox").GetComponent<Animator>();
     }
 
     void Update()

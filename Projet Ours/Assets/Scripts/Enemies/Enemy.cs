@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public bool executed;
     [HideInInspector] public bool repulsed;
     public GameObject blood;
-    public GameObject camera;
+    GameObject camera;
     public GameObject Flak2Sang;
     public bool isKicked;
     private ArenaSpawn arenaSpawn;
@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
         executed = false;
         isKicked = false;
         nounours = GameObject.FindGameObjectWithTag("Player");
-        camera = GameObject.Find("Main Camera");
+        camera = GameObject.Find("MainCameraInit");
         enemy = GetComponent<Rigidbody2D>();
     }
 

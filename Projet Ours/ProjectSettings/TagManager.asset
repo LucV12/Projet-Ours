@@ -24,6 +24,12 @@ TagManager:
   - BearserkItem
   - RueeItem
   - TerriItem
+  - DialogManager
+  - TextBox
+  - PauseMenu
+  - NameText
+  - DialogueText
+  - GameOver
   layers:
   - Default
   - TransparentFX

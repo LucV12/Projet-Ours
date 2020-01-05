@@ -67,6 +67,7 @@ public class Baby : MonoBehaviour
 
     IEnumerator Attack()
     {
+        animator.SetBool("IsAttacking", true);
         canMove = false;
         isAttacking = true;
         yield return new WaitForSeconds(attackDuration);
@@ -83,6 +84,7 @@ public class Baby : MonoBehaviour
         }
 
         yield return new WaitForSeconds(attackDelay);
+        animator.SetBool("IsAttacking", false);
         isAttacking = false;
         canMove = true;
     }
