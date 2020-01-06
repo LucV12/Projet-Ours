@@ -10,16 +10,21 @@ public class RageRuee : MonoBehaviour
     public int rageDamageBoost;
     GameObject nounours;
     PlayerController pc;
+    GameObject rageManager;
+    RageManager RM;
 
     public void Start()
     {
         nounours = GameObject.FindGameObjectWithTag("Player");
         pc = nounours.GetComponent<PlayerController>();
+        rageManager = GameObject.FindGameObjectWithTag("RageManager");
+        RM = rageManager.GetComponent<RageManager>();
     }
 
     public IEnumerator RageActive2 ()
     {
         StartCoroutine(pc.ColorChangeRage());
+        RM.isInRage = true;
         yield return new WaitForSeconds(1);
         FindObjectOfType<AudioManager>().Play("DashRage");
         dashRageActivated = true;
@@ -33,6 +38,7 @@ public class RageRuee : MonoBehaviour
         pc.canRoll = true;
         dashRageActivated = false;
         pc.damage = pc.damage / rageDamageBoost;
+        RM.isInRage = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

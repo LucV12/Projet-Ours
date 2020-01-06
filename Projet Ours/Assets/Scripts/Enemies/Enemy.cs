@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     public GameObject Flak2Sang;
     public bool isKicked;
     private ArenaSpawn arenaSpawn;
+    GameObject rageManager;
+    RageManager RM;
 
     GameObject nounours;
 
@@ -30,6 +32,8 @@ public class Enemy : MonoBehaviour
         nounours = GameObject.FindGameObjectWithTag("Player");
         camera = GameObject.Find("MainCameraInit");
         enemy = GetComponent<Rigidbody2D>();
+        rageManager = GameObject.FindGameObjectWithTag("RageManager");
+        RM = rageManager.GetComponent<RageManager>();
     }
 
     void Update()
@@ -43,10 +47,14 @@ public class Enemy : MonoBehaviour
         {
             if (executed == false && nounours.GetComponent<PlayerController>().rageActivated == false)
             {
-                nounours.GetComponent<PlayerController>().rage += 0.2f;
+                if (RM.isInRage == false)
+                {
+                    nounours.GetComponent<PlayerController>().rage += 0.2f;
+                }
+
                 FindObjectOfType<AudioManager>().Play("MortManchot");
             }
-            else if (executed == true && nounours.GetComponent<PlayerController>().rageActivated == false)
+            else if (executed == true && nounours.GetComponent<PlayerController>().rageActivated == false && RM.isInRage == false)
             {
                 nounours.GetComponent<PlayerController>().rage += 0.5f;
             }
@@ -96,6 +104,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator executionReady()
     {
+        executed = true;
         //gameObject.GetComponent<Renderer>().material.color = Color.blue;
         yield return new WaitForSeconds(2.5f);
         //gameObject.GetComponent<Renderer>().material.color = Color.white;

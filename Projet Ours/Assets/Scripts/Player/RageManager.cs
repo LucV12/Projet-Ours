@@ -9,6 +9,7 @@ public class RageManager : MonoBehaviour
     int activeRage;
     GameObject nounours;
     bool rageAvaibleManager;
+    public bool isInRage = false;
 
     // Start is called before the first frame update
     void Start()

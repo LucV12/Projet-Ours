@@ -11,19 +11,24 @@ public class RageTerrifiante : MonoBehaviour
     public float terrorTime;
     GameObject nounours;
     PlayerController pc;
+    GameObject rageManager;
+    RageManager RM;
 
 
     private void Start()
     {
         nounours = GameObject.FindGameObjectWithTag("Player");
         pc = nounours.GetComponent<PlayerController>();
-        
+        rageManager = GameObject.FindGameObjectWithTag("RageManager");
+        RM = rageManager.GetComponent<RageManager>();
+
     }
     public IEnumerator RageActive3 ()
     {
         terrorPos = nounours.transform;
 
         StartCoroutine(pc.ColorChangeRage());
+        RM.isInRage = true;
 
         yield return new WaitForSeconds(1.1f);
 
@@ -41,6 +46,7 @@ public class RageTerrifiante : MonoBehaviour
             enemyToTerrify[i].GetComponent<Enemy>().repulsed = false;
             enemyToTerrify[i].GetComponent<Enemy>().enemy.velocity = Vector2.zero;
         }
+        RM.isInRage = false;
     }
 
     private void OnDrawGizmosSelected()
