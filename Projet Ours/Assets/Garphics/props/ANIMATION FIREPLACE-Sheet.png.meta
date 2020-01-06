@@ -1,31 +1,22 @@
 fileFormatVersion: 2
-guid: 43f074ab93712a945a13d993ae6b8ef8
+guid: ed38c96781bab70479234e5840e3d79f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8519427701171076940
-    second: Nounours idle face-Sheet_0
+      213: -3675919106700726622
+    second: ANIMATION FIREPLACE-Sheet_0
   - first:
-      213: 1950304269562830604
-    second: Nounours idle face-Sheet_1
+      213: 2355867284969612929
+    second: ANIMATION FIREPLACE-Sheet_1
   - first:
-      213: 4861162218502746490
-    second: Nounours idle face-Sheet_2
+      213: 7463445652555139697
+    second: ANIMATION FIREPLACE-Sheet_2
   - first:
-      213: -4964485477246733438
-    second: Nounours idle face-Sheet_3
+      213: 8976332426746533173
+    second: ANIMATION FIREPLACE-Sheet_3
   - first:
-      213: -8735884632081778620
-    second: Nounours idle face-Sheet_4
-  - first:
-      213: -5645929727051445114
-    second: Nounours idle face-Sheet_5
-  - first:
-      213: -5288296105195243469
-    second: Nounours idle face-Sheet_6
-  - first:
-      213: -934046293653845236
-    second: Nounours idle face-Sheet_7
+      213: 6518525407773678763
+    second: ANIMATION FIREPLACE-Sheet_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -110,13 +101,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Nounours idle face-Sheet_0
+      name: ANIMATION FIREPLACE-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +115,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 951931a3d273e4a4a8bbab72bee95588
-      internalID: 8519427701171076940
+      spriteID: 39ef93db93993454685a097bf1208518
+      internalID: -3675919106700726622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nounours idle face-Sheet_1
+      name: ANIMATION FIREPLACE-Sheet_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 60
         y: 0
-        width: 32
-        height: 32
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d700b8bc2d16a7345a2882c7f98abe71
-      internalID: 1950304269562830604
+      spriteID: 7db2e8a105fe6ca4498d2e9910aceb30
+      internalID: 2355867284969612929
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nounours idle face-Sheet_2
+      name: ANIMATION FIREPLACE-Sheet_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 120
         y: 0
-        width: 32
-        height: 32
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +157,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a6289a162726414c8d8b4ac9183b871
-      internalID: 4861162218502746490
+      spriteID: 82446623a78c02048a52f45fda98f872
+      internalID: 7463445652555139697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nounours idle face-Sheet_3
+      name: ANIMATION FIREPLACE-Sheet_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 180
         y: 0
-        width: 32
-        height: 32
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e16e539d7cacfd4c976dbf5376284f7
-      internalID: -4964485477246733438
+      spriteID: 0cd2994db213c6445979094e38d46973
+      internalID: 8976332426746533173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nounours idle face-Sheet_4
+      name: ANIMATION FIREPLACE-Sheet_4
       rect:
         serializedVersion: 2
-        x: 128
+        x: 240
         y: 0
-        width: 32
-        height: 32
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,71 +199,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88f1bda6d506cc64883decf978cb307b
-      internalID: -8735884632081778620
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nounours idle face-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 043224d148bd2284aafe1a5fef295e29
-      internalID: -5645929727051445114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nounours idle face-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fbfd2ab9bc9d74c46b8f3842adf9bdc5
-      internalID: -5288296105195243469
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nounours idle face-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3f4ef94a5bc9ad418bcd13c04f8a18b
-      internalID: -934046293653845236
+      spriteID: 1379723d184938546bf8e54677dccda2
+      internalID: 6518525407773678763
       vertices: []
       indices: 
       edges: []

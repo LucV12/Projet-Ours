@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1268384066907375643}
   - component: {fileID: 1268384066907375647}
   m_Layer: 11
-  m_Name: Tonneau radioactif1
+  m_Name: Tonneau Normal
   m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,6 +153,11 @@ MonoBehaviour:
   pouissance2FEU: 4
   throwTime: 1
   colliderHit: {fileID: 1268384066907375646}
+  isExplosive: 0
+  whatIsEnemies:
+    serializedVersion: 2
+    m_Bits: 0
+  explosionRange: 0
 --- !u!50 &1268384066907375647
 Rigidbody2D:
   serializedVersion: 4

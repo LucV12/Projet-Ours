@@ -166,6 +166,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Grabbable"))
         {
+            grabbableObject = collision.gameObject;
+
             if (Input.GetAxisRaw("Grab") != 0)
             {
                 if (isAxisInUseLeft == false)
@@ -403,13 +405,13 @@ public class PlayerController : MonoBehaviour
 
     private void Grab()
     {
-        grabbableObject = GameObject.FindGameObjectWithTag("Grabbable");
+        //grabbableObject = GameObject.FindGameObjectWithTag("Grabbable");
         grabbableObject.GetComponent<Grabbable>().isGrabbed = true;
     }
 
     IEnumerator ColorChange()
     {
-        gameObject.GetComponent<Renderer>().material.color = Color.magenta;
+        gameObject.GetComponent<Renderer>().material.color = Color.red;
         yield return new WaitForSeconds(0.2f);
         gameObject.GetComponent<Renderer>().material.color = Color.white;
 
