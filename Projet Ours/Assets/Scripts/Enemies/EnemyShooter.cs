@@ -61,6 +61,7 @@ public class EnemyShooter : MonoBehaviour
             {
                 animator.SetBool("IsShooting", true);
                 Instantiate(projectile, transform.position, Quaternion.identity);
+                FindObjectOfType<AudioManager>().Play("TirManchot");
                 timeBtwShots = startTimeBtwshots;                
             }
 

@@ -17,6 +17,9 @@ public class ActiveAndRollUIScript : MonoBehaviour
     private float activeFill;
     private float startActiveFill;
 
+    public GameObject[] activeSprites = new GameObject[3];
+    public GameObject[] rageSprites = new GameObject[3];
+
     // Start is called before the first frame update
     void Start()
     {
