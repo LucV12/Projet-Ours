@@ -12,5 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2978fd2e5b7ae724aa2831c93b2d29e3, type: 3}
   m_Name: BearserkPalette
   m_EditorClassIdentifier: 
-  colors: []
-  _colorsPositionFilePath: 
+  colors:
+  - r: 0.92156863
+    g: 0
+    b: 0
+    a: 1
+  - r: 0.31764707
+    g: 0
+    b: 0.020483797
+    a: 1
+  - r: 0.53333336
+    g: 0.2784314
+    b: 0.29053125
+    a: 1
+  - r: 0.85882354
+    g: 0.06274512
+    b: 0.08637141
+    a: 1
+  - r: 0.9137255
+    g: 0.6039216
+    b: 0.61592907
+    a: 1
+  - r: 0.9137255
+    g: 0
+    b: 0.035776492
+    a: 1
+  _colorsPositionFilePath: Assets/Palettes/nounours/BearserkPalette-positions.txt
+  <Id>k__BackingField: 9

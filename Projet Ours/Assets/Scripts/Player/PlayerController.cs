@@ -210,10 +210,7 @@ public class PlayerController : MonoBehaviour
 
                 if (GM.capaAvaible.Contains("Kick") == false)
                 {
-                    GM.capaAvaible.Add("Kick");
-                    UI.GetComponent<ActiveAndRollUIScript>().activeSprites[0].SetActive(true);
-                    UI.GetComponent<ActiveAndRollUIScript>().activeSprites[1].SetActive(false);
-                    UI.GetComponent<ActiveAndRollUIScript>().activeSprites[2].SetActive(false);
+                    GM.capaAvaible.Add("Kick");                    
                 }
 
             if (Input.GetButtonDown("Y"))
@@ -222,6 +219,9 @@ public class PlayerController : MonoBehaviour
                  capacities[0].SetActive(true);
                  capacities[1].SetActive(false);
                  capacities[2].SetActive(false);
+                UI.GetComponent<ActiveAndRollUIScript>().activeSprites[0].SetActive(true);
+                UI.GetComponent<ActiveAndRollUIScript>().activeSprites[1].SetActive(false);
+                UI.GetComponent<ActiveAndRollUIScript>().activeSprites[2].SetActive(false);
             }
         }
 

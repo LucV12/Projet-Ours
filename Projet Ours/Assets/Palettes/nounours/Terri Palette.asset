@@ -12,5 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2978fd2e5b7ae724aa2831c93b2d29e3, type: 3}
   m_Name: Terri Palette
   m_EditorClassIdentifier: 
-  colors: []
-  _colorsPositionFilePath: 
+  colors:
+  - r: 0.92156863
+    g: 0.7071752
+    b: 0
+    a: 1
+  - r: 0.31764707
+    g: 0.25063226
+    b: 0
+    a: 1
+  - r: 0.53333336
+    g: 0.46871623
+    b: 0.2784314
+    a: 1
+  - r: 0.85882354
+    g: 0.6515113
+    b: 0.06274512
+    a: 1
+  - r: 0.9137255
+    g: 0.83943284
+    b: 0.6039216
+    a: 1
+  - r: 0.9137255
+    g: 0.66371614
+    b: 0
+    a: 1
+  _colorsPositionFilePath: Assets/Palettes/nounours/Terri Palette-positions.txt
+  <Id>k__BackingField: 19
