@@ -47,8 +47,22 @@ public class Kick : MonoBehaviour
             animator.SetBool("IsKicking", false);
         }
 
-        
+        if (enemiesToDamage.Length > 0 && enemiesToDamage[0].gameObject.tag == "Boss")
+        {
+            enemiesToDamage[0].GetComponent<Enemy>().TakeDamage(1);
+        }
 
+        if (enemiesToDamage.Length > 0 && enemiesToDamage[0].gameObject.tag == "Pinata")
+        {
+            Debug.Log("Kicked!");
+            enemiesToDamage[0].GetComponent<Pinata>().TakeDamage(1);
+            enemiesToDamage[0].GetComponent<Pinata>().enemy.velocity = aim * kickPower;
+            enemiesToDamage[0].GetComponent<Pinata>().isKicked = true;
+            yield return new WaitForSeconds(kickPushTime);
+            enemiesToDamage[0].GetComponent<Pinata>().enemy.velocity = Vector2.zero;
+            enemiesToDamage[0].GetComponent<Pinata>().isKicked = false;
+            animator.SetBool("IsKicking", false);
+        }
     }
 }
 

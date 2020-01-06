@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D enemy;
     public float health;
     public bool executed;
+    public float  executedTime;
     [HideInInspector] public bool repulsed;
     public GameObject blood;
     GameObject camera;
@@ -75,7 +76,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.CompareTag("Grabbable"))
+        if (other.collider.CompareTag("Grabbable") && other.gameObject.GetComponent<Grabbable>().isExplosive == false)
         {
             executed = true;
         }
@@ -97,7 +98,7 @@ public class Enemy : MonoBehaviour
     IEnumerator executionReady()
     {
         //gameObject.GetComponent<Renderer>().material.color = Color.blue;
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(executedTime);
         //gameObject.GetComponent<Renderer>().material.color = Color.white;
         executed = false;
     }

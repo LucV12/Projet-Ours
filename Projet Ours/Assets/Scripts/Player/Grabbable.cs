@@ -58,7 +58,7 @@ public class Grabbable : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.CompareTag("Enemy"))
+        if (other.collider.CompareTag("Enemy") || other.collider.CompareTag("Boss"))
         {
             if (isExplosive == true)
             {
@@ -66,6 +66,26 @@ public class Grabbable : MonoBehaviour
                 for (int i = 0; i < enemiesToBlow.Length; i++)
                 {
                     enemiesToBlow[i].GetComponent<Enemy>().TakeDamage(1);
+                }
+                FindObjectOfType<AudioManager>().Play("Explosion");
+                Destroy(gameObject);
+            }
+            else if (isExplosive == false)
+            {
+                FindObjectOfType<AudioManager>().Play("StunLancer");
+            }
+            grabbableObject.velocity = grabbableObject.velocity * 0f;
+            colliderHit.enabled = false;
+        }
+
+        if (other.collider.CompareTag("Pinata"))
+        {
+            if (isExplosive == true)
+            {
+                Collider2D[] enemiesToBlow = Physics2D.OverlapCircleAll(transform.position, explosionRange, whatIsEnemies);
+                for (int i = 0; i < enemiesToBlow.Length; i++)
+                {
+                    enemiesToBlow[i].GetComponent<Pinata>().TakeDamage(1);
                 }
                 FindObjectOfType<AudioManager>().Play("Explosion");
                 Destroy(gameObject);

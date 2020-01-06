@@ -34,7 +34,10 @@ public class Roar : MonoBehaviour
         Collider2D[] enemyToPush = Physics2D.OverlapCircleAll(roarPos.position, roarRange, whatIsEnemies);
         for (int i = 0; i < enemyToPush.Length; i++)
         {
-            StartCoroutine(enemyToPush[i].GetComponent<Enemy>().Repulsed());
+            if (enemyToPush[i].CompareTag("Enemy"))
+            {
+                StartCoroutine(enemyToPush[i].GetComponent<Enemy>().Repulsed());
+            }
         }
         
     }
