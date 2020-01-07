@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1190481144707093913}
   m_Layer: 12
   m_Name: table face
-  m_TagString: Untagged
+  m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -146,6 +146,7 @@ MonoBehaviour:
   canMove: 0
   trailActive: 0
   canRoll: 1
+  isRolling: 0
   curve:
     serializedVersion: 2
     m_Curve:
@@ -209,13 +210,18 @@ MonoBehaviour:
   - {fileID: 8994258469503293728}
   - {fileID: 4144785096370613728}
   enemyCheckDistance: 1
+  propsCheckDistance: 0.5
   CollStop: {fileID: 6850098507008566403}
+  CollTrig: {fileID: 1649801985}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
   EnviroLayer:
     serializedVersion: 2
     m_Bits: 8192
+  BackgroundLayer:
+    serializedVersion: 2
+    m_Bits: 4096
 --- !u!95 &154733573039282559
 Animator:
   serializedVersion: 3

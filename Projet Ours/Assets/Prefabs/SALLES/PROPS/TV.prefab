@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5666477692203302786}
   - component: {fileID: 5666477692203302787}
   - component: {fileID: 2027374052181095679}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: TV
-  m_TagString: Untagged
+  m_TagString: Props
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

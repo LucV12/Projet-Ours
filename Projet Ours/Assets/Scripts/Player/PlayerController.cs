@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public bool canMove;
     public bool trailActive = false;
     public bool canRoll = true;
+    public bool isRolling = false;
     public AnimationCurve curve;
 
     [HideInInspector] public bool canLooseLife = true;
@@ -63,10 +64,13 @@ public class PlayerController : MonoBehaviour
 
     [Header("Collision and layers")]
     public float enemyCheckDistance = 2f;
+    public float propsCheckDistance = 0.2f;
     GameObject grabbableObject;    
     public Collider2D CollStop;
+    public Collider2D CollTrig;
     public LayerMask enemyLayer;
     public LayerMask EnviroLayer;
+    public LayerMask BackgroundLayer;
 
 
     void Start()
@@ -159,6 +163,11 @@ public class PlayerController : MonoBehaviour
         if (EnviroHit && EnviroHit.collider.gameObject.tag == "Enviro")
         {
             CollStop.enabled = true;
+        }
+        RaycastHit2D PropsHit = Physics2D.Raycast(transform.position, rollMovement, propsCheckDistance, BackgroundLayer);
+        if (PropsHit && PropsHit.collider.gameObject.tag == "Props" && isRolling == true)
+        {
+            Destroy(PropsHit.collider.gameObject);
         }
 
     }
@@ -314,6 +323,17 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    /*private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Props"))
+        {
+            if (isRolling == true)
+            {
+                Destroy(collision.gameObject);
+            }
+        }
+    }*/
+
     #region dash routines
     private IEnumerator Roll()   //Coroutine de la Roulade.
     {
@@ -321,7 +341,8 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         canRoll = false;
         trailActive = true;
-        
+        CollTrig.enabled = false;
+        isRolling = true;
 
         RaycastHit2D enemyHit = Physics2D.Raycast(transform.position, rollMovement, enemyCheckDistance, enemyLayer);
         if (enemyHit && enemyHit.collider.gameObject.tag == "Enemy")
@@ -340,6 +361,8 @@ public class PlayerController : MonoBehaviour
         trailActive = false;
         trail.enabled = !trail.enabled;
         CollStop.enabled = true;
+        CollTrig.enabled = true;
+        isRolling = false;
         yield return new WaitForSeconds(rollDelay);
         canRoll = true;            
     }

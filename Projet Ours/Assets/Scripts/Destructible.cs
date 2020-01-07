@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Destructible : MonoBehaviour
 {
+ 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            if (collision.GetComponent<PlayerController>().trailActive == true)
+            if (collision.GetComponent<PlayerController>().isRolling == true)
             {
                 Destroy(gameObject);
             }
