@@ -33,6 +33,7 @@ public class GameOverScript : MonoBehaviour
     {
         if (Input.GetButtonDown("Start") && GameIsOver == true)
         {
+            nounours.SetActive(true);
             GameIsOver = false;
             SM.HubScene();
             PC.health = 10;
@@ -41,6 +42,7 @@ public class GameOverScript : MonoBehaviour
             GameOverUI.SetActive(false);
             nounours.SetActive(true);
             nounours.GetComponent<Renderer>().material.color = Color.white;
+            PC.canMove = true;
             GameIsOver = false;
         }
     }

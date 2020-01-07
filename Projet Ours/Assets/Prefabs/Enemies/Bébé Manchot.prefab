@@ -236,7 +236,7 @@ MonoBehaviour:
   enemy: {fileID: 8209273059801167081}
   health: 1
   executed: 0
-  executedTime: 0
+  executedTime: 2
   repulsed: 0
   blood: {fileID: 3122966314988428144, guid: a95d2d2c5c5cd2c4db66c47a4f769cf6, type: 3}
   Flak2Sang: {fileID: 4096593589477641891, guid: 2c771aa9456d82f41a5cee23256bbc54,
