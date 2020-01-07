@@ -13,11 +13,18 @@ public class NouvelleGeneration : MonoBehaviour
     public List<SalleObjectif> salleObjectifPrefab = new List<SalleObjectif>();                 //Pour les salles d'objectifs
     public List<SalleBossArene> salleBossArenesPrefab = new List<SalleBossArene>();
 
+    public Couloire couloireHorizontal;
+    public Couloire couloireVertical;
+
     List<Connecteur> connecteurDisponiblePlacer = new List<Connecteur>();                       //Pour les portes des salles placer et disponibles
     Connecteur.orientation orientationConnecteurActuel;
     Connecteur.orientation orientationConnecteurDispo;
 
-    public Vector2 intervaleNbDeSalle = new Vector2(5, 15);                                     //Nombre de salles à placer
+    Connecteur connecteurDispoObsolete;
+
+    List<Vector3> positionsSallePlacer = new List<Vector3>();
+
+    //public Vector2 intervaleNbDeSalle = new Vector2(5, 15);                                     //Nombre de salles à placer (USELESS)
 
 
     //2- Référence pour toutes les salles et les couloirs
@@ -49,7 +56,7 @@ public class NouvelleGeneration : MonoBehaviour
         //5.1- Initiation du startup et des interval
 
         WaitForSeconds startup = new WaitForSeconds(1);
-        WaitForFixedUpdate interval = new WaitForFixedUpdate();
+        WaitForSeconds interval = new WaitForSeconds(0.5f);
 
         yield return interval;
 
@@ -63,12 +70,11 @@ public class NouvelleGeneration : MonoBehaviour
 
         //5.3- Selection du nombre de salles à placer
 
-        int nbDeSalle = Random.Range((int)intervaleNbDeSalle.x, (int)intervaleNbDeSalle.y);
-
 
         //5.4- Boucle pour position les salles normales
 
-        for (int a = 0; a < nbDeSalle; a++)
+
+        while (sallesDejaPlacer.Count < sallesPrefabs.Count)
         {
 
             PlacementSalleNormale();
@@ -116,7 +122,7 @@ public class NouvelleGeneration : MonoBehaviour
 
         yield return new WaitForSeconds(3);
 
-        ResetGeneration();
+        //ResetGeneration();
     }
 
 
@@ -126,7 +132,7 @@ public class NouvelleGeneration : MonoBehaviour
         //Instantiation de la salle du spawn
 
         salleSpawn = Instantiate(salleSpawnPrefab) as SalleSpawn;
-        salleSpawn.transform.parent = this.transform;                                                   //Pas compris
+        salleSpawn.transform.parent = this.transform;                                             
 
 
         //Récupération des portes de la salle
@@ -138,8 +144,10 @@ public class NouvelleGeneration : MonoBehaviour
 
         salleSpawn.transform.position = Vector3.zero;
 
+        positionsSallePlacer.Add(salleSpawn.transform.position);
 
-        Debug.Log("Placement du spawn");
+
+        Debug.LogError("Placement du spawn");
     }
 
 
@@ -161,27 +169,25 @@ public class NouvelleGeneration : MonoBehaviour
     //5.4- Place d'une salle random
     void PlacementSalleNormale()
     {
+        int r = Random.Range(0, sallesPrefabs.Count);
 
-        //Instantiation de la salle
-
-        Salle salleActuelle = Instantiate(sallesPrefabs[Random.Range(0, sallesPrefabs.Count)]) as Salle;
+        //Instantiation de la salle 1
+        Salle salleActuelle = Instantiate(sallesPrefabs[r]) as Salle;
         salleActuelle.transform.parent = this.transform;
-        Debug.Log("Une salle a été choisi");
+        Debug.LogError("Une salle a été choisi");
 
 
         //Rajoute les connecteurs au fur et à mesure d'abord dans la liste des portes de la salle, puis dans la liste de toute les portes placer et disponibles
 
         List<Connecteur> tousConnecteursDispo = new List<Connecteur>(connecteurDisponiblePlacer);
-        
 
         List<Connecteur> connecteursSalleActuelle = new List<Connecteur>();
-        
+
 
         AjoutDesConnecteursSurListe(salleActuelle, ref connecteursSalleActuelle);
-        print("Il y a dans la salle atuel  " + connecteursSalleActuelle.Count + "  Connecteurs");
 
         AjoutDesConnecteursSurListe(salleActuelle, ref connecteurDisponiblePlacer);
-        
+
 
         bool sallePlacer = false;
 
@@ -195,52 +201,92 @@ public class NouvelleGeneration : MonoBehaviour
 
             foreach (Connecteur connecteurActuel in connecteursSalleActuelle)
             {
-                
+
+                //Verification que le connecteur est existant
+                if (connecteurDispo == null)
+                {
+
+                    /*StopCoroutine("GenerationProcedural");
+
+                    if (salleSpawn)
+                    {
+                        Destroy(salleSpawn.gameObject);
+                    }
+
+                    foreach (Salle salle in sallesDejaPlacer)
+                    {
+                        Destroy(salle.gameObject);
+                    }
+
+                    sallesDejaPlacer.Clear();
+                    connecteurDisponiblePlacer.Clear();
+
+                    Destroy(GameObject.FindGameObjectWithTag("Enemy"));
+
+                    StartCoroutine("GenerationProcedural");*/
+
+                    //Debug.Log("Connecteur dispo null)");
+
+                    break; 
+
+
+                }
+
+
                 //Récupération de l'orientation de la porte
 
                 orientationConnecteurActuel = connecteurActuel.GetComponent<Connecteur>().orientationConnecteur;
                 orientationConnecteurDispo = connecteurDispo.GetComponent<Connecteur>().orientationConnecteur;
+                
 
 
                 //Vérification de l'orientation des connecteurs des salles
 
-                if (VerificationOrientationSalle(connecteurActuel, connecteurDispo))
+                if (!VerificationOrientationSalle(connecteurActuel, connecteurDispo))
                 {
+                    
+                    //Debug.Log("Un Connecteur n'est pas bon");
 
-                    connecteurDisponiblePlacer.Remove(connecteurActuel);
+                    //Positionnement de la salle au bout du couloir
 
-                    Debug.Log("Un Connecteur n'est pas bon");
+                    PositionnementSalle(ref salleActuelle, connecteurActuel, connecteurDispo);
+                    
 
-                    continue;
+
+                    if (!VerificationOverlapSalle(salleActuelle))
+                    {
+
+                        //Debug.Log("On valide la salle parce qu'il n'y a pas de contact");
+
+                        PlacementCouloire(connecteurDispo);
+
+                        sallePlacer = true;
+
+                        sallesDejaPlacer.Add(salleActuelle);
+
+                        //On retire tout les connecteurs utilisés
+
+                        connecteurActuel.gameObject.SetActive(false);
+                        connecteurDisponiblePlacer.Remove(connecteurActuel);
+
+                        connecteurDispoObsolete = connecteurDispo;
+
+                        connecteurDispoObsolete.gameObject.SetActive(false);
+                        connecteurDisponiblePlacer.Remove(connecteurDispoObsolete);
+
+                        positionsSallePlacer.Add(salleActuelle.transform.position);
+
+                    }
+                   
+                    break;
+
                 }
-
-
-                //Positionnement de la salle au bout du couloir
-
-                PositionnementSalle(ref salleActuelle, connecteurDispo);
-
-
-                sallePlacer = true;
-
-                sallesDejaPlacer.Add(salleActuelle);
-
-
-                //On retire tout les connecteurs utilisés
-
-                connecteurActuel.gameObject.SetActive(false);
-                connecteurDisponiblePlacer.Remove(connecteurActuel);
-
-                connecteurDispo.gameObject.SetActive(false);
-                connecteurDisponiblePlacer.Remove(connecteurDispo);
-
-                Debug.Log("Une salle normal est placer");
-
-                break;
 
             }
 
             if (sallePlacer)
             {
+                Debug.Log("Une salle normal est placer");
                 break;
             }
 
@@ -289,7 +335,7 @@ public class NouvelleGeneration : MonoBehaviour
 
 
     //5.4.2- Positionnement de la Salle
-    void PositionnementSalle(ref Salle salleActuelle, Connecteur connecteurVisé)
+    void PositionnementSalle(ref Salle salleActuelle, Connecteur connecteurActuel, Connecteur connecteurVisé)
     {
 
         //Reset la position à 0
@@ -299,12 +345,16 @@ public class NouvelleGeneration : MonoBehaviour
 
         //Position de la salle
 
+        //Vector3 positionSalleOffset = connecteurActuel.transform.position - salleActuelle.transform.position;
+        //salleActuelle.transform.position = connecteurVisé.transform.position - positionSalleOffset;
+
+
         if (connecteurVisé.orientationConnecteur == Connecteur.orientation.Est)
         {
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(10, 0, 0));
+            salleActuelle.transform.Translate(new Vector3(20, 0, 0));
 
         }
         else if (connecteurVisé.orientationConnecteur == Connecteur.orientation.Ouest)
@@ -312,7 +362,7 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(-10, 0, 0));
+            salleActuelle.transform.Translate(new Vector3(-20, 0, 0));
 
         }
         else if (connecteurVisé.orientationConnecteur == Connecteur.orientation.Sud)
@@ -320,7 +370,7 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(0, -10, 0));
+            salleActuelle.transform.Translate(new Vector3(0, -20, 0));
 
         }
         else if (connecteurVisé.orientationConnecteur == Connecteur.orientation.Nord)
@@ -328,30 +378,120 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(0, 10, 0));
+            salleActuelle.transform.Translate(new Vector3(0, 20, 0));
 
         }
 
     }
 
 
+    //5.4.3- Placement de couloire
+    void PlacementCouloire (Connecteur connecteur)
+    {
+
+        Couloire couloire;
+
+        if (connecteur.orientationConnecteur == Connecteur.orientation.Est)
+        {
+
+            couloire = Instantiate(couloireHorizontal) as Couloire;
+
+            Vector3 positionSalleOffset = connecteur.transform.parent.position;
+            couloire.transform.position = positionSalleOffset;
+            couloire.transform.Translate(new Vector3(10, 0, 0));
+
+        }
+        else if (connecteur.orientationConnecteur == Connecteur.orientation.Ouest)
+        {
+
+            couloire = Instantiate(couloireHorizontal) as Couloire;
+
+            Vector3 positionSalleOffset = connecteur.transform.parent.position;
+            couloire.transform.position = positionSalleOffset;
+            couloire.transform.Translate(new Vector3(-10, 0, 0));
+
+        }
+        else if (connecteur.orientationConnecteur == Connecteur.orientation.Sud)
+        {
+
+            couloire = Instantiate(couloireVertical) as Couloire;
+
+            Vector3 positionSalleOffset = connecteur.transform.parent.position;
+            couloire.transform.position = positionSalleOffset;
+            couloire.transform.Translate(new Vector3(0, -10, 0));
+
+        }
+        else if (connecteur.orientationConnecteur == Connecteur.orientation.Nord)
+        {
+
+            couloire = Instantiate(couloireVertical) as Couloire;
+
+            Vector3 positionSalleOffset = connecteur.transform.parent.position;
+            couloire.transform.position = positionSalleOffset;
+            couloire.transform.Translate(new Vector3(0, 10, 0));
+
+        }
+
+    }
+
+
+    //5.4.4- Verification d'un overlap entre les salles
+    bool VerificationOverlapSalle(Salle salle)
+    {
+
+        List<Vector3> positionsAVerifier = new List<Vector3>(positionsSallePlacer);
+
+        bool overlap = true;
+
+        foreach (Vector3 positionsSallesAutres in positionsAVerifier)
+        {
+
+            if (positionsSallesAutres == salle.transform.position)
+            {
+
+                overlap = true;
+                Debug.Log(overlap);
+                break;
+            }
+            else
+            {
+
+                overlap = false;
+                Debug.Log(overlap);
+            }
+
+        }
+        
+        if (overlap == true)
+        {
+            Debug.Log("return true");
+            return true;
+        }
+        else
+        {
+            Debug.Log("return false");
+            return false;
+        }
+       
+
+    }
+
+    
     //5.5- Placement des deux salles d'objectifs
     void PlacementSalleObjectif()
     {
 
-        //Rajoute les salles dans une nouvelle liste pour pouvoir les retirer
-
-        List<SalleObjectif> salleObjectifAPlacer = new List<SalleObjectif>(salleObjectifPrefab);
-
         //Instantiation de la salle
+        int r = Random.Range(0, salleObjectifPrefab.Count);
 
-        SalleObjectif salleActuelle = Instantiate(salleObjectifAPlacer[Random.Range(0, salleObjectifAPlacer.Count)]) as SalleObjectif;
+        SalleObjectif salleActuelle = Instantiate(salleObjectifPrefab[r]) as SalleObjectif;
         salleActuelle.transform.parent = this.transform;
 
 
         //Rajoute les connecteurs au fur et à mesure d'abord dans la liste des portes de la salle, puis dans la liste de toute les portes placer et disponibles
 
         List<Connecteur> tousConnecteursDispo = new List<Connecteur>(connecteurDisponiblePlacer);
+        //print("Il y a " + tousConnecteursDispo.Count + " connecteurs disponibles *1*");
         List<Connecteur> connecteursSalleActuelle = new List<Connecteur>();
 
         AjoutDesConnecteursSurListe(salleActuelle, ref connecteursSalleActuelle);
@@ -360,16 +500,23 @@ public class NouvelleGeneration : MonoBehaviour
 
         bool sallePlacer = false;
 
-
+        //Debug.Log(connecteursSalleActuelle.Count);
         //Test de toutes les portes disponibles
 
         foreach (Connecteur connecteurDispo in tousConnecteursDispo)
         {
-
+            //Debug.Log(connecteursSalleActuelle.Count);
             //Test de toutes les portes de la salleActuelle
 
             foreach (Connecteur connecteurActuel in connecteursSalleActuelle)
             {
+
+                //Verification que le connecteur est existant
+                if (connecteurDispo == null)
+                {     
+
+                    break;
+                }
 
                 //Récupération de l'orientation de la porte
 
@@ -379,43 +526,43 @@ public class NouvelleGeneration : MonoBehaviour
 
                 //Vérification de l'orientation des connecteurs des salles
 
-                if (VerificationOrientationSalle(connecteurActuel, connecteurDispo))
+                if (!VerificationOrientationSalle(connecteurActuel, connecteurDispo))
                 {
+                    
+                    //Positionnement de la salle au bout du couloir
 
-                    connecteurDisponiblePlacer.Remove(connecteurActuel);
+                    PositionnementSalleObjectif(ref salleActuelle, connecteurDispo);
 
-                    Debug.Log("Un Connecteur n'est pas bon");
 
-                    continue;
+                    if (!VerificationOverlapSalle(salleActuelle))
+                    {
+
+                        PlacementCouloire(connecteurDispo);
+
+                        sallePlacer = true;
+
+                        sallesDejaPlacer.Add(salleActuelle);
+
+
+                        //On retire tout les connecteurs utilisés
+
+                        connecteurActuel.gameObject.SetActive(false);
+                        connecteurDisponiblePlacer.Remove(connecteurActuel);
+
+                        connecteurDispo.gameObject.SetActive(false);
+                        connecteurDisponiblePlacer.Remove(connecteurDispo);
+
+                        positionsSallePlacer.Add(salleActuelle.transform.position);
+
+                        salleObjectifPrefab.RemoveAt(r);
+                    }
+
+                    //Debug.Log("Placement d'une salle objectif");
+
+                    break;
+
                 }
-
-
-                //
-
-
-                //Positionnement de la salle au bout du couloir
-
-                PositionnementSalleObjectif(ref salleActuelle, connecteurDispo);
-
-
-                sallePlacer = true;
-
-                sallesDejaPlacer.Add(salleActuelle);
-
-
-                //On retire tout les connecteurs utilisés
-
-                connecteurActuel.gameObject.SetActive(false);
-                connecteurDisponiblePlacer.Remove(connecteurActuel);
-
-                connecteurDispo.gameObject.SetActive(false);
-                connecteurDisponiblePlacer.Remove(connecteurDispo);
-
-                salleObjectifAPlacer.Remove(salleActuelle);
-
-                Debug.Log("Placement d'une salle objectif");
-
-                break;
+ 
 
             }
 
@@ -434,8 +581,6 @@ public class NouvelleGeneration : MonoBehaviour
             Destroy(salleActuelle.gameObject);
 
         }
-
-
         
     }
 
@@ -456,7 +601,9 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(10, 0, 0));
+            salleActuelle.transform.Translate(new Vector3(20, 0, 0));
+
+            //Debug.Log("La salle objectif va être placer à droite");
 
         }
         else if (connecteurVisé.orientationConnecteur == Connecteur.orientation.Ouest)
@@ -464,7 +611,9 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(-10, 0, 0));
+            salleActuelle.transform.Translate(new Vector3(-20, 0, 0));
+
+            //Debug.Log("La salle objectif va être placer à gauche");
 
         }
         else if (connecteurVisé.orientationConnecteur == Connecteur.orientation.Sud)
@@ -472,7 +621,9 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(0, -10, 0));
+            salleActuelle.transform.Translate(new Vector3(0, -20, 0));
+
+            //Debug.Log("La salle objectif va être placer en haut");
 
         }
         else if (connecteurVisé.orientationConnecteur == Connecteur.orientation.Nord)
@@ -480,7 +631,9 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(0, 10, 0));
+            salleActuelle.transform.Translate(new Vector3(0, 20, 0));
+
+            //Debug.Log("La salle objectif va être placer en bas");
 
         }
 
@@ -488,17 +641,13 @@ public class NouvelleGeneration : MonoBehaviour
     }
 
 
-    //5.6- Placement de l'arène et dela salle du boss
+   //5.6- Placement de l'arène et dela salle du boss
     void PlacementSalleAreneEtBoss()
     {
-
-        //Rajoute les salles dans une nouvelle liste pour pouvoir les retirer
-
-        List<SalleBossArene> salleBossAreneAPlacer = new List<SalleBossArene>(salleBossArenesPrefab);
-
+        int r = Random.Range(0, salleBossArenesPrefab.Count);
         //Instantiation de la salle
 
-        SalleBossArene salleActuelle = Instantiate(salleBossArenesPrefab[Random.Range(0, salleBossArenesPrefab.Count)]) as SalleBossArene;
+        SalleBossArene salleActuelle = Instantiate(salleBossArenesPrefab[r]) as SalleBossArene;
         salleActuelle.transform.parent = this.transform;
 
 
@@ -513,17 +662,44 @@ public class NouvelleGeneration : MonoBehaviour
 
         bool sallePlacer = false;
 
-
+        //Debug.Log(connecteursSalleActuelle.Count);
         //Test de toutes les portes disponibles
 
         foreach (Connecteur connecteurDispo in tousConnecteursDispo)
         {
-
+            //Debug.Log(connecteursSalleActuelle.Count);
             //Test de toutes les portes de la salleActuelle
 
             foreach (Connecteur connecteurActuel in connecteursSalleActuelle)
             {
 
+                //Verification que le connecteur est existant
+                if (connecteurDispo == null)
+                {
+
+                    /*StopCoroutine("GenerationProcedural");
+
+                    if (salleSpawn)
+                    {
+                        Destroy(salleSpawn.gameObject);
+                    }
+
+                    foreach (Salle salle in sallesDejaPlacer)
+                    {
+                        Destroy(salle.gameObject);
+                    }
+
+                    Destroy(GameObject.FindGameObjectWithTag("Enemy"));
+
+                    sallesDejaPlacer.Clear();
+                    connecteurDisponiblePlacer.Clear();
+
+                    StartCoroutine("GenerationProcedural");*/
+
+                    break;
+                }
+
+                //Debug.Log(connecteursSalleActuelle.Count);
                 //Récupération de l'orientation de la porte
 
                 orientationConnecteurActuel = connecteurActuel.GetComponent<Connecteur>().orientationConnecteur;
@@ -532,43 +708,39 @@ public class NouvelleGeneration : MonoBehaviour
 
                 //Vérification de l'orientation des connecteurs des salles
 
-                if (VerificationOrientationSalle(connecteurActuel, connecteurDispo))
+                if (!VerificationOrientationSalle(connecteurActuel, connecteurDispo))
                 {
+                    PositionnementSalleBossArene(ref salleActuelle, connecteurDispo);
 
-                    connecteurDisponiblePlacer.Remove(connecteurActuel);
 
-                    Debug.Log("Un Connecteur n'est pas bon");
+                    if (!VerificationOverlapSalle(salleActuelle))
+                    {
 
-                    continue;
+                        PlacementCouloire(connecteurDispo);
+
+                        sallePlacer = true;
+
+                        sallesDejaPlacer.Add(salleActuelle);
+
+
+                        //On retire tout les connecteurs utilisés
+
+                        connecteurActuel.gameObject.SetActive(false);
+                        connecteurDisponiblePlacer.Remove(connecteurActuel);
+
+                        connecteurDispo.gameObject.SetActive(false);
+                        connecteurDisponiblePlacer.Remove(connecteurDispo);
+
+                        positionsSallePlacer.Add(salleActuelle.transform.position);
+
+                        salleBossArenesPrefab.RemoveAt(r);
+                    }
+
+                    break;
+
+
                 }
-
-
-                //
-
-
-                //Positionnement de la salle au bout du couloir
-
-                PositionnementSalleBossArene(ref salleActuelle, connecteurDispo);
-
-
-                sallePlacer = true;
-
-                sallesDejaPlacer.Add(salleActuelle);
-
-
-                //On retire tout les connecteurs utilisés
-
-                connecteurActuel.gameObject.SetActive(false);
-                connecteurDisponiblePlacer.Remove(connecteurActuel);
-
-                connecteurDispo.gameObject.SetActive(false);
-                connecteurDisponiblePlacer.Remove(connecteurDispo);
-
-                salleBossAreneAPlacer.Remove(salleActuelle);
-
-                Debug.Log("Placement de l'arène et dela salle du boss");
-
-                break;
+               
 
             }
 
@@ -609,7 +781,9 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(10, 0, 0));
+            salleActuelle.transform.Translate(new Vector3(20, 0, 0));
+
+            //Debug.Log("La salle boss va être placer à droite");
 
         }
         else if (connecteurVisé.orientationConnecteur == Connecteur.orientation.Ouest)
@@ -617,7 +791,9 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(-10, 0, 0));
+            salleActuelle.transform.Translate(new Vector3(-20, 0, 0));
+
+            //Debug.Log("La salle boss va être placer à gauche");
 
         }
         else if (connecteurVisé.orientationConnecteur == Connecteur.orientation.Sud)
@@ -625,7 +801,9 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(0, -10, 0));
+            salleActuelle.transform.Translate(new Vector3(0, -20, 0));
+
+            //Debug.Log("La salle va être placer en haut");
 
         }
         else if (connecteurVisé.orientationConnecteur == Connecteur.orientation.Nord)
@@ -633,7 +811,9 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(0, 10, 0));
+            salleActuelle.transform.Translate(new Vector3(0, 20, 0));
+
+            //Debug.Log("La salle va être placer en bas");
 
         }
 
@@ -642,9 +822,11 @@ public class NouvelleGeneration : MonoBehaviour
     }
 
 
-    //5.8- Re initialisation de la génération pour voire plusieurs ittérations
+
+
+    /*5.8- Re initialisation de la génération pour voire plusieurs ittérations
     void ResetGeneration()
     {
         Debug.Log("Re initialisation de la génération");
-    }
+    }*/
 }

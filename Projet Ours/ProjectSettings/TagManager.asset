@@ -24,6 +24,7 @@ TagManager:
   - BearserkItem
   - RueeItem
   - TerriItem
+  - DialogManager
   layers:
   - Default
   - TransparentFX
@@ -40,7 +41,7 @@ TagManager:
   - Background
   - Enviro
   - Projectile
-  - 
+  - MursCollider
   - 
   - 
   - 
