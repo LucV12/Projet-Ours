@@ -32,6 +32,10 @@ TagManager:
   - GameOver
   - Props
   - RageManager
+  - Boss
+  - Pinata
+  - OBJ
+  - OBJ2
   layers:
   - Default
   - TransparentFX

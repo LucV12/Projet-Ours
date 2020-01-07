@@ -27,8 +27,8 @@ Transform:
   m_LocalPosition: {x: -10.738991, y: 9.392473, z: -30.277956}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
-  - {fileID: 7158890703883810974}
   - {fileID: 3624508549456921396}
+  - {fileID: 7158890703883810974}
   - {fileID: 8843542357477643156}
   - {fileID: 8647688565117974182}
   - {fileID: 5328550468420185119}
@@ -3414,16 +3414,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7767864796319891913}
     m_Modifications:
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_Name
-      value: caisse0-1 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_TagString
-      value: Props
-      objectReference: {fileID: 0}
     - target: {fileID: 2558631934981332323, guid: 768270e231b9b7f46a969b9e8c26f897,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3489,6 +3479,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_Name
+      value: caisse0-1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_TagString
+      value: Props
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 768270e231b9b7f46a969b9e8c26f897, type: 3}
 --- !u!4 &2488777706647284848 stripped
@@ -3504,16 +3504,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7767864796319891913}
     m_Modifications:
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_Name
-      value: caisse0-1 (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_TagString
-      value: Props
-      objectReference: {fileID: 0}
     - target: {fileID: 2558631934981332323, guid: 768270e231b9b7f46a969b9e8c26f897,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3579,6 +3569,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_Name
+      value: caisse0-1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_TagString
+      value: Props
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 768270e231b9b7f46a969b9e8c26f897, type: 3}
 --- !u!4 &3191251952543483230 stripped
@@ -3597,7 +3597,12 @@ PrefabInstance:
     - target: {fileID: 6404850315514228934, guid: 93d10d5b1f2534349b6656866d66aeaf,
         type: 3}
       propertyPath: m_Name
-      value: Machine base
+      value: MachineOBJ
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404850315514228934, guid: 93d10d5b1f2534349b6656866d66aeaf,
+        type: 3}
+      propertyPath: m_TagString
+      value: OBJ
       objectReference: {fileID: 0}
     - target: {fileID: 2833258956472867836, guid: 93d10d5b1f2534349b6656866d66aeaf,
         type: 3}
@@ -3637,7 +3642,7 @@ PrefabInstance:
     - target: {fileID: 2833258956472867836, guid: 93d10d5b1f2534349b6656866d66aeaf,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2833258956472867836, guid: 93d10d5b1f2534349b6656866d66aeaf,
         type: 3}
@@ -3684,16 +3689,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7767864796319891913}
     m_Modifications:
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_Name
-      value: caisse0-1 (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_TagString
-      value: Props
-      objectReference: {fileID: 0}
     - target: {fileID: 2558631934981332323, guid: 768270e231b9b7f46a969b9e8c26f897,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3759,6 +3754,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_Name
+      value: caisse0-1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_TagString
+      value: Props
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 768270e231b9b7f46a969b9e8c26f897, type: 3}
 --- !u!4 &3830681409168550341 stripped
@@ -3774,16 +3779,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7767864796319891913}
     m_Modifications:
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_Name
-      value: caisse0-1 (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_TagString
-      value: Props
-      objectReference: {fileID: 0}
     - target: {fileID: 2558631934981332323, guid: 768270e231b9b7f46a969b9e8c26f897,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3848,6 +3843,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_Name
+      value: caisse0-1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_TagString
+      value: Props
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 768270e231b9b7f46a969b9e8c26f897, type: 3}
@@ -4167,7 +4172,7 @@ PrefabInstance:
     - target: {fileID: 6185754703281168424, guid: 8833d390b72a4c24986ebfab5bb764c8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6185754703281168424, guid: 8833d390b72a4c24986ebfab5bb764c8,
         type: 3}
@@ -4214,16 +4219,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7767864796319891913}
     m_Modifications:
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_Name
-      value: caisse0-1 (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_TagString
-      value: Props
-      objectReference: {fileID: 0}
     - target: {fileID: 2558631934981332323, guid: 768270e231b9b7f46a969b9e8c26f897,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4289,6 +4284,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_Name
+      value: caisse0-1 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_TagString
+      value: Props
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 768270e231b9b7f46a969b9e8c26f897, type: 3}
 --- !u!4 &2094685922699793008 stripped
@@ -4304,16 +4309,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7767864796319891913}
     m_Modifications:
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_Name
-      value: caisse0-1 (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_TagString
-      value: Props
-      objectReference: {fileID: 0}
     - target: {fileID: 2558631934981332323, guid: 768270e231b9b7f46a969b9e8c26f897,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4379,6 +4374,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_Name
+      value: caisse0-1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_TagString
+      value: Props
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 768270e231b9b7f46a969b9e8c26f897, type: 3}
 --- !u!4 &8144789773276353645 stripped
@@ -4394,16 +4399,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7767864796319891913}
     m_Modifications:
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_Name
-      value: caisse0-1 (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_TagString
-      value: Props
-      objectReference: {fileID: 0}
     - target: {fileID: 2558631934981332323, guid: 768270e231b9b7f46a969b9e8c26f897,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4469,6 +4464,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_Name
+      value: caisse0-1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_TagString
+      value: Props
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 768270e231b9b7f46a969b9e8c26f897, type: 3}
 --- !u!4 &9152798894334247409 stripped
@@ -4484,16 +4489,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7767864796319891913}
     m_Modifications:
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_Name
-      value: caisse0-1 (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_TagString
-      value: Props
-      objectReference: {fileID: 0}
     - target: {fileID: 2558631934981332323, guid: 768270e231b9b7f46a969b9e8c26f897,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4559,6 +4554,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_Name
+      value: caisse0-1 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_TagString
+      value: Props
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 768270e231b9b7f46a969b9e8c26f897, type: 3}
 --- !u!4 &4798139827785089177 stripped
@@ -4574,16 +4579,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7767864796319891913}
     m_Modifications:
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_Name
-      value: caisse0-1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_TagString
-      value: Props
-      objectReference: {fileID: 0}
     - target: {fileID: 2558631934981332323, guid: 768270e231b9b7f46a969b9e8c26f897,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4648,6 +4643,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_Name
+      value: caisse0-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_TagString
+      value: Props
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 768270e231b9b7f46a969b9e8c26f897, type: 3}
@@ -4759,16 +4764,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7767864796319891913}
     m_Modifications:
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_Name
-      value: caisse0-1 (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
-        type: 3}
-      propertyPath: m_TagString
-      value: Props
-      objectReference: {fileID: 0}
     - target: {fileID: 2558631934981332323, guid: 768270e231b9b7f46a969b9e8c26f897,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4833,6 +4828,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_Name
+      value: caisse0-1 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604118807746376194, guid: 768270e231b9b7f46a969b9e8c26f897,
+        type: 3}
+      propertyPath: m_TagString
+      value: Props
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 768270e231b9b7f46a969b9e8c26f897, type: 3}

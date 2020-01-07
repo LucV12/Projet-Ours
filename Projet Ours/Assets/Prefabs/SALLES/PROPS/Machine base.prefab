@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8172794983329612442}
   - component: {fileID: 2698031074791425745}
-  m_Layer: 13
+  m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,8 @@ GameObject:
   - component: {fileID: 3866213050073864762}
   - component: {fileID: 6505827473664473744}
   - component: {fileID: 4103752479814850573}
-  m_Layer: 13
+  - component: {fileID: 567041396439215096}
+  m_Layer: 8
   m_Name: Machine base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,3 +210,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2122538, y: 1.1309338}
   m_EdgeRadius: 0
+--- !u!114 &567041396439215096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6404850315514228934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7abbdcdd629ed9e47b2bb7e3b544c06c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 10
+  Destroyed1: 0
