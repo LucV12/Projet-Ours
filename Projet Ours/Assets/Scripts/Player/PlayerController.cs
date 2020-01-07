@@ -410,7 +410,12 @@ public class PlayerController : MonoBehaviour
         timeBtwAttack = startTimeBtwAttack;
         Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
 
-        if (enemiesToDamage.Length > 0 && enemiesToDamage[0].gameObject.tag == "Enemy")
+        if (enemiesToDamage.Length > 0 && enemiesToDamage[0].gameObject.tag == "Pinata")
+        {
+            enemiesToDamage[0].GetComponent<Pinata>().TakeDamage(damage, aim);
+            Instantiate(slashParticle, crossHair.transform.position, Quaternion.identity);
+        }
+        if (enemiesToDamage.Length > 0 && (enemiesToDamage[0].gameObject.tag == "Enemy" || enemiesToDamage[0].gameObject.tag == "Boss"))
         {
             enemiesToDamage[0].GetComponent<Enemy>().TakeDamage(damage);
             Instantiate(slashParticle, crossHair.transform.position, Quaternion.identity);

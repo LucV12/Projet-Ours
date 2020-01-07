@@ -29,9 +29,24 @@ public class Tourbilol : MonoBehaviour
         Collider2D[] enemyToPush = Physics2D.OverlapCircleAll(tourbiPos.position, tourbiRange, whatIsEnemies);
         for (int i = 0; i < enemyToPush.Length; i++)
         {
-            enemyToPush[i].GetComponent<Enemy>().TakeDamage(1);
-            StartCoroutine(enemyToPush[i].GetComponent<Enemy>().Repulsed());
-            Debug.Log("Tourbilol !!!");
+            if (enemyToPush[i].CompareTag("Pinata"))
+            {
+                enemyToPush[i].GetComponent<Pinata>().TakeDamage(1);
+                Debug.Log("Tourbilol !!!");
+            }
+
+            if (enemyToPush[i].CompareTag("Boss"))
+            {
+                enemyToPush[i].GetComponent<Enemy>().TakeDamage(1);
+                Debug.Log("Tourbilol !!!");
+            }
+
+            if (enemyToPush[i].CompareTag("Enemy"))
+            {
+                enemyToPush[i].GetComponent<Enemy>().TakeDamage(1);
+                StartCoroutine(enemyToPush[i].GetComponent<Enemy>().Repulsed());
+                Debug.Log("Tourbilol !!!");
+            }
         }
         yield return new WaitForSeconds(tourbiDelay);
         animator.SetBool("IsTourbing", false);
