@@ -13,6 +13,7 @@ public class Boom : MonoBehaviour
     public float normalSpeed;
     public float chargeSpeed;
     public float chargePosition;
+    public float aggroRange;
 
     public GameObject blood;
     GameObject camera;
@@ -22,6 +23,7 @@ public class Boom : MonoBehaviour
     bool canMove;
     bool executed;
     bool isRepusled;
+    bool canDash;
 
     public Transform explosionPos;
     public float explosionRange;
@@ -51,27 +53,34 @@ public class Boom : MonoBehaviour
         {
             if (Vector2.Distance(transform.position, player.position) > chargePosition && isDoingCharge == false && canMove == true)
             {
-                transform.position = Vector2.MoveTowards(transform.position, player.position, normalSpeed * Time.deltaTime);
-                animator.SetBool("isMoving", true);
+                if (Vector2.Distance(transform.position, player.position) < aggroRange)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, player.position, normalSpeed * Time.deltaTime);
+                    animator.SetBool("isMoving", true);
+                }
+                
             }
             else if (Vector2.Distance(transform.position, player.position) <= chargePosition)
             {
                 if (isDoingCharge == false)
                 {                    
-                    isDoingCharge = true;
+                    isDoingCharge = true;                    
                     targetChargePos = player.position;
-                }
-                else if (isDoingCharge == true && canMove == true)
-                {
-                    transform.position = Vector2.MoveTowards(transform.position, targetChargePos, chargeSpeed * Time.deltaTime);
-                    animator.SetBool("isGlissing", true);
-                    if (transform.position == targetChargePos)
-                    {                        
-                        StartCoroutine(Explosion());
-                    }
-                }
+                }                
             }
-        }
+
+            if (isDoingCharge == true && canMove == true)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, targetChargePos, chargeSpeed * Time.deltaTime);
+                animator.SetBool("isGlissing", true);
+                canDash = true;
+            }
+
+            if (transform.position == targetChargePos && canDash == true)
+            {
+                StartCoroutine(Explosion());
+            }
+        }        
     }
 
     void OnDrawGizmosSelected()
@@ -100,7 +109,7 @@ public class Boom : MonoBehaviour
         for (int i = 0; i < playerToDamage.Length; i++)          
             
         {
-            playerToDamage[i].GetComponent<PlayerController>().health = 0;
+            playerToDamage[i].GetComponent<PlayerController>().health -= 2;
         }
 
         Instantiate(blood, transform.position, Quaternion.identity);

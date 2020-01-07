@@ -155,11 +155,12 @@ MonoBehaviour:
   normalSpeed: 0.4
   chargeSpeed: 2
   chargePosition: 1.5
+  aggroRange: 4
   blood: {fileID: 3122966314988428144, guid: a95d2d2c5c5cd2c4db66c47a4f769cf6, type: 3}
   Flak2Sang: {fileID: 4096593589477641891, guid: 2c771aa9456d82f41a5cee23256bbc54,
     type: 3}
   explosionPos: {fileID: 2706278801320752631}
-  explosionRange: 0.47
+  explosionRange: 1
   explosionDelay: 0.5
   whatIsEnnemies:
     serializedVersion: 2
