@@ -8,13 +8,13 @@ public class ArenaSpawn : MonoBehaviour
     public Transform[] spawnPoints;
     public GameObject[] enemy;
     public float spawnTime;
-    public int[] enemyCounts;
+    public int[] enemyCounts = new int[3];
     private int enemyCounter;
     private bool mustStartNewWave;
     private int waveIndex;
     GameObject gameManager;
     GameManager GM;
-    public GameObject[] lootAvaible;
+    public GameObject[] lootAvaible = new GameObject[4];
     public GameObject spawnLoot;
     GameObject currentLoot;
     int lootIndex;
@@ -37,12 +37,17 @@ public class ArenaSpawn : MonoBehaviour
         {
             int spawnPointIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
             int enemyIndex = UnityEngine.Random.Range(0, enemy.Length);
-            Enemy nmi = Instantiate(enemy[enemyIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation).GetComponent<Enemy>() as Enemy;
-            nmi.transform.parent = this.transform;
-            nmi.init(this);
+            /*Enemy nmi*/GameObject goTmp = Instantiate(enemy[enemyIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);//.GetComponent<Enemy>() as Enemy;
+            //nmi.transform.parent = this.transform;
+            //nmi.init(this);
+            goTmp.transform.parent = transform;
+            goTmp.GetComponent<Enemy>().init(this);
         }
         enemyCounter = enemyCount;
-        waveIndex++;
+        if (waveIndex < 3)
+            waveIndex++;
+        else
+            waveIndex = 2;
     }
 
 
@@ -68,7 +73,7 @@ public class ArenaSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mustStartNewWave)
+        if (mustStartNewWave == true)
         {
             GenerateWave(enemyCounts[waveIndex]);
             mustStartNewWave = false;

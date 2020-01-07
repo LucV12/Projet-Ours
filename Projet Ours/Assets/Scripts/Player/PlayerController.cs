@@ -321,6 +321,7 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         canRoll = false;
         trailActive = true;
+        
 
         RaycastHit2D enemyHit = Physics2D.Raycast(transform.position, rollMovement, enemyCheckDistance, enemyLayer);
         if (enemyHit && enemyHit.collider.gameObject.tag == "Enemy")

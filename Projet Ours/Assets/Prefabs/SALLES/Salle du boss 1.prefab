@@ -5408,7 +5408,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9021332124521653667}
-  - component: {fileID: 9021332124521653666}
   m_Layer: 0
   m_Name: Spawnpoints
   m_TagString: Untagged
@@ -5438,35 +5437,6 @@ Transform:
   m_Father: {fileID: 9021332124786149858}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9021332124521653666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9021332124521653664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d356ba20c77322f4dbb3c43ff1d750e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 9021332124479058323}
-  - {fileID: 9021332125717332527}
-  - {fileID: 9021332125534308498}
-  - {fileID: 9021332125248606095}
-  - {fileID: 9021332124494896419}
-  - {fileID: 9021332125311358453}
-  - {fileID: 9021332125844808165}
-  - {fileID: 9021332125649430963}
-  enemy:
-  - {fileID: 8209273059801167074, guid: 5c465af9a24078547be1eaee29d2a3ef, type: 3}
-  - {fileID: 4134490385012589299, guid: f8a26d360231a4f42b91018a59be03f1, type: 3}
-  - {fileID: 2706278802277070989, guid: ba7083d929e561c4ea5ee2211c48bfd0, type: 3}
-  spawnTime: 0
-  enemyCounts: 
-  lootAvaible: []
-  spawnLoot: {fileID: 0}
 --- !u!1 &9021332125248606092
 GameObject:
   m_ObjectHideFlags: 0
@@ -5654,6 +5624,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5729763841044066676}
     m_Modifications:
+    - target: {fileID: 3101009822127426131, guid: 95dfa67a09b54774ab377c797d61e426,
+        type: 3}
+      propertyPath: m_Name
+      value: Flaques de sang 2
+      objectReference: {fileID: 0}
     - target: {fileID: 711932619750104549, guid: 95dfa67a09b54774ab377c797d61e426,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5708,11 +5683,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3101009822127426131, guid: 95dfa67a09b54774ab377c797d61e426,
-        type: 3}
-      propertyPath: m_Name
-      value: Flaques de sang 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95dfa67a09b54774ab377c797d61e426, type: 3}
@@ -6166,6 +6136,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9021332124786149858}
     m_Modifications:
+    - target: {fileID: 2044513185526352861, guid: b7821dbcc97430f4b8a530d1defbbe13,
+        type: 3}
+      propertyPath: m_Name
+      value: Porte droite
+      objectReference: {fileID: 0}
     - target: {fileID: 2044513185526352857, guid: b7821dbcc97430f4b8a530d1defbbe13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6230,11 +6205,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2044513185526352861, guid: b7821dbcc97430f4b8a530d1defbbe13,
-        type: 3}
-      propertyPath: m_Name
-      value: Porte droite
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7821dbcc97430f4b8a530d1defbbe13, type: 3}
@@ -7525,6 +7495,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5729763841044066676}
     m_Modifications:
+    - target: {fileID: 3101009822127426131, guid: 95dfa67a09b54774ab377c797d61e426,
+        type: 3}
+      propertyPath: m_Name
+      value: Flaques de sang 2 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 711932619750104549, guid: 95dfa67a09b54774ab377c797d61e426,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7579,11 +7554,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3101009822127426131, guid: 95dfa67a09b54774ab377c797d61e426,
-        type: 3}
-      propertyPath: m_Name
-      value: Flaques de sang 2 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95dfa67a09b54774ab377c797d61e426, type: 3}

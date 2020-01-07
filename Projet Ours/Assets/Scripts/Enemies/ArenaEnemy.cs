@@ -6,22 +6,36 @@ public class ArenaEnemy : MonoBehaviour
 {
     private ArenaSpawn arenaSpawn;
     GameObject arena;
-    Enemy enemy;
+    public Enemy enemy;
 
     // Start is called before the first frame update
     void Start()
     {
-        arena = GameObject.Find("Arène + entrée");
+        arena = GameObject.Find("Arène + entrée(Clone)");
         arenaSpawn = arena.GetComponent<ArenaSpawn>();
-        enemy = GetComponent<Enemy>();
+        StartCoroutine(StartDelay());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (enemy.health == 0)
+        Debug.Log("ennemi life " + enemy.health);
+        /*if (enemy == null)
         {
             arenaSpawn.onEnemyDeath();
-        }
+        }*/
     }
+
+
+    IEnumerator StartDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        //enemy = this.gameObject.GetComponent<Enemy>();
+    }
+
+    public void ArenaDeath()
+    {
+        arenaSpawn.onEnemyDeath();
+    }
+
 }
