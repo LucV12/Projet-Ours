@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     private ArenaSpawn arenaSpawn;
     GameObject rageManager;
     RageManager RM;
+    GameObject arena;
 
     GameObject nounours;
 
@@ -35,6 +36,8 @@ public class Enemy : MonoBehaviour
         enemy = GetComponent<Rigidbody2D>();
         rageManager = GameObject.FindGameObjectWithTag("RageManager");
         RM = rageManager.GetComponent<RageManager>();
+        arena = GameObject.Find("Arène + entrée");
+        arenaSpawn = arena.GetComponent<ArenaSpawn>();
     }
 
     void Update()
@@ -63,7 +66,7 @@ public class Enemy : MonoBehaviour
             Instantiate(blood, transform.position, Quaternion.identity);
             camera.GetComponent<CameraShaker>().Shake();
             Instantiate(Flak2Sang, transform.position, Quaternion.identity);
-            arenaSpawn.onEnemyDeath();
+            //arenaSpawn.onEnemyDeath();
             Destroy(gameObject);
         }
     }

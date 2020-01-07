@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665613444041786685}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.24807644, y: 1.4661694, z: -1.5631968}
+  m_LocalPosition: {x: 0.74807644, y: 1.4661694, z: -1.5631968}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 7048200272671952833}
@@ -85,7 +85,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3333447081321081659}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9626102, y: -2.2836246, z: -309.28125}
+  m_LocalPosition: {x: -1.4626102, y: -2.2836246, z: -309.28125}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 3333447082000865169}
@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3333447081329241035}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0.5, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3333447082709721695}
@@ -902,7 +902,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3333447081417667679}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.9971104, y: -2.9925423, z: 0}
+  m_LocalPosition: {x: -2.4971104, y: -2.9925423, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3333447083223349612}
@@ -960,7 +960,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3333447081527121577}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0.5, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3333447082709721695}
@@ -2025,7 +2025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3333447082543136855}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.9979963, y: -1.0116272, z: 0}
+  m_LocalPosition: {x: 2.4979963, y: -1.0116272, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3333447083256680369}
@@ -2120,7 +2120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3333447082709721693}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.25, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 3333447081527121576}
@@ -2159,7 +2159,7 @@ MonoBehaviour:
   connecteurs:
   - {fileID: 4324436819252005291}
   - {fileID: 417860684632673963}
-  meshCollider: {fileID: 0}
+  gameObjectCollider: {fileID: 0}
 --- !u!1 &3333447082926034840
 GameObject:
   m_ObjectHideFlags: 0
@@ -2760,21 +2760,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2806116732673782128}
     m_Modifications:
-    - target: {fileID: 7678682772993397379, guid: ca668e092cce9234b90edcf066c996eb,
-        type: 3}
-      propertyPath: m_Name
-      value: table face
-      objectReference: {fileID: 0}
-    - target: {fileID: 7678682772993397379, guid: ca668e092cce9234b90edcf066c996eb,
-        type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7678682772993397379, guid: ca668e092cce9234b90edcf066c996eb,
-        type: 3}
-      propertyPath: m_TagString
-      value: Props
-      objectReference: {fileID: 0}
     - target: {fileID: 3668700483277048741, guid: ca668e092cce9234b90edcf066c996eb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2840,6 +2825,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7678682772993397379, guid: ca668e092cce9234b90edcf066c996eb,
+        type: 3}
+      propertyPath: m_Name
+      value: table face
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678682772993397379, guid: ca668e092cce9234b90edcf066c996eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678682772993397379, guid: ca668e092cce9234b90edcf066c996eb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Props
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca668e092cce9234b90edcf066c996eb, type: 3}
 --- !u!4 &3876609305728893913 stripped
@@ -2855,16 +2855,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2806116732673782128}
     m_Modifications:
-    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
-        type: 3}
-      propertyPath: m_Name
-      value: Tapis roulant vertical1 (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 240486282135896436, guid: 5b4823b77d9a6bf4ea1952b315068c86,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2929,6 +2919,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
+        type: 3}
+      propertyPath: m_Name
+      value: Tapis roulant vertical1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b4823b77d9a6bf4ea1952b315068c86, type: 3}
@@ -3130,16 +3130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2806116732673782128}
     m_Modifications:
-    - target: {fileID: 3101009822127426131, guid: 95dfa67a09b54774ab377c797d61e426,
-        type: 3}
-      propertyPath: m_Name
-      value: Flaques de sang 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3101009822127426131, guid: 95dfa67a09b54774ab377c797d61e426,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 711932619750104549, guid: 95dfa67a09b54774ab377c797d61e426,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3205,6 +3195,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3101009822127426131, guid: 95dfa67a09b54774ab377c797d61e426,
+        type: 3}
+      propertyPath: m_Name
+      value: Flaques de sang 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101009822127426131, guid: 95dfa67a09b54774ab377c797d61e426,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95dfa67a09b54774ab377c797d61e426, type: 3}
 --- !u!4 &2253750696697088619 stripped
@@ -3220,16 +3220,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2806116732673782128}
     m_Modifications:
-    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
-        type: 3}
-      propertyPath: m_Name
-      value: Tapis roulant vertical1 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 240486282135896436, guid: 5b4823b77d9a6bf4ea1952b315068c86,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3294,6 +3284,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
+        type: 3}
+      propertyPath: m_Name
+      value: Tapis roulant vertical1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b4823b77d9a6bf4ea1952b315068c86, type: 3}
@@ -3590,16 +3590,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2806116732673782128}
     m_Modifications:
-    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
-        type: 3}
-      propertyPath: m_Name
-      value: Tapis roulant milieu1 (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 7099633532260325960, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3664,6 +3654,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
+        type: 3}
+      propertyPath: m_Name
+      value: Tapis roulant milieu1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d, type: 3}
@@ -3865,21 +3865,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2806116732673782128}
     m_Modifications:
-    - target: {fileID: 8252974037418766216, guid: e82d3988d3816624b8dd071cf3ca13b5,
-        type: 3}
-      propertyPath: m_Name
-      value: outil0-1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8252974037418766216, guid: e82d3988d3816624b8dd071cf3ca13b5,
-        type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 8252974037418766216, guid: e82d3988d3816624b8dd071cf3ca13b5,
-        type: 3}
-      propertyPath: m_TagString
-      value: Props
-      objectReference: {fileID: 0}
     - target: {fileID: 5346960186862218967, guid: e82d3988d3816624b8dd071cf3ca13b5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3944,6 +3929,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252974037418766216, guid: e82d3988d3816624b8dd071cf3ca13b5,
+        type: 3}
+      propertyPath: m_Name
+      value: outil0-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252974037418766216, guid: e82d3988d3816624b8dd071cf3ca13b5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252974037418766216, guid: e82d3988d3816624b8dd071cf3ca13b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Props
       objectReference: {fileID: 0}
     - target: {fileID: 6308460061290275798, guid: e82d3988d3816624b8dd071cf3ca13b5,
         type: 3}
@@ -4055,16 +4055,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2806116732673782128}
     m_Modifications:
-    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
-        type: 3}
-      propertyPath: m_Name
-      value: Tapis roulant milieu1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 7099633532260325960, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4129,6 +4119,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
+        type: 3}
+      propertyPath: m_Name
+      value: Tapis roulant milieu1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d, type: 3}
@@ -4240,16 +4240,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2806116732673782128}
     m_Modifications:
-    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
-        type: 3}
-      propertyPath: m_Name
-      value: Tapis roulant vertical1 (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 240486282135896436, guid: 5b4823b77d9a6bf4ea1952b315068c86,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4315,6 +4305,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
+        type: 3}
+      propertyPath: m_Name
+      value: Tapis roulant vertical1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b4823b77d9a6bf4ea1952b315068c86, type: 3}
 --- !u!4 &6628262150610122613 stripped
@@ -4330,16 +4330,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2806116732673782128}
     m_Modifications:
-    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
-        type: 3}
-      propertyPath: m_Name
-      value: Tapis roulant vertical1 (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 240486282135896436, guid: 5b4823b77d9a6bf4ea1952b315068c86,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4405,6 +4395,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
+        type: 3}
+      propertyPath: m_Name
+      value: Tapis roulant vertical1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 240486282135896427, guid: 5b4823b77d9a6bf4ea1952b315068c86,
         type: 3}
       propertyPath: m_SortingOrder
@@ -4425,16 +4425,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2806116732673782128}
     m_Modifications:
-    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
-        type: 3}
-      propertyPath: m_Name
-      value: Tapis roulant milieu1 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 7099633532260325960, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4499,6 +4489,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
+        type: 3}
+      propertyPath: m_Name
+      value: Tapis roulant milieu1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d, type: 3}
@@ -4610,21 +4610,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2806116732673782128}
     m_Modifications:
-    - target: {fileID: 7678682772993397379, guid: ca668e092cce9234b90edcf066c996eb,
-        type: 3}
-      propertyPath: m_Name
-      value: table face (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7678682772993397379, guid: ca668e092cce9234b90edcf066c996eb,
-        type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7678682772993397379, guid: ca668e092cce9234b90edcf066c996eb,
-        type: 3}
-      propertyPath: m_TagString
-      value: Props
-      objectReference: {fileID: 0}
     - target: {fileID: 3668700483277048741, guid: ca668e092cce9234b90edcf066c996eb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4689,6 +4674,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678682772993397379, guid: ca668e092cce9234b90edcf066c996eb,
+        type: 3}
+      propertyPath: m_Name
+      value: table face (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678682772993397379, guid: ca668e092cce9234b90edcf066c996eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678682772993397379, guid: ca668e092cce9234b90edcf066c996eb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Props
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca668e092cce9234b90edcf066c996eb, type: 3}
@@ -4800,16 +4800,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2806116732673782128}
     m_Modifications:
-    - target: {fileID: 8661782047006122932, guid: 676e2987be671374f81bb6cf100378a5,
-        type: 3}
-      propertyPath: m_Name
-      value: "Tapis roulant c\xF4t\xE9 droit1"
-      objectReference: {fileID: 0}
-    - target: {fileID: 8661782047006122932, guid: 676e2987be671374f81bb6cf100378a5,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 8661782047006122953, guid: 676e2987be671374f81bb6cf100378a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4875,6 +4865,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8661782047006122932, guid: 676e2987be671374f81bb6cf100378a5,
+        type: 3}
+      propertyPath: m_Name
+      value: "Tapis roulant c\xF4t\xE9 droit1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661782047006122932, guid: 676e2987be671374f81bb6cf100378a5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 676e2987be671374f81bb6cf100378a5, type: 3}
 --- !u!4 &1825092467700970489 stripped
@@ -4890,16 +4890,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2806116732673782128}
     m_Modifications:
-    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
-        type: 3}
-      propertyPath: m_Name
-      value: Tapis roulant vertical1
-      objectReference: {fileID: 0}
-    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 240486282135896436, guid: 5b4823b77d9a6bf4ea1952b315068c86,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4965,6 +4955,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
+        type: 3}
+      propertyPath: m_Name
+      value: Tapis roulant vertical1
+      objectReference: {fileID: 0}
+    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b4823b77d9a6bf4ea1952b315068c86, type: 3}
 --- !u!4 &7048200272671952833 stripped
@@ -4980,16 +4980,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2806116732673782128}
     m_Modifications:
-    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
-        type: 3}
-      propertyPath: m_Name
-      value: Tapis roulant vertical1 (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 240486282135896436, guid: 5b4823b77d9a6bf4ea1952b315068c86,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5055,6 +5045,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
+        type: 3}
+      propertyPath: m_Name
+      value: Tapis roulant vertical1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 240486282135896425, guid: 5b4823b77d9a6bf4ea1952b315068c86,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 240486282135896427, guid: 5b4823b77d9a6bf4ea1952b315068c86,
         type: 3}
       propertyPath: m_SortingOrder
@@ -5075,16 +5075,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2806116732673782128}
     m_Modifications:
-    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
-        type: 3}
-      propertyPath: m_Name
-      value: Tapis roulant milieu1 (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 7099633532260325960, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5150,6 +5140,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
+        type: 3}
+      propertyPath: m_Name
+      value: Tapis roulant milieu1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d, type: 3}
 --- !u!4 &318309356441523369 stripped
@@ -5165,21 +5165,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2806116732673782128}
     m_Modifications:
-    - target: {fileID: 8252974037418766216, guid: e82d3988d3816624b8dd071cf3ca13b5,
-        type: 3}
-      propertyPath: m_Name
-      value: outil0-1 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8252974037418766216, guid: e82d3988d3816624b8dd071cf3ca13b5,
-        type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 8252974037418766216, guid: e82d3988d3816624b8dd071cf3ca13b5,
-        type: 3}
-      propertyPath: m_TagString
-      value: Props
-      objectReference: {fileID: 0}
     - target: {fileID: 5346960186862218967, guid: e82d3988d3816624b8dd071cf3ca13b5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5245,6 +5230,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8252974037418766216, guid: e82d3988d3816624b8dd071cf3ca13b5,
+        type: 3}
+      propertyPath: m_Name
+      value: outil0-1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252974037418766216, guid: e82d3988d3816624b8dd071cf3ca13b5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252974037418766216, guid: e82d3988d3816624b8dd071cf3ca13b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Props
+      objectReference: {fileID: 0}
     - target: {fileID: 6308460061290275798, guid: e82d3988d3816624b8dd071cf3ca13b5,
         type: 3}
       propertyPath: m_SortingOrder
@@ -5265,16 +5265,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2806116732673782128}
     m_Modifications:
-    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
-        type: 3}
-      propertyPath: m_Name
-      value: Tapis roulant milieu1 (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 7099633532260325960, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5339,6 +5329,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
+        type: 3}
+      propertyPath: m_Name
+      value: Tapis roulant milieu1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099633532260325959, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42ccf0a2e7fdde3478d84ab0941d5c2d, type: 3}

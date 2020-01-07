@@ -229,14 +229,13 @@ MonoBehaviour:
     - "Voici toutes les comp\xE9tences que tu as apprises."
     - "A droite, tu peux choisir ta mani\xE8re de d\xE9chainer ta Rage. A gauche,
       ce sont tes comp\xE9tences secondaires."
-    - "Appuie sur Y lorsque tu te trouve sur un symbole pour \xE9quiper la comp\xE9tence."
+    - "Appuie sur Y lorsque tu te trouves sur un symbole pour \xE9quiper la comp\xE9tence."
     - Bon courage, jeune Bearserk !
   talkPos: {fileID: 5421434660695105571}
   talkRange: 0.74
   whatIsThePlayer:
     serializedVersion: 2
     m_Bits: 1024
-  textBox: {fileID: 0}
   toucheA: {fileID: 5421434660439394241}
 --- !u!1 &5421434661978214053
 GameObject:

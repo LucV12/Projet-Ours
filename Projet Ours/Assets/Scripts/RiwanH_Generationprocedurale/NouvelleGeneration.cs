@@ -58,14 +58,11 @@ public class NouvelleGeneration : MonoBehaviour
         WaitForSeconds startup = new WaitForSeconds(1);
         WaitForSeconds interval = new WaitForSeconds(0.5f);
 
-        yield return interval;
-
 
         //5.2- Placement de la salle du Spawn
 
         PlacementSalleSpawn();
 
-        yield return interval;
 
 
         //5.3- Selection du nombre de salles à placer
@@ -79,8 +76,6 @@ public class NouvelleGeneration : MonoBehaviour
 
             PlacementSalleNormale();
 
-            yield return interval;
-
         }
 
         Debug.LogError("Toutes les salles sont placer");
@@ -93,8 +88,6 @@ public class NouvelleGeneration : MonoBehaviour
 
             PlacementSalleObjectif();
 
-            yield return interval;
-
         }
 
         Debug.LogError("Toutes les salles objectif sont placer");
@@ -105,8 +98,6 @@ public class NouvelleGeneration : MonoBehaviour
         {
 
             PlacementSalleAreneEtBoss(); 
-
-            yield return interval;
 
         }
 

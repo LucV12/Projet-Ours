@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71977021237893159}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5196896, y: 5.6021767, z: -453.0031}
+  m_LocalPosition: {x: -1.5196896, y: 3.6021767, z: -453.0031}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 71977020615240587}
@@ -364,7 +364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71977021769640237}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.011632919, y: -2.012947, z: 0}
+  m_LocalPosition: {x: 0.011632919, y: -4.012947, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 71977021684742915}
@@ -482,7 +482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71977021969893515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.1117525, y: -18.206367, z: 0}
+  m_LocalPosition: {x: -11.1117525, y: -17.206367, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 71977022452017518}
@@ -519,8 +519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connecteurs:
   - {fileID: 3852250059936757455}
-  - {fileID: 0}
-  meshCollider: {fileID: 0}
+  gameObjectCollider: {fileID: 0}
 --- !u!1 &71977022367603315
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71977022452017519}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: 1, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 71977021969893557}
@@ -2260,7 +2259,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71977022595700570}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: 1, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 71977021969893557}
@@ -3438,7 +3437,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7841889014649458604}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0850697, y: 10.383774, z: -13.254883}
+  m_LocalPosition: {x: 1.0850697, y: 8.383774, z: -13.254883}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 2088060586114686739}
@@ -4358,11 +4357,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7720200574290690906}
     m_Modifications:
-    - target: {fileID: 5202892375817169688, guid: 105010b3dad44af4c98a578283e20118,
-        type: 3}
-      propertyPath: m_Name
-      value: Reservoir base
-      objectReference: {fileID: 0}
     - target: {fileID: 8290283585045732276, guid: 105010b3dad44af4c98a578283e20118,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4427,6 +4421,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202892375817169688, guid: 105010b3dad44af4c98a578283e20118,
+        type: 3}
+      propertyPath: m_Name
+      value: Reservoir base
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 105010b3dad44af4c98a578283e20118, type: 3}

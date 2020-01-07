@@ -37,7 +37,8 @@ public class ArenaSpawn : MonoBehaviour
         {
             int spawnPointIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
             int enemyIndex = UnityEngine.Random.Range(0, enemy.Length);
-            Enemy nmi = Instantiate(enemy[enemyIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation).GetComponent<Enemy>();
+            Enemy nmi = Instantiate(enemy[enemyIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation).GetComponent<Enemy>() as Enemy;
+            nmi.transform.parent = this.transform;
             nmi.init(this);
         }
         enemyCounter = enemyCount;

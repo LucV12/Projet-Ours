@@ -8,6 +8,7 @@ public class EnemySpawn : MonoBehaviour
     public GameObject[] enemy;
     public float spawnTime;
     public int enemyCount;
+    Enemy enemySpawn;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,8 @@ public class EnemySpawn : MonoBehaviour
         {
             int spawnPointIndex = Random.Range(0, spawnPoints.Length);
             int enemyIndex = Random.Range(0, enemy.Length);
-            Instantiate(enemy[enemyIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            GameObject enemyCreation = Instantiate(enemy[enemyIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation) as GameObject;
+            enemyCreation.transform.parent = this.transform;
         }
         
     }
