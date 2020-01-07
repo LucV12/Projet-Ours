@@ -27,8 +27,8 @@ public class Kick : MonoBehaviour
     {
         Vector3 aim = new Vector3(Input.GetAxis("AimHorizontal"), Input.GetAxis("AimVertical"), 0.0f);
 
-        animator.SetFloat("Horizontal", aim.x);
-        animator.SetFloat("Vertical", aim.y);
+        animator.SetFloat("AimHorizontal", aim.x);
+        animator.SetFloat("AimVertical", aim.y);
         animator.SetBool("IsKicking", true);
         yield return new WaitForSeconds(0.2f);
         animator.SetBool("IsKicking", false);
