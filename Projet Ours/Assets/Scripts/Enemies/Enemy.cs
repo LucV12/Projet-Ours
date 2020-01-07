@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
             Instantiate(blood, transform.position, Quaternion.identity);
             camera.GetComponent<CameraShaker>().Shake();
             Instantiate(Flak2Sang, transform.position, Quaternion.identity);
-            //arenaSpawn.onEnemyDeath();
+            arenaSpawn.onEnemyDeath();
             Destroy(gameObject);
         }
     }

@@ -12,12 +12,22 @@ public class ArenaSpawn : MonoBehaviour
     private int enemyCounter;
     private bool mustStartNewWave;
     private int waveIndex;
+    GameObject gameManager;
+    GameManager GM;
+    public GameObject[] lootAvaible;
+    public GameObject spawnLoot;
+    GameObject currentLoot;
+    int lootIndex;
 
     // Start is called before the first frame update
     void Start()
     {
         waveIndex = 0;
         mustStartNewWave = true;
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        GM = gameManager.GetComponent<GameManager>();
+        lootIndex = UnityEngine.Random.Range (0, lootAvaible.Length);
+        currentLoot = lootAvaible[lootIndex];
     }
     
     void GenerateWave(int enemyCount)
@@ -42,6 +52,10 @@ public class ArenaSpawn : MonoBehaviour
         {
             StartCoroutine(waveDelay());
         }
+        else
+        {
+            SpawnLoot();
+        }
     }
 
     private IEnumerator waveDelay()
@@ -59,5 +73,10 @@ public class ArenaSpawn : MonoBehaviour
             mustStartNewWave = false;
         }
 
+    }
+
+    public void SpawnLoot()
+    {
+        Instantiate(currentLoot, spawnLoot.transform);
     }
 }
