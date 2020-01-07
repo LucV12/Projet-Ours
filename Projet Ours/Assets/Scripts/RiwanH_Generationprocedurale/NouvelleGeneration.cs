@@ -78,7 +78,7 @@ public class NouvelleGeneration : MonoBehaviour
 
         }
 
-        Debug.LogError("Toutes les salles sont placer");
+        //Debug.LogError("Toutes les salles sont placer");
 
 
         //5.5- Boucle pour position les salles d'objectifs
@@ -90,7 +90,7 @@ public class NouvelleGeneration : MonoBehaviour
 
         }
 
-        Debug.LogError("Toutes les salles objectif sont placer");
+        //Debug.LogError("Toutes les salles objectif sont placer");
 
 
         //5.6- Placement des salles finals : L'Arène et la Salle du Boss
@@ -101,12 +101,12 @@ public class NouvelleGeneration : MonoBehaviour
 
         }
 
-        Debug.LogError("Toutes les salles finales sont placer");
+        //Debug.LogError("Toutes les salles finales sont placer");
 
 
         //5.7- Fin de la génération
 
-        Debug.LogError("La generation est terminer");
+        //Debug.LogError("La generation est terminer");
 
 
         //5.8- Re initialisation de la génération pour voire plusieurs ittérations
@@ -138,7 +138,7 @@ public class NouvelleGeneration : MonoBehaviour
         positionsSallePlacer.Add(salleSpawn.transform.position);
 
 
-        Debug.LogError("Placement du spawn");
+        //Debug.LogError("Placement du spawn");
     }
 
 
@@ -249,7 +249,7 @@ public class NouvelleGeneration : MonoBehaviour
 
                         //Debug.Log("On valide la salle parce qu'il n'y a pas de contact");
 
-                        PlacementCouloire(connecteurDispo);
+                        PlacementCouloire(connecteurDispo, connecteurActuel);
 
                         sallePlacer = true;
 
@@ -345,7 +345,7 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(20, 0, 0));
+            salleActuelle.transform.Translate(new Vector3(12, 0, 0));
 
         }
         else if (connecteurVisé.orientationConnecteur == Connecteur.orientation.Ouest)
@@ -353,7 +353,7 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(-20, 0, 0));
+            salleActuelle.transform.Translate(new Vector3(-12, 0, 0));
 
         }
         else if (connecteurVisé.orientationConnecteur == Connecteur.orientation.Sud)
@@ -377,7 +377,7 @@ public class NouvelleGeneration : MonoBehaviour
 
 
     //5.4.3- Placement de couloire
-    void PlacementCouloire (Connecteur connecteur)
+    void PlacementCouloire (Connecteur connecteur, Connecteur connecteurActuelle)
     {
 
         Couloire couloire;
@@ -389,7 +389,7 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteur.transform.parent.position;
             couloire.transform.position = positionSalleOffset;
-            couloire.transform.Translate(new Vector3(10, 0, 0));
+            couloire.transform.Translate(new Vector3(5.5f, 0, 5));
 
         }
         else if (connecteur.orientationConnecteur == Connecteur.orientation.Ouest)
@@ -399,7 +399,7 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteur.transform.parent.position;
             couloire.transform.position = positionSalleOffset;
-            couloire.transform.Translate(new Vector3(-10, 0, 0));
+            couloire.transform.Translate(new Vector3(-5.5f, 0, 5));
 
         }
         else if (connecteur.orientationConnecteur == Connecteur.orientation.Sud)
@@ -409,7 +409,7 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteur.transform.parent.position;
             couloire.transform.position = positionSalleOffset;
-            couloire.transform.Translate(new Vector3(0, -10, 0));
+            couloire.transform.Translate(new Vector3(0, -10, 5));
 
         }
         else if (connecteur.orientationConnecteur == Connecteur.orientation.Nord)
@@ -417,9 +417,9 @@ public class NouvelleGeneration : MonoBehaviour
 
             couloire = Instantiate(couloireVertical) as Couloire;
 
-            Vector3 positionSalleOffset = connecteur.transform.parent.position;
+            Vector3 positionSalleOffset = connecteur.transform.parent.position; 
             couloire.transform.position = positionSalleOffset;
-            couloire.transform.Translate(new Vector3(0, 10, 0));
+            couloire.transform.Translate(new Vector3(0, 10, 5));
 
         }
 
@@ -441,26 +441,26 @@ public class NouvelleGeneration : MonoBehaviour
             {
 
                 overlap = true;
-                Debug.Log(overlap);
+                //Debug.Log(overlap);
                 break;
             }
             else
             {
 
                 overlap = false;
-                Debug.Log(overlap);
+                //Debug.Log(overlap);
             }
 
         }
         
         if (overlap == true)
         {
-            Debug.Log("return true");
+            //Debug.Log("return true");
             return true;
         }
         else
         {
-            Debug.Log("return false");
+            //Debug.Log("return false");
             return false;
         }
        
@@ -528,7 +528,7 @@ public class NouvelleGeneration : MonoBehaviour
                     if (!VerificationOverlapSalle(salleActuelle))
                     {
 
-                        PlacementCouloire(connecteurDispo);
+                        PlacementCouloire(connecteurDispo, connecteurActuel);
 
                         sallePlacer = true;
 
@@ -592,7 +592,7 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(20, 0, 0));
+            salleActuelle.transform.Translate(new Vector3(12, 0, 0));
 
             //Debug.Log("La salle objectif va être placer à droite");
 
@@ -602,7 +602,7 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(-20, 0, 0));
+            salleActuelle.transform.Translate(new Vector3(-12, 0, 0));
 
             //Debug.Log("La salle objectif va être placer à gauche");
 
@@ -707,7 +707,7 @@ public class NouvelleGeneration : MonoBehaviour
                     if (!VerificationOverlapSalle(salleActuelle))
                     {
 
-                        PlacementCouloire(connecteurDispo);
+                        PlacementCouloire(connecteurDispo, connecteurActuel);
 
                         sallePlacer = true;
 
@@ -772,7 +772,7 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(20, 0, 0));
+            salleActuelle.transform.Translate(new Vector3(12, 0, 0));
 
             //Debug.Log("La salle boss va être placer à droite");
 
@@ -782,7 +782,7 @@ public class NouvelleGeneration : MonoBehaviour
 
             Vector3 positionSalleOffset = connecteurVisé.transform.parent.position;
             salleActuelle.transform.position = positionSalleOffset;
-            salleActuelle.transform.Translate(new Vector3(-20, 0, 0));
+            salleActuelle.transform.Translate(new Vector3(-12, 0, 0));
 
             //Debug.Log("La salle boss va être placer à gauche");
 
