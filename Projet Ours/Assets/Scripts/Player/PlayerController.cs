@@ -444,6 +444,16 @@ public class PlayerController : MonoBehaviour
             enemiesToDamage[0].GetComponent<Enemy>().TakeDamage(damage);
             Instantiate(slashParticle, crossHair.transform.position, Quaternion.identity);
         }
+        if (enemiesToDamage.Length > 0 && enemiesToDamage[0].gameObject.tag == "OBJ")
+        {
+            enemiesToDamage[0].GetComponent<MachineOBJ>().TakeDamage(damage);
+            Instantiate(slashParticle, crossHair.transform.position, Quaternion.identity);
+        }
+        if (enemiesToDamage.Length > 0 && enemiesToDamage[0].gameObject.tag == "OBJ2")
+        {
+            enemiesToDamage[0].GetComponent<ReservoirOBJ>().TakeDamage(damage);
+            Instantiate(slashParticle, crossHair.transform.position, Quaternion.identity);
+        }
 
         Debug.Log(enemiesToDamage.Length);
         Debug.Log("AtK");

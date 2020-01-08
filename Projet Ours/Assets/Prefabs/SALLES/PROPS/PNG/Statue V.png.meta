@@ -1,22 +1,34 @@
 fileFormatVersion: 2
-guid: d6d326441d8412b47bdf7bcaea5e5cd1
+guid: 564a2f0448512f1458e8611cee7c1aa5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8538479424256427916
-    second: grota-Sheet_0
+      213: 2905516542555783398
+    second: Statue V_0
   - first:
-      213: 6386404275836750844
-    second: grota-Sheet_1
+      213: -8360424921234860641
+    second: Statue V_1
   - first:
-      213: -3444589252409083647
-    second: grota-Sheet_2
+      213: 3600530186618160728
+    second: Statue V_2
   - first:
-      213: -5162776848955402501
-    second: grota-Sheet_3
+      213: 4076591630686240415
+    second: Statue V_3
   - first:
-      213: 5320373618629200804
-    second: grota-Sheet_4
+      213: -2860823081465002042
+    second: Statue V_4
+  - first:
+      213: 9185848172976206657
+    second: Statue V_5
+  - first:
+      213: -5576957963651119429
+    second: Statue V_6
+  - first:
+      213: 5255025188066906943
+    second: Statue V_7
+  - first:
+      213: 8774901035370746334
+    second: Statue V_8
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -101,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grota-Sheet_0
+      name: Statue V_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
-        height: 64
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,20 +127,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb2dea6d380f49c488a69ddb87ad82bc
-      internalID: 8538479424256427916
+      spriteID: d9e0e74339ddf7c4c89a9559231b2f72
+      internalID: 2905516542555783398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grota-Sheet_1
+      name: Statue V_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
-        height: 64
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,20 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae6708af88bbaa942aa193c277f32d8a
-      internalID: 6386404275836750844
+      spriteID: abbc26160df988942bc408a766122d35
+      internalID: -8360424921234860641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grota-Sheet_2
+      name: Statue V_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 64
-        height: 64
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa77f0dd7380e2749ad6961826bd463c
-      internalID: -3444589252409083647
+      spriteID: 1556c3dd86b54604d8ad834814eb8d0b
+      internalID: 3600530186618160728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grota-Sheet_3
+      name: Statue V_3
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 64
-        height: 64
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,20 +190,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5db269f7bd0868a48a1653f48a3a8ac2
-      internalID: -5162776848955402501
+      spriteID: 77f4a20325c9ec747a1f1ae90dbff474
+      internalID: 4076591630686240415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grota-Sheet_4
+      name: Statue V_4
       rect:
         serializedVersion: 2
         x: 256
         y: 0
         width: 64
-        height: 64
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,8 +211,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebc3c4f6175d98e4e9db32ab11125e5c
-      internalID: 5320373618629200804
+      spriteID: 0cb79bd7d25652841a41c9c9828e1398
+      internalID: -2860823081465002042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue V_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489b097eb8e779147bf62848323720c9
+      internalID: 9185848172976206657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue V_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f0c5ebd543f36a43a276665f353654d
+      internalID: -5576957963651119429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue V_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b8f3387746fa94fa7b4cfb7a1862a1
+      internalID: 5255025188066906943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue V_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ca59017dc4c4054dbe9f5806e602ff5
+      internalID: 8774901035370746334
       vertices: []
       indices: 
       edges: []
