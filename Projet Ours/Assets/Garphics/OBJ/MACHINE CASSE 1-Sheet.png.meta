@@ -1,0 +1,613 @@
+fileFormatVersion: 2
+guid: 43759bd7af30e8b48a13ca2fdd996069
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7298244548096530283
+    second: MACHINE CASSE 1-Sheet_0
+  - first:
+      213: -3619960451413191206
+    second: MACHINE CASSE 1-Sheet_1
+  - first:
+      213: 3595787712717214865
+    second: MACHINE CASSE 1-Sheet_2
+  - first:
+      213: 1652789805881866664
+    second: MACHINE CASSE 1-Sheet_3
+  - first:
+      213: -2339866279490441979
+    second: MACHINE CASSE 1-Sheet_4
+  - first:
+      213: 5847767955211815465
+    second: MACHINE CASSE 1-Sheet_5
+  - first:
+      213: 5681728469698519221
+    second: MACHINE CASSE 1-Sheet_6
+  - first:
+      213: -4234458436971767839
+    second: MACHINE CASSE 1-Sheet_7
+  - first:
+      213: -7842982424632814366
+    second: MACHINE CASSE 1-Sheet_8
+  - first:
+      213: -5150049760961335303
+    second: MACHINE CASSE 1-Sheet_9
+  - first:
+      213: -3162821675891641617
+    second: MACHINE CASSE 1-Sheet_10
+  - first:
+      213: 6706405326988997014
+    second: MACHINE CASSE 1-Sheet_11
+  - first:
+      213: 7270675256790840369
+    second: MACHINE CASSE 1-Sheet_12
+  - first:
+      213: 5631248058583801505
+    second: MACHINE CASSE 1-Sheet_13
+  - first:
+      213: -2046242462729240641
+    second: MACHINE CASSE 1-Sheet_14
+  - first:
+      213: 714571405833539412
+    second: MACHINE CASSE 1-Sheet_15
+  - first:
+      213: 121971097756249581
+    second: MACHINE CASSE 1-Sheet_16
+  - first:
+      213: 6811537867793388309
+    second: MACHINE CASSE 1-Sheet_17
+  - first:
+      213: 7106602783116846668
+    second: MACHINE CASSE 1-Sheet_18
+  - first:
+      213: -6093591737749503731
+    second: MACHINE CASSE 1-Sheet_19
+  - first:
+      213: -8326993766567324108
+    second: MACHINE CASSE 1-Sheet_20
+  - first:
+      213: 6935744036645395904
+    second: MACHINE CASSE 1-Sheet_21
+  - first:
+      213: -6299458155286564988
+    second: MACHINE CASSE 1-Sheet_22
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 67
+        width: 241
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5798b1dbebe6fc4b8442b8bbbbcb9e0
+      internalID: -7298244548096530283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1956
+        y: 51
+        width: 239
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 880dcfd412542e449ad84542ed2d4981
+      internalID: -3619960451413191206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2725
+        y: 233
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 023bf1f75de4d564e8ebbe4267c11e5e
+      internalID: 1652789805881866664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 64
+        width: 236
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a513a993a9728a34da65436989dbad40
+      internalID: -2339866279490441979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2294
+        y: 70
+        width: 238
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3b0c2ce6972314ab9d5ecb2087580f
+      internalID: 5847767955211815465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 2425
+        y: 217
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98ec22950faee0142a1b9b5116d95e68
+      internalID: -4234458436971767839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2614
+        y: 67
+        width: 228
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 999141ce1ab127846a08d44dea0716bc
+      internalID: -7842982424632814366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2684
+        y: 223
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0deff173f37834844a7ca8b0314149bd
+      internalID: -5150049760961335303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2745
+        y: 217
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8f6c4873fddca458eca5a4d916c9d5
+      internalID: -3162821675891641617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 67
+        width: 230
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8392e26964ff4e04e94130c1e972538b
+      internalID: 6706405326988997014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 65
+        width: 235
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb896b17aeaf0e1428f83c1ceb0c11b9
+      internalID: 7270675256790840369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 67
+        width: 227
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dea10433914d004f8695ea9cdbd90c7
+      internalID: 5631248058583801505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 178
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeba2820ed111ab4f86d40ef985b5341
+      internalID: -2046242462729240641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 67
+        width: 225
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3feecbdfe950a947a95d4585be36873
+      internalID: 714571405833539412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 2833
+        y: 194
+        width: 23
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8323cb68b09c5b2479b33b93705fd6ff
+      internalID: 121971097756249581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 2938
+        y: 67
+        width: 225
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d78a43883ece21428e73d41ca627697
+      internalID: 6811537867793388309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 117
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec5d260ab9c0f349a7a2ac214d85d51
+      internalID: 7106602783116846668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 120
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241214e710ad81d41ba49b71006463c0
+      internalID: -6093591737749503731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 92
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3542d9a99d87f314d837f013b977bfcd
+      internalID: -8326993766567324108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 87
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb5897c59447e1041bf32b5890fc4297
+      internalID: 6935744036645395904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MACHINE CASSE 1-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 80
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65aa6b6484f08cf4594fcbd7de93bc73
+      internalID: -6299458155286564988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

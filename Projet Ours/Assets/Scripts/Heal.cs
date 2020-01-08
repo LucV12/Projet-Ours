@@ -23,7 +23,7 @@ public class Heal : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (nounours.GetComponent<PlayerController>().health <= 9)
+            if (nounours.GetComponent<PlayerController>().health <= 8)
             {
                 nounours.GetComponent<PlayerController>().health += heal;
                 Debug.Log("Heal !");

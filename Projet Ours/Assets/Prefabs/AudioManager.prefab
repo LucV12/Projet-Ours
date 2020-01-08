@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2789620988800853004}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: AudioManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,6 +142,12 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Musique
     clip: {fileID: 8300000, guid: e5f0ca4336e38704da1c0bf2d08d8945, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MusiqueHub
+    clip: {fileID: 8300000, guid: cfc6d451123422f4aa68e2c237e65c6f, type: 3}
     volume: 1
     pitch: 1
     loop: 1

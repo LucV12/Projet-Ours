@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 8209273059801167081}
-  health: 1
+  health: 2
   executed: 0
   executedTime: 2
   repulsed: 0

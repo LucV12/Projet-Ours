@@ -29,7 +29,7 @@ public class PorteBoss : MonoBehaviour
 
         if (Locked == false)
         {
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            Destroy(this.gameObject);            
         }
     }
 }

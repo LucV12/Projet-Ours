@@ -22,7 +22,7 @@ public class RageManager : MonoBehaviour
     {
         for (int i = 0; i < rages.Length; i++)
         {
-            if (rages[i].activeSelf)
+            if (rages[i].activeSelf == true)
             {
                 activeRage = i;
                 break;

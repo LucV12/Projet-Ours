@@ -67,12 +67,12 @@ public class Grabbable : MonoBehaviour
                 {
                     enemiesToBlow[i].GetComponent<Enemy>().TakeDamage(1);
                 }
-                FindObjectOfType<AudioManager>().Play("Explosion");
+                FindObjectOfType<AudioManager>().PlayThis("Explosion");
                 Destroy(gameObject);
             }
             else if (isExplosive == false)
             {
-                FindObjectOfType<AudioManager>().Play("StunLancer");
+                FindObjectOfType<AudioManager>().PlayThis("StunLancer");
             }
             grabbableObject.velocity = grabbableObject.velocity * 0f;
             colliderHit.enabled = false;
@@ -87,12 +87,12 @@ public class Grabbable : MonoBehaviour
                 {
                     enemiesToBlow[i].GetComponent<Pinata>().TakeDamage(1);
                 }
-                FindObjectOfType<AudioManager>().Play("Explosion");
+                FindObjectOfType<AudioManager>().PlayThis("Explosion");
                 Destroy(gameObject);
             }
             else if (isExplosive == false)
             {
-                FindObjectOfType<AudioManager>().Play("StunLancer");
+                FindObjectOfType<AudioManager>().PlayThis("StunLancer");
             }
             grabbableObject.velocity = grabbableObject.velocity * 0f;
             colliderHit.enabled = false;

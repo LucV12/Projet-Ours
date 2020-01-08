@@ -26,7 +26,7 @@ public class RageRuee : MonoBehaviour
         StartCoroutine(pc.ColorChangeRage());
         RM.isInRage = true;
         yield return new WaitForSeconds(1);
-        FindObjectOfType<AudioManager>().Play("DashRage");
+        //FindObjectOfType<AudioManager>().PlayThis("DashRage");
         dashRageActivated = true;
         pc.rollSpeed = pc.rollSpeed * dashRageSpeedBoost;
         pc.canRoll = false;

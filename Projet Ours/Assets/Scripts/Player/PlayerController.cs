@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Dash") && trailActive == false && canRoll == true)
         {
             StartCoroutine(Roll());
-            FindObjectOfType<AudioManager>().Play("Roulade");
+            FindObjectOfType<AudioManager>().PlayThis("Roulade");
             StartCoroutine(UI.GetComponent<ActiveAndRollUIScript>().rollUICooldown());
         }
 
@@ -485,10 +485,10 @@ public class PlayerController : MonoBehaviour
         canLooseLife = false;
         animator.SetBool("IsRageActivated", true);
         canMove = false;
-        FindObjectOfType<AudioManager>().Play("EnclenchementRage");
+        FindObjectOfType<AudioManager>().PlayThis("EnclenchementRage");
         //gameObject.GetComponent<Renderer>().material.color = Color.yellow;
         yield return new WaitForSeconds(1.1f);
-        FindObjectOfType<AudioManager>().Play("RageBoom");
+        FindObjectOfType<AudioManager>().PlayThis("RageBoom");
         //gameObject.GetComponent<Renderer>().material.color = Color.white;
         animator.SetBool("IsRageActivated", false);
         canMove = true;
@@ -498,7 +498,7 @@ public class PlayerController : MonoBehaviour
     public void HitByEnemy()
     {
         StartCoroutine(ColorChange());
-        FindObjectOfType<AudioManager>().Play("HitByEnemy");
+        FindObjectOfType<AudioManager>().PlayThis("HitByEnemy");
     }
 
 }

@@ -33,13 +33,13 @@ public class Baby : MonoBehaviour
         player = nounours.transform;
         isRepusled = GetComponent<Enemy>().repulsed;
         executed = GetComponent<Enemy>().executed;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        animator.SetBool("IsMoving", false);        
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        animator.SetBool("IsMoving", false);
 
         if (executed == false && isRepusled == false)
         {

@@ -1,0 +1,631 @@
+fileFormatVersion: 2
+guid: 10e3e1b9c707c3344b519b44736908d1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8322907092052918180
+    second: RESERVOIR CASSE-Sheet_0
+  - first:
+      213: 5876073018295287008
+    second: RESERVOIR CASSE-Sheet_1
+  - first:
+      213: -5218463958043462460
+    second: RESERVOIR CASSE-Sheet_2
+  - first:
+      213: -4642819716438510950
+    second: RESERVOIR CASSE-Sheet_3
+  - first:
+      213: -213001995255834172
+    second: RESERVOIR CASSE-Sheet_4
+  - first:
+      213: 381088929828971776
+    second: RESERVOIR CASSE-Sheet_5
+  - first:
+      213: 457111502907589679
+    second: RESERVOIR CASSE-Sheet_6
+  - first:
+      213: -5943254193052374397
+    second: RESERVOIR CASSE-Sheet_7
+  - first:
+      213: -7352656466311577737
+    second: RESERVOIR CASSE-Sheet_8
+  - first:
+      213: 5123242747395212093
+    second: RESERVOIR CASSE-Sheet_9
+  - first:
+      213: -5248504109272564812
+    second: RESERVOIR CASSE-Sheet_10
+  - first:
+      213: -6797796397175429654
+    second: RESERVOIR CASSE-Sheet_11
+  - first:
+      213: -7589487563880682429
+    second: RESERVOIR CASSE-Sheet_12
+  - first:
+      213: -4094215270285849481
+    second: RESERVOIR CASSE-Sheet_13
+  - first:
+      213: -5848695613826609794
+    second: RESERVOIR CASSE-Sheet_14
+  - first:
+      213: 8453853602408095682
+    second: RESERVOIR CASSE-Sheet_15
+  - first:
+      213: -1473691220745036327
+    second: RESERVOIR CASSE-Sheet_16
+  - first:
+      213: -229574295952111179
+    second: RESERVOIR CASSE-Sheet_17
+  - first:
+      213: -4700764619012392803
+    second: RESERVOIR CASSE-Sheet_18
+  - first:
+      213: 3801567227315193798
+    second: RESERVOIR CASSE-Sheet_19
+  - first:
+      213: 3723366260363086958
+    second: RESERVOIR CASSE-Sheet_20
+  - first:
+      213: 5506152346045326122
+    second: RESERVOIR CASSE-Sheet_21
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 67
+        width: 241
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e76def53769b794bb1852572d239d8b
+      internalID: 8322907092052918180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1977
+        y: 67
+        width: 239
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aeab2cfcce57054c8ecd186dd0f5e1b
+      internalID: 5876073018295287008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2405
+        y: 233
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 990875a5bb44a6545bca3129d32820cf
+      internalID: -5218463958043462460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2725
+        y: 233
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a214464faa2c5184b8c9f6b0e38e5d47
+      internalID: -4642819716438510950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 67
+        width: 230
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f621fe7a9e877934f947125a0a7f1296
+      internalID: -213001995255834172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 67
+        width: 235
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab548b26915145f4387aa48048e50dbf
+      internalID: 381088929828971776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 67
+        width: 227
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9fd10f8d910e414da711a26790e1682
+      internalID: 457111502907589679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 67
+        width: 236
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c21593339365a44aa8e1c9b159cb28
+      internalID: -5943254193052374397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 67
+        width: 225
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aab2a528d589e948a63c9b559102387
+      internalID: -7352656466311577737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2298
+        y: 67
+        width: 238
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74a0bd09ba1e3424a8914ca31d6bca60
+      internalID: 5123242747395212093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2364
+        y: 220
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b747db5f1d3444f438157b2a09d1e491
+      internalID: -5248504109272564812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2616
+        y: 67
+        width: 228
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 662dda5d228910c40983db58f3794d33
+      internalID: -6797796397175429654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 2684
+        y: 223
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97ec122fedb872f4f8a4f4f0b201c213
+      internalID: -7589487563880682429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 2745
+        y: 217
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c280704b49742f848ad425aa5872bbb1
+      internalID: -4094215270285849481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 2938
+        y: 67
+        width: 225
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbba3640d9925a544a16cfa7158b2a6d
+      internalID: -5848695613826609794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 178
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeaa5a23e70e70a4bb93356bb8c9f8cd
+      internalID: 8453853602408095682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 2833
+        y: 194
+        width: 23
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 456c6bd39169c5e43b81f5a37c952341
+      internalID: -1473691220745036327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 117
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb337495722970140829c9e4e462abfa
+      internalID: -229574295952111179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 120
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a7322a40dfb0e48834b4030301d01e
+      internalID: -4700764619012392803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 92
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67fb373a8b1ec924585c33ef4a909c1e
+      internalID: 3801567227315193798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 87
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e496f0af99591499213f690c52a13c
+      internalID: 3723366260363086958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RESERVOIR CASSE-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 80
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e845c8e1820074b997671cba4f20df
+      internalID: 5506152346045326122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

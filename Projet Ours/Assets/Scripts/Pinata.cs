@@ -44,12 +44,12 @@ public class Pinata : MonoBehaviour
         if (executed == true)
         {
             health -= damage * 5;
-            FindObjectOfType<AudioManager>().Play("Execution");
+            FindObjectOfType<AudioManager>().PlayThis("Execution");
             Debug.Log("EXECUTED !");
         }
 
         health -= damage;
-        FindObjectOfType<AudioManager>().Play("Frappe");
+        FindObjectOfType<AudioManager>().PlayThis("Frappe");
         Debug.Log("damage TAKEN !");
     }
 
@@ -58,7 +58,7 @@ public class Pinata : MonoBehaviour
         if (executed == true)
         {
             health -= damage * 5;
-            FindObjectOfType<AudioManager>().Play("Execution");
+            FindObjectOfType<AudioManager>().PlayThis("Execution");
             Debug.Log("EXECUTED !");
         }
 
@@ -70,7 +70,7 @@ public class Pinata : MonoBehaviour
         }
 
         health -= damage;
-        FindObjectOfType<AudioManager>().Play("Frappe");
+        FindObjectOfType<AudioManager>().PlayThis("Frappe");
         Debug.Log("damage TAKEN !");
     }
 
@@ -84,7 +84,7 @@ public class Pinata : MonoBehaviour
         if (other.collider.CompareTag("Enviro") && isKicked == true)
         {
             executed = true;
-            FindObjectOfType<AudioManager>().Play("StunContreMur");
+            FindObjectOfType<AudioManager>().PlayThis("StunContreMur");
         }
     }
 

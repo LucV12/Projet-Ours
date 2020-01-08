@@ -40,19 +40,19 @@ public class CapacityManager : MonoBehaviour
             if (activeCapa == 0)
             {
                 StartCoroutine(GetComponentInChildren<Kick>().KickActivable());
-                FindObjectOfType<AudioManager>().Play("Kick");
+                FindObjectOfType<AudioManager>().PlayThis("Kick");
             }
 
             if (activeCapa == 1)
             {
                 GetComponentInChildren<Roar>().RoarActivable();
-                FindObjectOfType<AudioManager>().Play("Roar");
+                FindObjectOfType<AudioManager>().PlayThis("Roar");
             }
 
             if (activeCapa == 2)
             {
                 StartCoroutine(GetComponentInChildren<Tourbilol>().TourbilolActivable());
-                FindObjectOfType<AudioManager>().Play("Tourbilol");
+                FindObjectOfType<AudioManager>().PlayThis("Tourbilol");
             }
 
             StartCoroutine(UI.GetComponent<ActiveAndRollUIScript>().activeUICooldown());

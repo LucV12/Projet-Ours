@@ -141,17 +141,17 @@ PrefabInstance:
     - target: {fileID: 3579127555575689727, guid: d6b79b49d0bd5a2488f2ed7b3bc4de33,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.21134077
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3579127555575689727, guid: d6b79b49d0bd5a2488f2ed7b3bc4de33,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.1775382
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3579127555575689727, guid: d6b79b49d0bd5a2488f2ed7b3bc4de33,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.5091364
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3579127555575689727, guid: d6b79b49d0bd5a2488f2ed7b3bc4de33,
         type: 3}
@@ -457,5 +457,25 @@ PrefabInstance:
       propertyPath: GameOverUI
       value: 
       objectReference: {fileID: 727844499}
+    - target: {fileID: 6288052887443175016, guid: 78b930e3f67bbc5468f3f4418d7a62df,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294385860768989241, guid: 78b930e3f67bbc5468f3f4418d7a62df,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294385860768989241, guid: 78b930e3f67bbc5468f3f4418d7a62df,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294385860768989241, guid: 78b930e3f67bbc5468f3f4418d7a62df,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78b930e3f67bbc5468f3f4418d7a62df, type: 3}

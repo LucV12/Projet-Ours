@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour
                     nounours.GetComponent<PlayerController>().rage += 0.2f;
                 }
 
-                FindObjectOfType<AudioManager>().Play("MortManchot");
+                FindObjectOfType<AudioManager>().PlayThis("MortManchot");
             }
             else if (executed == true && nounours.GetComponent<PlayerController>().rageActivated == false && RM.isInRage == false)
             {
@@ -78,12 +78,12 @@ public class Enemy : MonoBehaviour
         if (executed == true)
         {
             health -= damage * 5;
-            FindObjectOfType<AudioManager>().Play("Execution");
+            FindObjectOfType<AudioManager>().PlayThis("Execution");
             Debug.Log("EXECUTED !");
         }
 
         health -= damage;
-        FindObjectOfType<AudioManager>().Play("Frappe");
+        FindObjectOfType<AudioManager>().PlayThis("Frappe");
         Debug.Log("damage TAKEN !");
         StartCoroutine(colorChange());       
     }
@@ -98,7 +98,7 @@ public class Enemy : MonoBehaviour
         if (other.collider.CompareTag("Enviro") && isKicked == true)
         {
             executed = true;
-            FindObjectOfType<AudioManager>().Play("StunContreMur");
+            FindObjectOfType<AudioManager>().PlayThis("StunContreMur");
         }
     }
 
@@ -130,6 +130,6 @@ public class Enemy : MonoBehaviour
 
     private void DeathScream()
     {
-        FindObjectOfType<AudioManager>().Play("MortManchot");
+        FindObjectOfType<AudioManager>().PlayThis("MortManchot");
     }
 }

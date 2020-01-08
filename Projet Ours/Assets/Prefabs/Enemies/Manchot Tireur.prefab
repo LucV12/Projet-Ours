@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: -6763159975260491472}
-  health: 3
+  health: 2
   executed: 0
   executedTime: 2
   repulsed: 0
