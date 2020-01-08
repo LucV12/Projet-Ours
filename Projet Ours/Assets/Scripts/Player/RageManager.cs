@@ -38,6 +38,7 @@ public class RageManager : MonoBehaviour
 
             if (activeRage == 0)
             {
+                nounours.GetComponent<PlayerController>().canLooseLife = false;
                 StartCoroutine(GetComponentInChildren<RageBasique>().RageActive1());
             }
 

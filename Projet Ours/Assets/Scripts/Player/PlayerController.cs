@@ -472,6 +472,7 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator ColorChangeRage()
     {
+        canLooseLife = false;
         animator.SetBool("IsRageActivated", true);
         canMove = false;
         FindObjectOfType<AudioManager>().Play("EnclenchementRage");
@@ -481,6 +482,7 @@ public class PlayerController : MonoBehaviour
         //gameObject.GetComponent<Renderer>().material.color = Color.white;
         animator.SetBool("IsRageActivated", false);
         canMove = true;
+        canLooseLife = true;
     }
 
     public void HitByEnemy()

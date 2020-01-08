@@ -21,10 +21,10 @@ public class RageBasique : MonoBehaviour
 
     public IEnumerator RageActive1()
     {
+        pc.canLooseLife = false;
         StartCoroutine(pc.ColorChangeRage());
         RM.isInRage = true;
         pc.damage = pc.damage * rageDamageBoost;
-        pc.canLooseLife = false;
         Debug.Log("Rage Activée !!!");
         yield return new WaitForSeconds(rageTime);
         pc.damage = pc.damage / rageDamageBoost;
