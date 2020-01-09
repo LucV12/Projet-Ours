@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 154733573039282559}
   crossHair: {fileID: 154733572088424146}
-  health: 10
+  health: 100
   slashParticle: {fileID: 3664818284620356623, guid: 7a0ba75e78909a7458cda3be69332656,
     type: 3}
   InitPosition: {x: 0, y: 0, z: 0}

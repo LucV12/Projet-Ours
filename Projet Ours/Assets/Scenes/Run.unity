@@ -163,7 +163,6 @@ MonoBehaviour:
   - {fileID: 379325974889244277, guid: c8f07b2ec38ca6d4db2e09d0102b7e16, type: 3}
   - {fileID: 1095638782415946099, guid: a9440ae427be45a40874ef45ed89bf7d, type: 3}
   - {fileID: 1616811151215243187, guid: ff05343a72f189e45a6ec28437988a6a, type: 3}
-  - {fileID: 1111766957919945509, guid: 8f83be0ed2e0bd543bfd5975972ef9e2, type: 3}
   salleObjectifPrefab:
   - {fileID: 269096385418566500, guid: 291ee3ef2cdbc2748bc3482422eddd69, type: 3}
   - {fileID: 2858224257363627107, guid: ddffbd0a87a5c2c4da70e3f343708d8a, type: 3}
